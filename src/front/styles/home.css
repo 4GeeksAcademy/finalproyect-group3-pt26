@@ -28,3 +28,49 @@
     object-fit: cover;
     z-index: -1;
 }
+
+.home .content{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+}
+
+.form {
+    display: flex;
+    background-color: #ffffffcc;
+    color: #000;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 4px;
+    border-radius: 8px;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form input[type=text] {
+    border: transparent;
+    background-color: transparent;
+    width: 400px;
+    font-size: 1.2rem;
+    font-family: 'Poppins',sans-serif;
+}
+
+.form input[type=text]:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 940px) {
+    .form input[type=text] {
+        max-width: 275px;
+    }
+
+}
