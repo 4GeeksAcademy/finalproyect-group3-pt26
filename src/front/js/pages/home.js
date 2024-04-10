@@ -26,8 +26,9 @@ export const Home = () => {
                         <button><AiOutlineSearch className='icon'/></button>
                     </div>
                 </form>
-
 			</div>
 		</div>
+
+		
 	);
 };

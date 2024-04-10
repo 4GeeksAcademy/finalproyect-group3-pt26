@@ -1,0 +1,27 @@
+.row{
+    margin: 15px;
+}
+
+.transition{
+    transition-property: transform;
+    transition-duration: 250ms;
+}
+.transition:hover{
+    transform: scale(1.03);
+}
+
+.colorStyle:focus{
+    border-color: lightslategray;
+    box-shadow: 0 0 0 0.25rem rgb(119 136 153 / 60%);
+}
+
+.fatherLogin{
+    display: flex;
+    height: 700px;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    background: #dcdcc8;
+}

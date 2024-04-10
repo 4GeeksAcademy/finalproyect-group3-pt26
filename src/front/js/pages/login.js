@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import '../../styles/login.css'
+import { Link } from 'react-router-dom';
 
 
 export const Login = () => {
@@ -6,34 +8,30 @@ export const Login = () => {
     const [user, setUser] = useState();
 
 
-    return (
-        <>
-            <>
-            <div className='text-center'>
-                <h1>Login Form</h1>
-                <div className="w-75 mx-auto">
-                    <div className="mb-3">
-                        <label className="form-label">Email address</label>
-                        <input
-                            type="email" className="form-control"
-                            // value={user.email}
-                            // onChange={(e) => setUser({ ...user, email: e.target.value })}
-                        />
+    return <div className='fatherLogin'>
+        <div style={{ textAlign: "center" }}>
+            <h1>Login</h1>
+
+            <form>
+                <div className="container">
+                    <div className="row d-block">
+                        <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Email</label>
+                        <div className="col-sm-10">
+                            <input type="text" className="form-control form-control-lg colorStyle" style={{ width: "1235px" }} id="colFormLabelLg" placeholder="Email" />
+                        </div>
                     </div>
-                    <div className="mb-3">
-                        <label className="form-label">Password</label>
-                        <input
-                            type="password" className="form-control"
-                            // value={user.password || ''}
-                            // onChange={(e) => setUser({ ...user, password: e.target.value })}
-                        />
+                    <div className="row d-block">
+                        <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Password</label>
+                        <div className="col-sm-10">
+                            <input type="email" className="form-control form-control-lg colorStyle" style={{ width: "1235px" }} id="colFormLabelLg" placeholder="Password" />
+                        </div>
                     </div>
-                    <button 
-                    // onClick={() => sendCredentials()} className="btn btn-primary"
-                    >Submit</button>
                 </div>
-            </div>
-        </>
-        </> 
-    )
+
+            </form>
+            <Link to={'/'} >
+                <button style={{ margin: "10px", background: "lightslategray" }} className="btn transition">Back home</button>
+            </Link>
+        </div>
+    </div>
 }
