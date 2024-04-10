@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"; // Importa useContext y use
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
-import Video from "../../img/maldivesVideo.mp4";
+import Video from "../../img/Viaje.mp4";
 import {AiOutlineSearch} from 'react-icons/ai'
 
 
@@ -17,7 +17,7 @@ export const Home = () => {
 			<div className="overlay"></div>
 			<div className="content">
 			     <h1>First Class Travel</h1>
-                <h2>Top 1% Locations Worldwide</h2>
+                <h2>The world is yours, discover it with us</h2>
 				<form className="form">
                     <div>
                         <input type="text" placeholder='Search Destinations' />
