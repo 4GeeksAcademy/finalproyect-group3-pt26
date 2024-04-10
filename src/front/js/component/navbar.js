@@ -28,7 +28,10 @@ export const Navbar = () => {
             </ul>
             <div className="nav-icons">
                 <BiSearch className='icon' style={{ marginRight: '1rem' }} />
-                <BsPerson className='icon' />
+                <Link to={'/login'}>
+                    <BsPerson className='icon'/>
+                </Link>
+                
             </div>
 
 			<div className="hamburger" onClick={handleNav}>
