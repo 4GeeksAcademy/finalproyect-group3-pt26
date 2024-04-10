@@ -1,26 +1,33 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react"; // Importa useContext y useState en la misma línea
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import Video from "../../img/maldivesVideo.mp4";
+import {AiOutlineSearch} from 'react-icons/ai'
+
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center mt-5">
-			<h1>test</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">
-				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
+		<div className="home">
+			<video autoPlay loop muted id='video'>
+                <source src={Video} type='video/mp4' />
+            </video>
+			<div className="overlay"></div>
+			<div className="content">
+			     <h1>First Class Travel</h1>
+                <h2>Top 1% Locations Worldwide</h2>
+				<form className="form">
+                    <div>
+                        <input type="text" placeholder='Search Destinations' />
+                    </div>
+                    <div>
+                        <button><AiOutlineSearch className='icon'/></button>
+                    </div>
+                </form>
+
 			</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://start.4geeksacademy.com/starters/react-flask">
-					Read documentation
-				</a>
-			</p>
 		</div>
 	);
-};
+}
