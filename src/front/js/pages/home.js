@@ -5,6 +5,8 @@ import "../../styles/home.css";
 import Video from "../../img/Viaje.mp4";
 import { AiOutlineSearch } from 'react-icons/ai'
 import { Destination } from "./destination";
+import { Search } from "./search";
+
 
 
 export const Home = () => {
@@ -34,6 +36,10 @@ export const Home = () => {
 			<div className="carrusel">
 				<Destination />
 			</div>
+			<div className="carrusel">
+				<Search />
+			</div>
+			
 		</>
 	);
 };
