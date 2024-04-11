@@ -6,7 +6,7 @@
     align-items: center;
     padding: 0 1rem;
     z-index: 2;
-    position:absolute;
+    /* position:absolute; */
     color:#fff;
 }
 
