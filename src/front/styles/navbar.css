@@ -17,14 +17,26 @@
 .nav-menu li a {
     color: #fff; /* Cambia el color del texto a negro */
     text-decoration: none; /* Elimina la subraya predeterminada */
+    font-size: 25px;
 }
 
 .nav-menu {
     display: flex;
+    width: 800px;
+    justify-content: space-between;
+    margin-top: 15px;
 }
 
 li {
-    padding: 1rem;
+    padding: 5px 14px;
+    margin: 10px;
+    border: 1px solid #ffffff61;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 255, 0.2);
+    transition: box-shadow 0.3s linear;
+}
+li:hover{
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
 }
 
 .hamburger {

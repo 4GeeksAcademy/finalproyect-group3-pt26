@@ -18,7 +18,7 @@ export const Navbar = () => {
     return (
         <div className={nav ? 'navbar navbar-bg' : 'navbar'}>
             <div className={nav ? 'logo dark' : 'logo'}>
-                <Link to='/'><h2>Travello</h2></Link>
+                <Link to='/'><img src="https://raw.githubusercontent.com/4GeeksAcademy/finalproyect-group3-pt26/main/src/front/img/travello%20white%20bg%20brand.PNG" style={{ width: "150px", height: "55px", opacity: "0.75 " }} /></Link>
             </div>
             <ul className="nav-menu">
                 <li><Link to='/' smooth={true} duration={500}>Home</Link></li>
@@ -29,10 +29,11 @@ export const Navbar = () => {
             </ul>
             <div className="nav-icons">
                 <Link to={'/register'}>
-                    <button>Register</button>
+                    <button style={{ marginRight: "12px" }} smooth={true} duration={500}>Register</button>
                 </Link>
                 <Link to={'/login'}>
-                    <BsPerson className='icon' />
+                    {/* <BsPerson className='icon' /> */}
+                    <button smooth={true} duration={500}>Login</button>
                 </Link>
 
             </div>
