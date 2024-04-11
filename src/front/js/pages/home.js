@@ -36,10 +36,10 @@ export const Home = () => {
 			<div className="carrusel">
 				<Destination />
 			</div>
-			<div className="carrusel">
+			<div className="">
 				<Search />
 			</div>
-			
+
 		</>
 	);
 };
