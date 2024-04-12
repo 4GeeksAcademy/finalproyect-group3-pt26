@@ -7,6 +7,7 @@ import { Destination } from "./destination";
 import { Search } from "./search";
 import { Footer } from "../component/footer";
 import { Recomendaciones } from "./recomendaciones";
+import { Testimoniales } from "./testimoniales";
 
 
 export const Home = () => {
@@ -43,6 +44,10 @@ export const Home = () => {
 
 			<div >
 				<Search />
+			</div>
+
+			<div >
+				<Testimoniales/>
 			</div>
 
 			<div >

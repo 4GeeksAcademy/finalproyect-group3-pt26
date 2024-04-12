@@ -3,7 +3,7 @@ import "../../styles/testimoniales.css";
 import avatarImage from "../../img/avatarImage.jpeg";
 
 
-export default function Testimonials() {
+export const Testimoniales = () => {
   return (
     <section id="testimonials">
       <div className="title">
