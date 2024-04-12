@@ -97,6 +97,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
+    background-color: #8338ec14;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+}
+.col-4:hover{
+    transform: translateX(0.4rem) translateY(-1rem);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .TRcontainer {
