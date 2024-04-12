@@ -103,8 +103,15 @@
     transition: 0.3s ease-in-out;
 }
 .col-4:hover{
-    transform: translateX(0.4rem) translateY(-1rem);
+    transform: translateX(0.02rem) translateY(-0.5rem);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card{
+    border: none;
+}
+
+.card-img-top{
+    border-radius: 15px;
 }
 
 .TRcontainer {

@@ -30,14 +30,14 @@ export const Navbar = () => {
 
             </ul>
             <div className="nav-icons">
-                <Link to={'/register'}>
-                    <button style={{ marginRight: "12px" }} smooth={true} duration={500}>Register</button>
-                </Link>
                 <Link to={'/login'}>
                     {/* <BsPerson className='icon' /> */}
-                    <button smooth={true} duration={500}>Login</button>
+                    <button style={{ marginRight: "12px" }} smooth={true} duration={500}>Login</button>
                 </Link>
 
+                <Link to={'/register'}>
+                    <button smooth={true} duration={500}>Register</button>
+                </Link>
             </div>
 
             <div className="hamburger" onClick={handleNav}>

@@ -17,9 +17,24 @@
 
 .fatherLogin{
     display: flex;
-    /* height: 700px; */
+    height: 600px;
+    width: 1000px;
     align-items: center;
     justify-content: center;
+    border: 1px solid #80808047;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 19px 16px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media screen and (max-width: 375px) {
+    .fatherLogin {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+.imageToLogin{
+    width: 52%;
 }
 
 
