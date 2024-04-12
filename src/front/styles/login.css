@@ -17,12 +17,9 @@
 
 .fatherLogin{
     display: flex;
-    height: 700px;
+    /* height: 700px; */
     align-items: center;
     justify-content: center;
 }
 
-body{
-    background: #dcdcc8;
-}
 
