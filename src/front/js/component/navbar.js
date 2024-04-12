@@ -23,19 +23,18 @@ export const Navbar = () => {
             </div>
             <ul className="nav-menu">
                 <li><Link to='/' smooth={true} duration={500}>Home</Link></li>
-                <li><Link to='/info' smooth={true} duration={500}>Destinations</Link></li>
-                {/* <li><Link to='/carousel' smooth={true} duration={500}>Our Services</Link></li> */}
+                <li><Link to='/info' smooth={true} duration={500}>About Us</Link></li>
                 <li><Link to='/travel' smooth={true} duration={500}>Travel</Link></li>
-                <li><Link to='/views' smooth={true} duration={500}>Book</Link></li>
+                <li><Link to='/views' smooth={true} duration={500}>Contact</Link></li>
 
             </ul>
             <div className="nav-icons">
                 <Link to={'/register'}>
-                    <button style={{ marginRight: "12px" }} smooth={true} duration={500}>Register</button>
+                    <button style={{ marginRight: "12px" }} smooth={true} duration={500}>REGISTER</button>
                 </Link>
                 <Link to={'/login'}>
                     {/* <BsPerson className='icon' /> */}
-                    <button smooth={true} duration={500}>Login</button>
+                    <button smooth={true} duration={500}>LOG IN</button>
                 </Link>
 
             </div>

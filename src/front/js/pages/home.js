@@ -47,8 +47,10 @@ export const Home = () => {
 			</div>
 
 			<div >
-				<Testimoniales/>
+				<Testimoniales />
 			</div>
+
+			<Footer />
 		</>
 	);
 };

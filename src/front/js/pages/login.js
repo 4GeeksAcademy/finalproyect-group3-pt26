@@ -10,28 +10,43 @@ export const Login = () => {
 
     return <div className='fatherLogin'>
         <div style={{ textAlign: "center" }}>
-            <h1>Login</h1>
+            <h1>LOG IN</h1>
 
-            <form>
+            {/* <form>
                 <div className="container">
                     <div className="row d-block">
-                        <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Email</label>
-                        <div className="col-sm-10">
-                            <input type="text" className="form-control form-control-lg colorStyle" style={{ width: "1235px" }} id="colFormLabelLg" placeholder="Email" />
+                        <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg text-center">Email</label>
+                        <div className="col-sm-8">
+                            <input type="text" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Your email" />
                         </div>
                     </div>
                     <div className="row d-block">
-                        <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Password</label>
-                        <div className="col-sm-10">
-                            <input type="email" className="form-control form-control-lg colorStyle" style={{ width: "1235px" }} id="colFormLabelLg" placeholder="Password" />
+                        <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg text-center">Password</label>
+                        <div className="col-sm-8">
+                            <input type="email" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Your password" />
                         </div>
                     </div>
                 </div>
 
+            </form> */}
+
+
+            <form>
+                <div className="mb-3">
+                    <label className="form-label">Email address</label>
+                    <input type="email" className="form-control" />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Password</label>
+                    <input type="password" className="form-control" style={{ width: '100%' }} />
+                </div>
+                <Link to={'/'} >
+                    <button style={{ margin: "10px", background: "lightslategray" }} className="btn transition">LOG IN</button>
+                </Link>
             </form>
-            <Link to={'/'} >
-                <button style={{ margin: "10px", background: "lightslategray" }} className="btn transition">Back home</button>
-            </Link>
+
+
+
         </div>
     </div>
 }
