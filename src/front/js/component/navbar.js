@@ -14,7 +14,7 @@ export const Navbar = () => {
 
     const handleNav = () => setNav(!nav) //funciona como un switch para apagar y encender la nav
 
-
+    
     return (
         <div className={nav ? 'navbar navbar-bg' : 'navbar'}>
             <div className={nav ? 'logo dark' : 'logo'}>
