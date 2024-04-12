@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => (
 	<footer className="footer">
-		<div className="container">
+		<div className="container ContainerFooter">
 			<div className="footer-info">
 				<h2>Travello</h2>
 				<p>Síguenos en nuestras redes sociales:</p>
@@ -18,10 +18,10 @@ export const Footer = () => (
 			</div>
 			<div className="comentarios">
 				<h3>Déjanos tu comentario</h3>
-				<form>
+				<div>
 					<textarea placeholder="Escribe tu comentario aquí"></textarea>
 					<button type="submit">Enviar</button>
-				</form>
+				</div>
 			</div>
 		</div>
 	</footer>

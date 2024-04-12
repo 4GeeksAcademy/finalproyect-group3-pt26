@@ -1,17 +1,17 @@
 .footer {
     background-color: #333;
     color: #fff;
-    padding: 40px 0;
+    padding: 30px;
   }
   
-  .container {
+  .ContainerFooter{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   
   .footer-info {
-    flex: 1 1 300px;
+    flex: 300px;
   }
   
   .footer-info h2 {
@@ -25,7 +25,7 @@
   }
   
   .comentarios {
-    flex: 1 1 300px;
+    flex: 300px;
   }
   
   .comentarios h3 {
@@ -69,37 +69,3 @@
   
   
 
-/* .footer h3 {
-    color: var(--primary-light);
-}
-
-.footer .top, .bottom {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer .social {
-    display: flex;
-    justify-content: space-between;
-    width: 280px;
-}
-
-.footer .icon {
-   color: var(--primary-light);
-}
-
-.footer ul {
-    display: flex;
-}
-
-.footer li {
-    padding: .5rem;
-}
-
-@media screen and (max-width: 1140px) {
-    .footer ul {
-        flex-direction: column;
-    }
-} */
