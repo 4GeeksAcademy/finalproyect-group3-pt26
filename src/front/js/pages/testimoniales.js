@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import "../../styles/testimoniales.css";
 import avatarImage from "../../img/avatarImage.jpeg";
 
 
