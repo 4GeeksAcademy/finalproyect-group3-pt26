@@ -80,3 +80,13 @@
     height: 300px;
     background: aquamarine;
 }
+.buttonSearch{
+       
+        border: none;
+        color: #fff;
+        padding: .7rem 1.5rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        background-color: #48cae4;
+        font-family: 'Poppins', sans-serif;
+}

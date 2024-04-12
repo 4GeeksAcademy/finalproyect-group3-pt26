@@ -3,26 +3,42 @@ import "../../styles/footer.css";
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { Link } from "react-router-dom";
 
-export const Footer = () => (
-	<footer className="footer">
-		<div className="container ContainerFooter">
-			<div className="footer-info">
-				<h2>Travello</h2>
-				<p>Síguenos en nuestras redes sociales:</p>
-				<div className="redes-sociales">
-					<Link to={'/'} className="link"><i className="fab fa-facebook"></i></Link>
-					<Link to={'/'} className="link"><i className="fab fa-instagram"></i></Link>
-					<Link to={'/'} className="link"><i className="fab fa-twitter"></i></Link>
-					<Link to={'/'} className="link"><i className="fab fa-linkedin"></i></Link>
+export const Footer = () => {
+	return (
+		<footer>
+			<div className='footer'>
+				<div className="container">
+					<div className="top">
+						<h3>TRAVELO</h3>
+						<div className="social">
+							<FaFacebook className='icon' />
+							<FaInstagram className='icon' />
+							<FaTwitter className='icon' />
+							<FaPinterest className='icon' />
+							<FaYoutube className='icon' />
+						</div>
+					</div>
+					<div className="bottom">
+						<div className="left">
+							<ul>
+								<li>About</li>
+								<li>Careers</li>
+								<li>Advertising</li>
+							</ul>
+						</div>
+						<div className="right">
+							<ul>
+								<li>Contact</li>
+								<li>Terms</li>
+								<li>Policy</li>
+								{/* <li>Privacy</li> */}
+							</ul>
+						</div>
+					</div>
 				</div>
+
+
 			</div>
-			<div className="comentarios">
-				<h3>Déjanos tu comentario</h3>
-				<div>
-					<textarea placeholder="Escribe tu comentario aquí"></textarea>
-					<button type="submit">Enviar</button>
-				</div>
-			</div>
-		</div>
-	</footer>
-);
+		</footer>
+	)
+};
