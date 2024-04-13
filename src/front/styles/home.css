@@ -139,7 +139,7 @@
     }
 }
 
-@media screen and (max-width: 485px) {
+@media screen and (max-width: 768px) {
     .row {
       width: 100%;
       max-width: 100%;
