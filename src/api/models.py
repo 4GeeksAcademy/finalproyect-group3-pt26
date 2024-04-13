@@ -1,4 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
+from sqlalchemy.orm import relationship, declarative_base
+from sqlalchemy import create_engine
 
 db = SQLAlchemy()
 
@@ -16,4 +19,123 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             # do not serialize the password, its a security breach
+        }
+    
+class Hotel(db.Model):
+    __tablename__ = 'hotel'
+    id= db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(120), nullable=False)
+    descripcion = db.Column(db.String(250),nullable = False)
+    duracion = db.Column(db.String(250),nullable = False)
+    precio = db.Column(db.Float,nullable = False)
+
+    def __init__(self,id,name,descripcion,duracion,precio):
+        self.id = id
+        self.name = name
+        self.descripcion = descripcion
+        self.duracion = duracion
+        self.precio = precio
+        
+
+    def __repr__(self):
+        return f'<Hotel name: {self.name} >'
+    
+    def __serialize__(self):
+        return{
+            "id": self.id,
+            "name": self.name,
+            "descripcion" : self.descripcion,
+            "duracion": self.duracion,
+            "precio": self.precio
+        }
+    
+class Tours(db.Model):
+    __tablename__ = 'tours'
+    id= db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(120), nullable=False)
+    descripcion = db.Column(db.String(250),nullable = False)
+    duracion = db.Column(db.String(250),nullable = False)
+    precio = db.Column(db.Float,nullable = False)
+
+    def __init__(self,id,name,descripcion,duracion,precio):
+        self.id = id
+        self.name = name
+        self.descripcion = descripcion
+        self.duracion = duracion
+        self.precio = precio
+    
+    def __repr__(self):
+        return f'<Tours name:{self.name}>'
+    
+    def __serialize__(self):
+        return{
+            "id":self.id,
+            "name": self.name,
+            "descripcion": self.descripcion,
+            "duracion": self.duracion,
+            "precio": self.precio
+        }
+            
+class Paquetes(db.Model):
+    __tablename__ = 'paquetes'
+    id= db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(120), nullable=False)
+    destino = db.Column(db.String(120), nullable = False)
+    descripcion = db.Column(db.String(250),nullable = False)
+    duracion = db.Column(db.String(250),nullable = False)
+    precio = db.Column(db.Float,nullable = False)
+    
+    def __init__(self,id,name,destino,descripcion,duracion,precio):
+        self.id = id
+        self.name = name
+        self.destino = destino
+        self.descripcion = descripcion
+        self.duracion = duracion
+        self.precio = precio
+    
+    def __repr__(self):
+        return f'<Tours name:{self.name}>'
+    
+    def __serialize__(self):
+        return{
+            "id":self.id,
+            "name": self.name,
+            "destino" : self.destino,
+            "descripcion": self.descripcion,
+            "duracion": self.duracion,
+            "precio": self.precio
+        }
+
+class Reservas(db.Model):
+    __tablename__= 'reservas'
+    id = db.Column(db.Integer,primary_key = True)
+    fecha_inicio = db.Column(DateTime, nullable=False)
+    fecha_final = db.Column(DateTime, nullable=False)
+
+    id_user = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = relationship(User , backref = 'todas_reservas')
+
+    id_tour = db.Column(db.Integer, db.ForeignKey('tours.id'))
+    tour = relationship(Tours)
+
+    id_paquetes = db.Column(db.Integer, db.ForeignKey('paquetes.id'))
+    paquetes = relationship(Paquetes)
+
+    id_hotel = db.Column(db.Integer, db.ForeignKey('hotel.id'))
+    hotel = relationship(Hotel)
+
+    def __init__(self,id,fecha_inicio,fecha_final):
+        self.id = id
+        self.fecha_inicio = fecha_inicio
+        self.fecha_final = fecha_final
+    
+    def __repr__(self):
+        return f'<Reservas id:{self.id}>'
+    
+    def __serialize__(self):
+        return{
+            "id":self.id,
+            "fecha_inico": self.fecha_inicio,
+            "fecha_final": self.fecha_final
+
         }
