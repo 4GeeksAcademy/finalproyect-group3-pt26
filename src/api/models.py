@@ -49,8 +49,8 @@ class Hotel(db.Model):
             "precio": self.precio
         }
     
-class Tours(db.Model):
-    __tablename__ = 'tours'
+class Tour(db.Model):
+    __tablename__ = 'tour'
     id= db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(120), nullable=False)
     descripcion = db.Column(db.String(250),nullable = False)
@@ -65,7 +65,7 @@ class Tours(db.Model):
         self.precio = precio
     
     def __repr__(self):
-        return f'<Tours name:{self.name}>'
+        return f'<Tour name:{self.name}>'
     
     def __serialize__(self):
         return{
@@ -115,8 +115,8 @@ class Reservas(db.Model):
     id_user = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = relationship(User , backref = 'todas_reservas')
 
-    id_tour = db.Column(db.Integer, db.ForeignKey('tours.id'))
-    tour = relationship(Tours)
+    id_tour = db.Column(db.Integer, db.ForeignKey('tour.id'))
+    tour = relationship(Tour)
 
     id_paquetes = db.Column(db.Integer, db.ForeignKey('paquetes.id'))
     paquetes = relationship(Paquetes)
@@ -135,7 +135,7 @@ class Reservas(db.Model):
     def __serialize__(self):
         return{
             "id":self.id,
-            "fecha_inico": self.fecha_inicio,
+            "fecha_inicio": self.fecha_inicio,
             "fecha_final": self.fecha_final
 
         }
