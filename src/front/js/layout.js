@@ -41,7 +41,7 @@ const Layout = () => {
                         <Route element={<Register />} path="/register" />
                         <Route element={<Travel />} path="/travel" />
                     </Routes>
-                    {/* <Footer /> */}
+                    <Footer />
                 </ScrollToTop>
             </BrowserRouter>
 
