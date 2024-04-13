@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BiSearch } from 'react-icons/bi';
-import { BsPerson } from 'react-icons/bs';
 import "../../styles/navbar.css"; // Asegúrate de importar tus estilos CSS aquí si es necesario
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
-// import Logo from "../../img/travello brand 3.";
 
 
 export const Navbar = () => {
@@ -23,10 +20,10 @@ export const Navbar = () => {
             </div>
             <ul className="nav-menu">
                 <li><Link to='/' smooth={true} duration={500}>Home</Link></li>
-                <li><Link to='/info' smooth={true} duration={500}>Destinations</Link></li>
+                <li><Link to='/info' smooth={true} duration={500}>About Us</Link></li>
                 {/* <li><Link to='/carousel' smooth={true} duration={500}>Our Services</Link></li> */}
                 <li><Link to='/travel' smooth={true} duration={500}>Travel</Link></li>
-                <li><Link to='/views' smooth={true} duration={500}>Book</Link></li>
+                <li><Link to='/views' smooth={true} duration={500}>Contact</Link></li>
 
             </ul>
             <div className="nav-icons">
