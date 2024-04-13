@@ -44,4 +44,19 @@
     width: 52%;
 }
 
+.loginBoton{
+    background-color: #5651e59e;
+    width: 200px;
+    height: 45px;
+    border-radius: 25px;
+    color: white;
+    border: none;
+    transition-property: transform, background-color;
+    transition-duration: 250ms;
+}
+.loginBoton:hover{
+    background-color: #5651e5f2;
+    transform: scale(1.06);
+}
+
 

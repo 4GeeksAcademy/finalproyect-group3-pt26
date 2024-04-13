@@ -30,9 +30,8 @@ export const Login = () => {
                         </div>
                     </div>
                 </div>
-
             </form>
-
+            <button className='loginBoton'>login</button>
 
         </div>
     </div>

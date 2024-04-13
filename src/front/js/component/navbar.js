@@ -20,7 +20,7 @@ export const Navbar = () => {
             </div>
             <ul className="nav-menu">
                 <li><Link to='/' smooth={true} duration={500}>Home</Link></li>
-                <li><Link to='/info' smooth={true} duration={500}>About Us</Link></li>
+                <li><Link to='/info' smooth={true} duration={500} style={{ width: "130px" }}>About Us</Link></li>
                 {/* <li><Link to='/carousel' smooth={true} duration={500}>Our Services</Link></li> */}
                 <li><Link to='/travel' smooth={true} duration={500}>Travel</Link></li>
                 <li><Link to='/views' smooth={true} duration={500}>Contact</Link></li>

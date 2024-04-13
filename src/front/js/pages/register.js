@@ -22,15 +22,19 @@ export const Register = () => {
                     <div className="row">
                         {/* <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Password</label> */}
                         <div className="col-sm-10">
+                            <input style={{ width: "315px", borderRadius: "22px" }} type="email" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Full Name" />
+                        </div>
+                    </div>
+                    <div className="row">
+                        {/* <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Password</label> */}
+                        <div className="col-sm-10">
                             <input style={{ width: "315px", borderRadius: "22px" }} type="email" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Password" />
                         </div>
                     </div>
                 </div>
 
             </form>
-            <Link to={'/'} >
-                <button style={{ margin: "10px", background: "lightslategray" }} className="btn transition">Submit</button>
-            </Link>
+            <button className='loginBoton'>Register</button>
         </div>
     </div>
 }
