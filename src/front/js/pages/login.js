@@ -10,10 +10,10 @@ export const Login = () => {
 
     return <div className='fatherLogin'>
         <div className='imageToLogin'>
-            <img style={{ marginLeft: "50px" }} src='https://ps.w.org/login-customizer/assets/icon-256x256.png?rev=2455454' width={"250px"} height={"250px"} />
+            <img style={{ marginLeft: "30px" }} src='https://ps.w.org/login-customizer/assets/icon-256x256.png?rev=2455454' width={"100px"} height={"100px"} />
         </div>
         <div style={{ textAlign: "center" }}>
-            <h1>LOG IN</h1>
+            <h1>LOGIN</h1>
 
             <form>
                 <div className="container">
@@ -35,4 +35,5 @@ export const Login = () => {
 
         </div>
     </div>
+  
 }

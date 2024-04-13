@@ -86,10 +86,17 @@
     justify-content: space-between;
   }
   
-  @media screen and (max-width: 768px) {
+     @media screen and (min-width: 280px) and (max-width: 768px) {
+    .packages ul li {
+      padding: 0 0.5rem;
+      font-size: 2vh;
+      padding-bottom: 1rem;
+    }
+    .packages ul li.active {
+      border-bottom-width: 0.3rem;
+    }
     .destinations {
-      grid-template-columns: repeat(1, 1fr); /* Una columna en dispositivos móviles */
-      gap: 1rem; /* Espacio entre las tarjetas */
-      padding: 0 0.5rem; /* Padding lateral */
+      grid-template-columns: 1fr;
+      padding: 0;
     }
   }

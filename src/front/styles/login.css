@@ -17,8 +17,8 @@
 
 .fatherLogin{
     display: flex;
-    height: 600px;
-    width: 1000px;
+    height: 300px;
+    width: 800px;
     align-items: center;
     justify-content: center;
     border: 1px solid #80808047;
@@ -41,7 +41,7 @@
   }
 
 .imageToLogin{
-    width: 52%;
+    width: 30%;
 }
 
 .loginBoton{

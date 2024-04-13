@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/home.css";
+import '../../styles/login.css'
 
 
 export const Register = () => {
     return <div className='fatherLogin'>
         <div className='imageToLogin'>
-            <img style={{ marginLeft: "50px" }} src='https://ps.w.org/login-customizer/assets/icon-256x256.png?rev=2455454' width={"250px"} height={"250px"} />
+            <img style={{ marginLeft: "50px" }} src='https://ps.w.org/login-customizer/assets/icon-256x256.png?rev=2455454' width={"100px"} height={"100px"} />
         </div>
         <div style={{ textAlign: "center" }}>
-            <h1>Register</h1>
+            <h2>Register</h2>
 
             <form>
                 <div className="container">
