@@ -10,6 +10,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    username = db.Column(db.String(80), unique=False, nullable=False)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -76,8 +77,8 @@ class Tour(db.Model):
             "precio": self.precio
         }
             
-class Paquetes(db.Model):
-    __tablename__ = 'paquetes'
+class Package(db.Model):
+    __tablename__ = 'package'
     id= db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(120), nullable=False)
     destino = db.Column(db.String(120), nullable = False)
@@ -109,20 +110,20 @@ class Paquetes(db.Model):
 class Reservas(db.Model):
     __tablename__= 'reservas'
     id = db.Column(db.Integer,primary_key = True)
-    fecha_inicio = db.Column(DateTime, nullable=False)
-    fecha_final = db.Column(DateTime, nullable=False)
+    fecha_inicio = db.Column(db.DateTime, nullable=False)
+    fecha_final = db.Column(db.DateTime, nullable=False)
 
     id_user = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = relationship(User , backref = 'todas_reservas')
+    user = db.relationship(User , backref = 'todas_reservas')
 
     id_tour = db.Column(db.Integer, db.ForeignKey('tour.id'))
-    tour = relationship(Tour)
+    tour = db.relationship(Tour)
 
-    id_paquetes = db.Column(db.Integer, db.ForeignKey('paquetes.id'))
-    paquetes = relationship(Paquetes)
+    id_package = db.Column(db.Integer, db.ForeignKey('package.id'))
+    package = db.relationship(Package)
 
     id_hotel = db.Column(db.Integer, db.ForeignKey('hotel.id'))
-    hotel = relationship(Hotel)
+    hotel = db.relationship(Hotel)
 
     def __init__(self,id,fecha_inicio,fecha_final):
         self.id = id
