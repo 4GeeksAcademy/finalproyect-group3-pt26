@@ -34,22 +34,6 @@ export const Login = () => {
             </form>
 
 
-            <form>
-                <div className="mb-3">
-                    <label className="form-label">Email address</label>
-                    <input type="email" className="form-control" />
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">Password</label>
-                    <input type="password" className="form-control" style={{ width: '100%' }} />
-                </div>
-                <Link to={'/'} >
-                    <button style={{ margin: "10px", background: "lightslategray" }} className="btn transition">LOG IN</button>
-                </Link>
-            </form>
-
-
-
         </div>
     </div>
 }
