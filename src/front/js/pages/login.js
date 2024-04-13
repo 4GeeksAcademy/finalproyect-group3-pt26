@@ -13,7 +13,7 @@ export const Login = () => {
             <img style={{ marginLeft: "50px" }} src='https://ps.w.org/login-customizer/assets/icon-256x256.png?rev=2455454' width={"250px"} height={"250px"} />
         </div>
         <div style={{ textAlign: "center" }}>
-            <h1>Login</h1>
+            <h1>LOG IN</h1>
 
             <form>
                 <div className="container">
@@ -32,9 +32,24 @@ export const Login = () => {
                 </div>
 
             </form>
-            <Link to={'/'} >
-                <button style={{ margin: "10px", background: "lightslategray" }} className="btn transition">Back home</button>
-            </Link>
+
+
+            <form>
+                <div className="mb-3">
+                    <label className="form-label">Email address</label>
+                    <input type="email" className="form-control" />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Password</label>
+                    <input type="password" className="form-control" style={{ width: '100%' }} />
+                </div>
+                <Link to={'/'} >
+                    <button style={{ margin: "10px", background: "lightslategray" }} className="btn transition">LOG IN</button>
+                </Link>
+            </form>
+
+
+
         </div>
     </div>
 }

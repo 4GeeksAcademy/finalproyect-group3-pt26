@@ -29,7 +29,7 @@ export const Register = () => {
 
             </form>
             <Link to={'/'} >
-                <button style={{ margin: "10px", background: "lightslategray" }} className="btn transition">Back home</button>
+                <button style={{ margin: "10px", background: "lightslategray" }} className="btn transition">Submit</button>
             </Link>
         </div>
     </div>
