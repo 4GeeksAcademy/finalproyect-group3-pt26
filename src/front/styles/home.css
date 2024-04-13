@@ -139,6 +139,20 @@
     }
 }
 
+@media screen and (max-width: 485px) {
+    .row {
+      width: 100%;
+      max-width: 100%;
+      flex-direction: column;
+      display: flex;
+      align-content: center;
+    }
+    .col-4 {
+        width: 100%;
+        max-width: 100%;
+      }
+  }
+
 
 
 

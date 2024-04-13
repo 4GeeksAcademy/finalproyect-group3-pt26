@@ -33,6 +33,13 @@
     }
   }
 
+  @media screen and (max-width: 575px) {
+    .fatherLogin {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
 .imageToLogin{
     width: 52%;
 }
