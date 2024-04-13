@@ -76,8 +76,8 @@ class Tour(db.Model):
             "precio": self.precio
         }
             
-class Paquetes(db.Model):
-    __tablename__ = 'paquetes'
+class Paquete(db.Model):
+    __tablename__ = 'paquete'
     id= db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(120), nullable=False)
     destino = db.Column(db.String(120), nullable = False)
@@ -118,8 +118,8 @@ class Reservas(db.Model):
     id_tour = db.Column(db.Integer, db.ForeignKey('tour.id'))
     tour = relationship(Tour)
 
-    id_paquetes = db.Column(db.Integer, db.ForeignKey('paquetes.id'))
-    paquetes = relationship(Paquetes)
+    id_paquete = db.Column(db.Integer, db.ForeignKey('paquete.id'))
+    paquete = relationship(Paquete)
 
     id_hotel = db.Column(db.Integer, db.ForeignKey('hotel.id'))
     hotel = relationship(Hotel)
