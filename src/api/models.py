@@ -18,7 +18,7 @@ class User(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "username" : username.id,
+            "username" : self.username.id,
             "email": self.email,
             # do not serialize the password, its a security breach
         }
@@ -96,7 +96,7 @@ class Paquete(db.Model):
         self.precio = precio
     
     def __repr__(self):
-        return f'<Tour name:{self.name}>'
+        return f'<Paquete name:{self.name}>'
     
     def __serialize__(self):
         return{
