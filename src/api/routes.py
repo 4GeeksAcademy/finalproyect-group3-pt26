@@ -21,10 +21,10 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
-# @api.route('/api/users', methods=['GET'])
-# def get_user():
-#     users = User.query.all()
+@api.route('/api/users', methods=['GET'])
+def get_user():
+    users = User.query.all()
 
-#     response_body = [user.serialize() for user in users]
+    response_body = [user.serialize() for user in users]
 
-#     return jsonify(response_body), 200
+    return jsonify(response_body), 200
