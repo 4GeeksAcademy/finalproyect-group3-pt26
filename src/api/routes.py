@@ -211,7 +211,22 @@ def get_single_accommodation(accommodation_id):
 @api.route('/accommodations', methods=['POST'])
 def new_accommodation():
 
-    pass
+    data = request.json
+
+    if not data: return jsonify({"msg": "Invalid JSON data"}), 400
+
+    new_accommodation = Hotel(**data) #desempaquetado de diccionario y creación de una nueva instancia
+
+    db.session.add(new_accommodation)
+
+    try:
+        db.session.commit()
+        return jsonify({"msg": "Accommodation created successfully"}), 200
+    
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
+
 
 #Actualizar la información de un alojamiento existente
 @api.route('/accommodations/<int:accommodation_id>', methods=['PUT'])
@@ -235,6 +250,20 @@ def update_accommodation(accommodation_id):
     except Exception as e:
         db.session.rollback()
         return jsonify({"error": str(e)}), 500
+
+#Eliminar un alojamiento existente
+@api.route('/accommodations/<int:accommodation_id>', methods=['DELETE'])
+def delete_accommodation(accommodation_id):
+
+    selected_hotel = Hotel.query.get(accommodation_id)
+
+    if selected_hotel:
+        db.session.delete(selected_hotel)
+        db.session.commit()
+        return jsonify({"msg": f"The {selected_hotel} has been successfully deleted"})
+    else:
+        return jsonify({"msg": "Hotel not found"}), 404
+
 
 
 
