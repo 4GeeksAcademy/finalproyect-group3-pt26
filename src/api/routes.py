@@ -197,7 +197,7 @@ def get_accomodations():
     return jsonify(response_body), 200
 
 #Obtener un alojamiento específico por su ID
-@api.route('/accommodations/<int:accommodation_id>', methods=['GET'])
+@api.route('/accommodation/<int:accommodation_id>', methods=['GET'])
 def get_single_accommodation(accommodation_id):
 
     single_accommodation = Hotel.query.get(accommodation_id)
@@ -229,7 +229,7 @@ def new_accommodation():
 
 
 #Actualizar la información de un alojamiento existente
-@api.route('/accommodations/<int:accommodation_id>', methods=['PUT'])
+@api.route('/accommodation/<int:accommodation_id>', methods=['PUT'])
 def update_accommodation(accommodation_id):
 
     data = request.get_json()
@@ -252,7 +252,7 @@ def update_accommodation(accommodation_id):
         return jsonify({"error": str(e)}), 500
 
 #Eliminar un alojamiento existente
-@api.route('/accommodations/<int:accommodation_id>', methods=['DELETE'])
+@api.route('/accommodation/<int:accommodation_id>', methods=['DELETE'])
 def delete_accommodation(accommodation_id):
 
     selected_hotel = Hotel.query.get(accommodation_id)
