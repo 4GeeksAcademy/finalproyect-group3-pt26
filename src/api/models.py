@@ -105,8 +105,8 @@ class Paquete(db.Model):
             "precio": self.precio
         }
 
-class Reservas(db.Model):
-    __tablename__= 'reservas'
+class Reserva(db.Model):
+    __tablename__= 'reserva'
     id = db.Column(db.Integer,primary_key = True, autoincrement=True)
     fecha_inicio = db.Column(DateTime, nullable=False)
     fecha_final = db.Column(DateTime, nullable=False)
@@ -128,12 +128,11 @@ class Reservas(db.Model):
         self.fecha_final = fecha_final
     
     def __repr__(self):
-        return f'<Reservas id:{self.id}>'
+        return f'<Reserva id:{self.id}>'
     
     def serialize(self):
         return{
             "id":self.id,
             "fecha_inicio": self.fecha_inicio,
             "fecha_final": self.fecha_final
-
         }

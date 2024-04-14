@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Tour
+from api.models import db, User, Tour, Hotel, Paquete, Reserva
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 
@@ -177,3 +177,43 @@ def delete_tour(tour_id):
         return jsonify({'message': 'Tour eliminado exitosamente' }), 200
     else:
         return jsonify({'message': 'Tour no encontrado'}),404
+
+
+#Hotel
+#Obtener todos los alojamientos
+@api.route('/accommodations', methods = ['GET'])
+def get_accomodations():
+
+    accomodations = Hotel.query.all()
+
+    accomodations_serialized = []
+    for hotel in accomodations:
+        accomodations_serialized.append(hotel.serialize())
+
+    response_body = {
+        "result" : accomodations_serialized
+    }
+
+    return jsonify(response_body), 200
+
+#Obtener un alojamiento específico por su ID
+@api.route('/accommodations/<int:accommodation_id', method=['GET'])
+def get_single_accommodation(accommodation_id):
+
+    single_accommodation = Hotel.query.get(accommodation_id)
+    if single_accommodation:
+        return jsonify({
+            "hotel": single_accommodation.serialize()
+        }), 200
+    else: return jsonify({"msg" : "Hotel not found"}), 404
+
+#Crear un nuevo alojamiento
+@api.route('/accommodations', method=['POST'])
+def new_accommodation():
+
+    pass
+
+
+
+
+
