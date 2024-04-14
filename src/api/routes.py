@@ -197,7 +197,7 @@ def get_accomodations():
     return jsonify(response_body), 200
 
 #Obtener un alojamiento específico por su ID
-@api.route('/accommodations/<int:accommodation_id', method=['GET'])
+@api.route('/accommodations/<int:accommodation_id', methods=['GET'])
 def get_single_accommodation(accommodation_id):
 
     single_accommodation = Hotel.query.get(accommodation_id)
@@ -208,7 +208,7 @@ def get_single_accommodation(accommodation_id):
     else: return jsonify({"msg" : "Hotel not found"}), 404
 
 #Crear un nuevo alojamiento
-@api.route('/accommodations', method=['POST'])
+@api.route('/accommodations', methods=['POST'])
 def new_accommodation():
 
     pass
