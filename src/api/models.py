@@ -24,14 +24,14 @@ class User(db.Model):
     
 class Hotel(db.Model):
     __tablename__ = 'hotel'
-    id= db.Column(db.Integer, primary_key = True)
+    id= db.Column(db.Integer, primary_key = True, autoincrement=True)
     name = db.Column(db.String(120), nullable=False)
     descripcion = db.Column(db.String(250),nullable = False)
     duracion = db.Column(db.String(250),nullable = False)
     precio = db.Column(db.Float,nullable = False)
 
     def __init__(self,name,descripcion,duracion,precio):
-       
+        
         self.name = name
         self.descripcion = descripcion
         self.duracion = duracion
@@ -52,14 +52,13 @@ class Hotel(db.Model):
     
 class Tour(db.Model):
     __tablename__ = 'tour'
-    id= db.Column(db.Integer, primary_key = True)
+    id= db.Column(db.Integer, primary_key = True, autoincrement=True)
     name = db.Column(db.String(120), nullable=False)
     descripcion = db.Column(db.String(250),nullable = False)
     duracion = db.Column(db.String(250),nullable = False)
     precio = db.Column(db.Float,nullable = False)
 
-    def __init__(self,id,name,descripcion,duracion,precio):
-        self.id=id
+    def __init__(self,name,descripcion,duracion,precio):
         self.name = name
         self.descripcion = descripcion
         self.duracion = duracion
@@ -79,15 +78,14 @@ class Tour(db.Model):
             
 class Paquete(db.Model):
     __tablename__ = 'paquete'
-    id= db.Column(db.Integer, primary_key = True)
+    id= db.Column(db.Integer, primary_key = True, autoincrement=True)
     name = db.Column(db.String(120), nullable=False)
     destino = db.Column(db.String(120), nullable = False)
     descripcion = db.Column(db.String(250),nullable = False)
     duracion = db.Column(db.String(250),nullable = False)
     precio = db.Column(db.Float,nullable = False)
     
-    def __init__(self,id,name,destino,descripcion,duracion,precio):
-        self.id = id
+    def __init__(self,name,destino,descripcion,duracion,precio):
         self.name = name
         self.destino = destino
         self.descripcion = descripcion
@@ -109,7 +107,7 @@ class Paquete(db.Model):
 
 class Reservas(db.Model):
     __tablename__= 'reservas'
-    id = db.Column(db.Integer,primary_key = True)
+    id = db.Column(db.Integer,primary_key = True, autoincrement=True)
     fecha_inicio = db.Column(DateTime, nullable=False)
     fecha_final = db.Column(DateTime, nullable=False)
 
@@ -125,8 +123,7 @@ class Reservas(db.Model):
     id_hotel = db.Column(db.Integer, db.ForeignKey('hotel.id'))
     hotel = relationship(Hotel)
 
-    def __init__(self,id,fecha_inicio,fecha_final):
-        self.id = id
+    def __init__(self,fecha_inicio,fecha_final):
         self.fecha_inicio = fecha_inicio
         self.fecha_final = fecha_final
     
