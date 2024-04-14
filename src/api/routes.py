@@ -197,7 +197,7 @@ def get_accomodations():
     return jsonify(response_body), 200
 
 #Obtener un alojamiento específico por su ID
-@api.route('/accommodations/<int:accommodation_id', methods=['GET'])
+@api.route('/accommodations/<int:accommodation_id', method=['GET'])
 def get_single_accommodation(accommodation_id):
 
     single_accommodation = Hotel.query.get(accommodation_id)
@@ -212,6 +212,33 @@ def get_single_accommodation(accommodation_id):
 def new_accommodation():
 
     pass
+
+#Actualizar la información de un alojamiento existente
+@api.route('/accommodations/<int:accommodation_id>', methods=['PUT'])
+def update_accommodation(accommodation_id):
+
+    data = request.get_json()
+    if not data: return jsonify({"msg": "Invalid JSON data"}), 400
+    
+    hotel = Hotel.query.get(accommodation_id)
+    if not hotel: return jsonify({"msg": "Hotel not found"}), 404
+
+    if 'name' in data: hotel.name = data['name']
+    if 'descripcion' in data: hotel.descripcion = data['descripcion']
+    if 'duracion' in data: hotel.duracion = data['duracion']
+    if 'precio' in data: hotel.precio = data['precio']
+
+    try:
+        db.session.commit()
+        return jsonify({"msg": "Accommodation updated successfully"}), 200
+    
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
+
+
+
+
 
 
 
