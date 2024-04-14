@@ -58,7 +58,7 @@ def crear_usuario():
     except Exception as e:
         db.session.rollback()
         return jsonify({'message':'Error al registrar usuarios {}'.format(str(e))}),404
-
+    
 @api.route('/user/<int:user_id>', methods = ['PUT'])
 def actualizar_user(user_id):
     
