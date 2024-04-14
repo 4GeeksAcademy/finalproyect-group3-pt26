@@ -30,8 +30,8 @@ class Hotel(db.Model):
     duracion = db.Column(db.String(250),nullable = False)
     precio = db.Column(db.Float,nullable = False)
 
-    def __init__(self,id,name,descripcion,duracion,precio):
-        self.id = id
+    def __init__(self,name,descripcion,duracion,precio):
+       
         self.name = name
         self.descripcion = descripcion
         self.duracion = duracion
@@ -41,7 +41,7 @@ class Hotel(db.Model):
     def __repr__(self):
         return f'<Hotel name: {self.name} >'
     
-    def __serialize__(self):
+    def serialize(self):
         return{
             "id": self.id,
             "name": self.name,
@@ -59,7 +59,7 @@ class Tour(db.Model):
     precio = db.Column(db.Float,nullable = False)
 
     def __init__(self,id,name,descripcion,duracion,precio):
-        self.id = id
+        self.id=id
         self.name = name
         self.descripcion = descripcion
         self.duracion = duracion
@@ -68,7 +68,7 @@ class Tour(db.Model):
     def __repr__(self):
         return f'<Tour name:{self.name}>'
     
-    def __serialize__(self):
+    def serialize(self):
         return{
             "id":self.id,
             "name": self.name,
@@ -97,7 +97,7 @@ class Paquete(db.Model):
     def __repr__(self):
         return f'<Paquete name:{self.name}>'
     
-    def __serialize__(self):
+    def serialize(self):
         return{
             "id":self.id,
             "name": self.name,
@@ -133,7 +133,7 @@ class Reservas(db.Model):
     def __repr__(self):
         return f'<Reservas id:{self.id}>'
     
-    def __serialize__(self):
+    def serialize(self):
         return{
             "id":self.id,
             "fecha_inicio": self.fecha_inicio,
