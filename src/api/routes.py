@@ -13,8 +13,9 @@ CORS(api)
 
 @api.route('/')
 def sitemap():
-    return generate_sitemap(app)
+    return generate_sitemap(api)
 
+#Obtenemos todos los usuarios
 @api.route('/users', methods=['GET'])
 def get_users():
 
@@ -24,6 +25,32 @@ def get_users():
 
     return jsonify(response_body), 200
 
+#Creamos un usuario
+@api.route('/register', methods = ['POST'])
+def crear_usuario():
+
+    #capturo los datos del formulario
+    register_data = request.json
+    username = register_data.get('username')
+    email = register_data.get('email')
+    password = request.json.get('password')
+
+#crea una nueva instancia del modelo de usuario y desempaco **register_data
+    new_user = User(**register_data) 
+
+    db.session.add(new_user)
+
+    try:
+        db.session.commit()
+        return jsonify({'message': 'Usuario registrado exitosamente'}),200
+    
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'message':'Error al registrar usuarios {}'.format(str(e))}),404
+
+
+
+#Obtenemos todos los Tour
 @api.route('/tours', methods=['GET'])
 def get_tours():
 
@@ -33,6 +60,7 @@ def get_tours():
 
     return jsonify(response_body), 200
 
+#Obtener un tour en especifico
 @api.route('/tours/<int:tour_id>', methods = ['GET'])
 def get_OneTour(tour_id):
 
@@ -43,7 +71,8 @@ def get_OneTour(tour_id):
         return jsonify(serialize_tour), 200
     else:
         return jsonify({'mesage' : 'Tour no encontrado'}), 400
-    
+
+#Crearemos un Nuevo Tours
 @api.route('/tours' ,methods = ['POST'])
 def create_Tour():
 
@@ -69,8 +98,46 @@ def create_Tour():
     
     #devuelvo repuesta con exito
     return jsonify({'message': 'Tour creado exitosamente', 'tour': new_tour.serialize()}), 201
+
+ # Modificacion de Tour   
+@api.route('/tours/<int:tour_id>', methods = ['PUT'])
+def actualizacion_tour(tour_id):
+
+    tour = Tour.query.get(tour_id)
+
+    if not tour:
+        return jsonify({'message':'Tour No Encontrado'}),404
     
-@api.routes('/tours/<int:tours_id>', methods = ['GET'])
-def actualizacion_tour(tours_id):
+    tour_data = request.json
+
+    if not tour_data:
+        return ({'message': 'No se proporcionaron datos para actualizar el tour'}), 400
     
-    pass
+    #actualizar los campos del tour con los nuevos datos
+
+    tour.name = tour_data.get('name',tour.name)
+    tour.descripcion = tour_data.get('descripcion', tour.descripcion)
+    tour.duracion = tour_data.get ('duracion', tour.duracion)
+    tour.precio = tour_data.get ('precio', tour.precio)
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'message': 'Error al actualizar el tour: {}'.format(str(e))}), 500
+
+    return jsonify({'message': 'Tour actualizado exitosamente', 'tour': tour.serialize()}), 200
+
+#Eliminamos un tour
+@api.route('/tours/<int:tour_id>', methods = ['DELETE'])
+def delete_tour(tour_id):
+
+    # encuentra el tour por su id en base de datos
+    tour = Tour.query.get(tour_id)
+
+    if tour:
+        db.session.delete(tour)
+        db.session.commit()
+        return jsonify({'message': 'Tour eliminado exitosamente' }), 200
+    else:
+        return jsonify({'message': 'Tour no encontrado'}),404

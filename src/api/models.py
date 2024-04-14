@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 db = SQLAlchemy()
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True,autoincrement=True)
     username = db.Column(db.String(120), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
@@ -31,7 +31,7 @@ class Hotel(db.Model):
     precio = db.Column(db.Float,nullable = False)
 
     def __init__(self,name,descripcion,duracion,precio):
-        
+
         self.name = name
         self.descripcion = descripcion
         self.duracion = duracion
