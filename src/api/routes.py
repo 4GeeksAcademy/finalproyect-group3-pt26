@@ -25,6 +25,17 @@ def get_users():
 
     return jsonify(response_body), 200
 
+#Obtenemos un usuario por su id
+
+@api.route('/users/<int:user_id>', methods=['GET'])
+def get_user_profile(user_id):
+    user = User.query.get(user_id)
+
+    if user:
+        return jsonify(user.serialize()), 200
+    else:
+        return jsonify({'message': 'Usuario no encontrado'}), 404
+
 #Creamos un usuario
 @api.route('/register', methods = ['POST'])
 def crear_usuario():
