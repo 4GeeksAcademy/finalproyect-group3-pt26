@@ -25,18 +25,7 @@ def handle_hello():
 def get_user():
 
     all_users = User.query.all()
+    print(len(all_users))
 
-    users_serialized = []
-    for user in all_users:
-        users_serialized.append(user.serialize())
-
-    response_body = {
-        "msg": "Ok", "result" : users_serialized
-    }
-
+    response_body = [user.serialize() for user in all_users]
     return jsonify(response_body), 200
-
-@api.route('/users', methods= ['POST'])
-def create_user():
-
-    pass
