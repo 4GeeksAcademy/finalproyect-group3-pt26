@@ -35,7 +35,7 @@ def crear_usuario():
     email = register_data.get('email')
     password = request.json.get('password')
 
-#crea una nueva instancia del modelo de usuario y desempaco **register_data
+    #crea una nueva instancia del modelo de usuario y desempaco **register_data
     new_user = User(**register_data) 
 
     db.session.add(new_user)
@@ -48,7 +48,32 @@ def crear_usuario():
         db.session.rollback()
         return jsonify({'message':'Error al registrar usuarios {}'.format(str(e))}),404
 
+@api.route('/user/<int:user_id>', methods = ['PUT'])
+def actualizar_user(user_id):
+    
+    user = User.query.get(user_id)
+    user_data = request.json
 
+    if not user_data:
+        return jsonify({'message':'Usuario No Encontrado'}),404
+
+
+    if not user_data:
+        return jsonify({'message':'No se Proporcionaron datos para actualizar el usuario'}), 400
+    
+    #Actualizo los campos del nuevo tour
+
+    user.username = user_data.get('username',User.username)
+    user.email = user_data.get('email',User.email)
+    user.password = user_data.get('password', User.password)
+    user.is_active = user_data.get('is_active',User.is_active)
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        return jsonify({'message': 'Error al actualizar un Usuario: {}'.format(str(e))}),400
+    
+    return jsonify({'message': 'Usuario actualizado Exitosamente', 'user':user.serialize()}),200
 
 #Obtenemos todos los Tour
 @api.route('/tours', methods=['GET'])
