@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: f7346f3d8488
+Revision ID: 147243f3639a
 Revises: 
-Create Date: 2024-04-13 22:57:04.179335
+Create Date: 2024-04-14 00:02:34.290927
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f7346f3d8488'
+revision = '147243f3639a'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -26,7 +26,7 @@ def upgrade():
     sa.Column('precio', sa.Float(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_table('paquetes',
+    op.create_table('paquete',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=120), nullable=False),
     sa.Column('destino', sa.String(length=120), nullable=False),
@@ -48,7 +48,6 @@ def upgrade():
     sa.Column('email', sa.String(length=120), nullable=False),
     sa.Column('password', sa.String(length=80), nullable=False),
     sa.Column('is_active', sa.Boolean(), nullable=False),
-    sa.Column('username', sa.String(length=80), nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email')
     )
@@ -58,10 +57,10 @@ def upgrade():
     sa.Column('fecha_final', sa.DateTime(), nullable=False),
     sa.Column('id_user', sa.Integer(), nullable=True),
     sa.Column('id_tour', sa.Integer(), nullable=True),
-    sa.Column('id_paquetes', sa.Integer(), nullable=True),
+    sa.Column('id_paquete', sa.Integer(), nullable=True),
     sa.Column('id_hotel', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['id_hotel'], ['hotel.id'], ),
-    sa.ForeignKeyConstraint(['id_paquetes'], ['paquetes.id'], ),
+    sa.ForeignKeyConstraint(['id_paquete'], ['paquete.id'], ),
     sa.ForeignKeyConstraint(['id_tour'], ['tour.id'], ),
     sa.ForeignKeyConstraint(['id_user'], ['user.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -74,6 +73,6 @@ def downgrade():
     op.drop_table('reservas')
     op.drop_table('user')
     op.drop_table('tour')
-    op.drop_table('paquetes')
+    op.drop_table('paquete')
     op.drop_table('hotel')
     # ### end Alembic commands ###
