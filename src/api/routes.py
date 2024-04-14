@@ -70,3 +70,7 @@ def create_Tour():
     #devuelvo repuesta con exito
     return jsonify({'message': 'Tour creado exitosamente', 'tour': new_tour.serialize()}), 201
     
+@api.routes('/tours/<int:tours_id>', methods = ['GET'])
+def actualizacion_tour(tours_id):
+    
+    pass
