@@ -35,7 +35,7 @@ def get_tours():
 @api.route('/users', methods=['GET'])
 def get_users():
     users = User.query.all()
-
+    
     all_tours = Tour.query.all()
     # print(len(all_users))
 
