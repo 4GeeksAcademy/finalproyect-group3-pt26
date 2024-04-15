@@ -338,6 +338,14 @@ def eliminar_paquete(paquete_id):
 
 #FINAL DE ENDPOINT PAQUETES
 
+# @api.route('/reservas', methods=['GET']) # obtener todas las reservas
+# def get_reservas():
+#     reservas = Reserva.query.all()
+#     response_body = [item.serialize() for item in reservas]
+#     return jsonify(response_body), 200
+
+
+# @api.route('/reservas', methods=['GET'])
 
 #
 
