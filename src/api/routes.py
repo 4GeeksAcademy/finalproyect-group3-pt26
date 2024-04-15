@@ -106,8 +106,22 @@ def login():
     if user is None:
         return jsonify({"msg": "Bad email or password"}), 401
 
-    access_token = create_access_token(identity= user.id)
+    access_token = create_access_token(identity= user.email)
     return jsonify({"token": access_token, "user_id": user.id})
+
+#protectec
+@api.route("/protected", methods=["GET"])
+@jwt_required() #no devuelve nada si no se proporciona el token, asegura que debe ser obligatorio el token para acceder
+def protected():
+    #Acceda a la identidad del usuario actual con get_jwt_identity
+    current_user_email = get_jwt_identity()
+
+    current_user =User.query.filter_by(email = current_user_email).first()
+
+    if current_user is None:
+        return jsonify({'message':'Bad Not Found'})
+    
+    return jsonify(logged_in_as= current_user.serialize()), 200
 
 #Obtenemos todos los Tour
 @api.route('/tours', methods=['GET'])
