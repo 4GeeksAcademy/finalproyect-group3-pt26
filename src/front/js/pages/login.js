@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import '../../styles/login.css'
 import { Link } from 'react-router-dom';
+import { Context } from "../store/appContext";
 
 
 export const Login = () => {
 
-    const [user, setUser] = useState();
+    const [user , setUser] = useState({})
+
+    const { store , actions } = useContext(Context)
+
+
+    const sendCredentials = async () =>{
+        actions.Login(user);
+    }
 
 
     return <div className='fatherLogin'>
@@ -20,18 +28,31 @@ export const Login = () => {
                     <div className="row">
                         {/* <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Email</label> */}
                         <div className="col-sm-10">
-                            <input style={{ width: "315px", borderRadius: "22px" }} type="text" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Email" />
+                            <input 
+                                 style={{ width: "315px", borderRadius: "22px" }} className="form-control form-control-lg colorStyle" placeholder="Email"
+                                 type="email"
+                                 value={user.email || ""}
+                                 onChange={(evt) => setUser({...user, email: evt.target.value})}
+
+                            />
                         </div>
                     </div>
                     <div className="row">
                         {/* <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Password</label> */}
                         <div className="col-sm-10">
-                            <input style={{ width: "315px", borderRadius: "22px" }} type="email" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Password" />
+                            <input 
+                                style={{ width: "315px", borderRadius: "22px" }} className="form-control form-control-lg colorStyle" placeholder="Password"
+                                type="password"
+                                value={user.password || ""}
+                                onChange={(evt) => setUser({...user, password: evt.target.value})}
+                                
+                                />
                         </div>
                     </div>
                 </div>
             </form>
-            <button className='loginBoton'>login</button>
+
+            <button onClick={()=> sendCredentials()} className='loginBoton'>login</button>
 
         </div>
     </div>
