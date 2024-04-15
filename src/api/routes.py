@@ -1,18 +1,18 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-from flask import Flask, request, jsonify, url_for, Blueprint
+from flask import Blueprint
 from api.models import db, User, Tour, Hotel, Paquete, Reserva
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
-from flask_jwt_extended import JWTManager
+
+#importado de la pagina
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
 
 
 api = Blueprint('api', __name__)
-
-# Setup the Flask-JWT-Extended extension
-api.config["JWT_SECRET_KEY"] = "example"  # Change this!
-jwt = JWTManager(api)
 
 # Allow CORS requests to this API
 CORS(api)
