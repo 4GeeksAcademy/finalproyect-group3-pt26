@@ -11,6 +11,7 @@ from flask_cors import CORS
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+from flask import make_response
 
 
 api = Blueprint('api', __name__)
@@ -100,6 +101,7 @@ def login():
 
     email = request.json.get("email", None)
     password = request.json.get("password", None)
+    username = request.json.get("username", None)
     
     user = User.query.filter_by(email = email, password = password).first()
 
@@ -107,9 +109,9 @@ def login():
         return jsonify({"msg": "Bad email or password"}), 401
 
     access_token = create_access_token(identity= user.email)
-    return jsonify({"token": access_token, "user_id": user.id})
+    return jsonify({"token": access_token, "user_id": user.id, "username": user.username})
 
-#protectec
+#protected
 @api.route("/protected", methods=["GET"])
 @jwt_required() #no devuelve nada si no se proporciona el token, asegura que debe ser obligatorio el token para acceder
 def protected():
@@ -122,6 +124,20 @@ def protected():
         return jsonify({'message':'Bad Not Found'})
     
     return jsonify(logged_in_as= current_user.serialize()), 200
+
+# Ruta para cerrar sesión
+@api.route('/logout', methods=['POST'])
+@jwt_required()  
+def logout():
+    current_user = get_jwt_identity()
+    
+    # Crear una respuesta JSON con el mensaje de cierre de sesión
+    response = make_response(jsonify(logged_out_as=current_user, message="Successfully logged out"))
+    
+    # Eliminar la cookie que contiene el token
+    response.set_cookie('jwt_token', '', expires=0)  # Establece la cookie del token a vacío y la expira inmediatamente
+    
+    return response, 200
 
 #Obtenemos todos los Tour
 @api.route('/tours', methods=['GET'])

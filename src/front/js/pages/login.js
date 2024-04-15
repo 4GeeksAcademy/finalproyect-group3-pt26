@@ -1,20 +1,24 @@
 import React, { useState,useContext } from 'react';
 import '../../styles/login.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Context } from "../store/appContext";
-
 
 export const Login = () => {
 
     const [user , setUser] = useState({})
 
+    const navigate = useNavigate()
+
     const { store , actions } = useContext(Context)
 
 
     const sendCredentials = async () =>{
-        actions.Login(user);
-    }
+      const isLogedds  = await actions.Login(user); /*esto me dira si es true o falso*/
+      if(isLogedds){
+        navigate("/")
+      }
 
+    }
 
     return <div className='fatherLogin'>
         <div className='imageToLogin'>
