@@ -4,7 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/accommodations";
+import { Accommodations } from "./pages/accommodations";
 import { Single } from "./pages/single";
 import { Info } from "./pages/info";
 import injectContext from "./store/appContext";
@@ -15,6 +15,7 @@ import { Footer } from "./component/footer";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { Travel } from "./pages/travel";
+import { SingleHotel } from "./pages/singleHotel";
 
 
 //create your first component
@@ -33,8 +34,8 @@ const Layout = () => {
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Info />} path="/info" />
-                        {/* <Route element={<Search />} path="/search" /> */}
-                        <Route element={<Demo />} path="/accommodations" />
+                        <Route element={<Accommodations />} path="/accommodations" />
+                        <Route element={<SingleHotel />} path="/accommodation/" /> {/* Falta agregar el parámetro del id al path */}
                         <Route element={<Login />} path="/login" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
