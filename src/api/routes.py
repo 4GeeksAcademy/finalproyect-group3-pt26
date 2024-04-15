@@ -267,6 +267,84 @@ def delete_accommodation(accommodation_id):
 
 
 
+# AQUI ESTARN LOS ENDPOINTS DE PAQUETES
+
+@api.route('/paquetes', methods=['GET']) # pedir todos los paquetes
+def get_all_paquetes():
+
+    todos_los_paquetes = Paquete.query.all()
+    response_body = [item.serialize() for item in todos_los_paquetes]
+    return jsonify(response_body), 200
+
+
+@api.route('/paquete/<int:paquete_id>', methods=['GET']) #pedir un paquete en especifico
+def get_paquete(paquete_id):
+    un_paquete = Paquete.query.get(paquete_id)
+    if un_paquete :
+        return jsonify(un_paquete.serialize()), 200
+    else :
+        return jsonify({'msg': 'paquete no encontrado'}), 404
+    
+
+@api.route('/paquete', methods=['POST']) #crear un paquete
+def crear_paquete():
+    data = request.json
+
+    if not data :
+        return jsonify({"msg": "formato invalido"}), 400
+    nuevo_paquete = Paquete(**data)
+
+    db.session.add(nuevo_paquete)
+
+    try: 
+        db.session.commit()
+        return jsonify({"msg": "se ha creado un nuevo paquete"}), 200
+
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
+
+
+@api.route('/paquete/<int:paquete_id>', methods=['PUT']) #modificar un paquete en especifico
+def modificar_paquete(paquete_id):
+    modificar_pq = Paquete.query.get(paquete_id)
+    data = request.get_json()
+    if not data :
+        return jsonify({"msg": "paquete no encontrado"}), 400
+    
+    if 'name' in data: modificar_pq.name = data['name']
+    if 'destino' in data: modificar_pq.destino = data['destino']
+    if 'descripcion' in data: modificar_pq.descripcion = data['descripcion']
+    if 'duracion' in data: modificar_pq.duracion = data['duracion']
+    if 'precio' in data: modificar_pq.precio = data['precio']
+
+    try:
+        db.session.commit()
+        return jsonify({"msg": "actualizacion exitosa"}), 200
+    
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
+    
+@api.route('/paquete/<int:paquete_id>', methods=['DELETE']) # Borrar paquete
+def eliminar_paquete(paquete_id):
+    paquete = Paquete.query.get(paquete_id)
+    if paquete :
+        db.session.delete(paquete)
+        db.session.commit()
+        return jsonify({"msg": "se elimino el paquete"}), 200
+    else : 
+        return jsonify({"msg": "no se encontro el paquete"}), 404
+
+#FINAL DE ENDPOINT PAQUETES
+
+
+#
+
+
+
+
+
 
 
 
