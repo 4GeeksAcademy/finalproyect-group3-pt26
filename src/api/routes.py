@@ -5,8 +5,14 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Tour, Hotel, Paquete, Reserva
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
+from flask_jwt_extended import JWTManager
+
 
 api = Blueprint('api', __name__)
+
+# Setup the Flask-JWT-Extended extension
+api.config["JWT_SECRET_KEY"] = "example"  # Change this!
+jwt = JWTManager(api)
 
 # Allow CORS requests to this API
 CORS(api)
@@ -58,7 +64,8 @@ def crear_usuario():
     except Exception as e:
         db.session.rollback()
         return jsonify({'message':'Error al registrar usuarios {}'.format(str(e))}),404
-    
+
+#actualizamos un usuario
 @api.route('/user/<int:user_id>', methods = ['PUT'])
 def actualizar_user(user_id):
     
@@ -85,6 +92,17 @@ def actualizar_user(user_id):
         return jsonify({'message': 'Error al actualizar un Usuario: {}'.format(str(e))}),400
     
     return jsonify({'message': 'Usuario actualizado Exitosamente', 'user':user.serialize()}),200
+
+#Login 
+@api.route("/login", methods=["POST"])
+def login():
+    username = request.json.get("username", None)
+    password = request.json.get("password", None)
+    if username != "test" or password != "test":
+        return jsonify({"msg": "Bad username or password"}), 401
+
+    access_token = create_access_token(identity=username)
+    return jsonify(access_token=access_token)
 
 #Obtenemos todos los Tour
 @api.route('/tours', methods=['GET'])
@@ -336,18 +354,8 @@ def eliminar_paquete(paquete_id):
     else : 
         return jsonify({"msg": "no se encontro el paquete"}), 404
 
-#FINAL DE ENDPOINT PAQUETES
-
-# @api.route('/reservas', methods=['GET']) # obtener todas las reservas
-# def get_reservas():
-#     reservas = Reserva.query.all()
-#     response_body = [item.serialize() for item in reservas]
-#     return jsonify(response_body), 200
 
 
-# @api.route('/reservas', methods=['GET'])
-
-#
 
 
 
