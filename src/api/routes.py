@@ -1,6 +1,7 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+from flask import Flask, request, jsonify, url_for
 from flask import Blueprint
 from api.models import db, User, Tour, Hotel, Paquete, Reserva
 from api.utils import generate_sitemap, APIException
@@ -96,13 +97,17 @@ def actualizar_user(user_id):
 #Login 
 @api.route("/login", methods=["POST"])
 def login():
-    username = request.json.get("username", None)
-    password = request.json.get("password", None)
-    if username != "test" or password != "test":
-        return jsonify({"msg": "Bad username or password"}), 401
 
-    access_token = create_access_token(identity=username)
-    return jsonify(access_token=access_token)
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+    
+    user = User.query.filter_by(email = email, password = password).first()
+
+    if user is None:
+        return jsonify({"msg": "Bad email or password"}), 401
+
+    access_token = create_access_token(identity= user.id)
+    return jsonify({"token": access_token, "user_id": user.id})
 
 #Obtenemos todos los Tour
 @api.route('/tours', methods=['GET'])
