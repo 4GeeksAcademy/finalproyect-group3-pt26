@@ -1,17 +1,21 @@
 import React, { useState, useContext } from 'react';
 import '../../styles/login.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { Context } from "../store/appContext";
 
 export const Login = () => {
 
     const [user, setUser] = useState({})
 
+    const navigate = useNavigate()
+
     const { store, actions } = useContext(Context)
 
-
     const sendCredentials = async () => {
-        actions.Login(user);
+        const isLogedds = await actions.Login(user);
+        if(isLogedds){
+            Navigate('/')
+        }
     }
 
     return <div className='fatherLogin'>
