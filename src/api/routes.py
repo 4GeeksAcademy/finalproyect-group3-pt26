@@ -260,7 +260,7 @@ def delete_accommodation(accommodation_id):
     if selected_hotel:
         db.session.delete(selected_hotel)
         db.session.commit()
-        return jsonify({"msg": f"Hotel {selected_hotel} has been successfully deleted"})
+        return jsonify({"msg": f"Hotel {selected_hotel} has been successfully deleted"}), 200
     else:
         return jsonify({"msg": "Hotel not found"}), 404
 
