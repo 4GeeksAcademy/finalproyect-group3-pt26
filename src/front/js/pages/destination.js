@@ -34,7 +34,7 @@ export const Destination = () => {
 						<div className="card-body">
 							<h4 className="text-center">Vacation Packages</h4>
 							<div className="d-flex justify-content-center">
-								<Link to={'/'} className="btn btn-primary">See options</Link>
+								<Link to={'/packages/'} className="btn btn-primary">See options</Link>
 							</div>
 						</div>
 					</div>

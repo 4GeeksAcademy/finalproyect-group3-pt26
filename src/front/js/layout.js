@@ -20,6 +20,7 @@ import { Travel } from "./pages/travel";
 import { SingleHotel } from "./pages/singleHotel";
 import { Tours } from "./pages/tours";
 import { SingleTour } from "./pages/singleTour";
+import { Packages } from "./pages/packages";
 
 
 //create your first component
@@ -42,6 +43,7 @@ const Layout = () => {
                         <Route element={<SingleHotel />} path="/accommodation/" /> {/* Falta agregar el parámetro del id al path */}
                         <Route element={<Tours />} path="/tours" />
                         <Route element={<SingleTour />} path="/tour/" /> {/* Falta agregar el parámetro del id al path */}
+                        <Route element={<Packages />} path="/packages" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
