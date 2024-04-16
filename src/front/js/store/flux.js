@@ -47,16 +47,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 			handleLogout: async (navigate)=>{
+				const store = getStore()
 				try {
 
 					const resp = await fetch(process.env.BACKEND_URL + "/api/logout",{
 						method : "POST",
 						headers : {
 							"Content-Type": "application/json",
+							"Authorization":"Bearer " + store.token
 						}
 					})
 	
-					const data = await resp.json
+					const data = await resp.json()
 
 					if(resp.ok){
 
@@ -64,10 +66,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 							token:null,
 							isLogedds: false,
 							message: null })
-						
-					    navigate("/")
+							navigate('/')
 					}
-
 
 					else{
 						console.error("Error al cerrar sesion", resp.statusText)

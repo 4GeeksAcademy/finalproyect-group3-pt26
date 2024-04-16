@@ -14,7 +14,7 @@ export const Login = () => {
     const sendCredentials = async () => {
         const isLogedds = await actions.Login(user);
         if(isLogedds){
-            Navigate('/')
+            navigate('/')
         }
     }
 

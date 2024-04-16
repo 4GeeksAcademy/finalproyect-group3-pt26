@@ -19,10 +19,6 @@
     margin: 0px;
 }
 
-/* li {
-    padding: 0 1rem;
-    
-} */
  ul {
     list-style-type: none;
    
@@ -85,7 +81,6 @@
     font-size: 1.2rem;
 }
 
-
 @media screen and (max-width: 940px) {
 
     .mobile-menu {
@@ -96,8 +91,6 @@
         left: 0;
         position: absolute;
         justify-content: space-between;
-        /* align-items: center; */
-        /* color: rgba(255, 255, 255, .95); */
         background-color: #f5f5f5;
         transition: 0.3s;
         color: #000;

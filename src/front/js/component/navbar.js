@@ -7,7 +7,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+
 
 export const Navbar = () => {
     const { store, actions } = useContext(Context)
@@ -21,19 +21,19 @@ export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false) // servirapara controlar la visibilidad del estado abierto o cerrado
 
     const handleMenuToogle = () => {   /*aqui esto me cambiara el estado entre true o false*/
-    // console.log("Toggling menu");
+
         setMenuOpen(!menuOpen)
-        // console.log("Menu open:", menuOpen);
+
     }
+    
 
     const handleLogout = async () => {   /*esto manejara la funcion o actions que defini en mi flux*/
-        const open = await actions.handleLogout()
+        const open = await actions.handleLogout(navigate)
         if (open) {
-            navigate("/")
+        navigate('/');
         }
-
-
     }
+
     return (
         <div className={nav ? 'navbar navbar-bg' : 'navbar'}>
             <div className={nav ? 'logo dark' : 'logo'}>
@@ -49,19 +49,16 @@ export const Navbar = () => {
             </ul>
             <div className="nav-icons">
                 {store.isLogedds ? (
-                 <div>
-                 <span className="username-span" onClick={handleMenuToogle}>
-                     {store.user.username}
-                 </span> {/* Muestra el nombre de usuario */}
-
-                 {/* <BsPerson className='icon' onClick={() => { console.log("Icon clicked"); handleMenuToogle(); }} style={{ color: 'black' }} /> */}
-                 <BsPerson className='icon' onClick={handleMenuToogle} style={{ color: 'black' }} />
-                 {menuOpen && (
-                     <div className="dropdown-menu">
-                         <button onClick={handleLogout}>Logout</button>
-                     </div>
-                 )}
-             </div>
+                  <div className="dropdown">
+                  <span className="username-span" onClick={handleMenuToogle}>
+                      {store.user.username}
+                 </span>
+                          <BsPerson className="icon" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style={{ color: 'black' }} />
+                          <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <li>< Link class="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>
+                          </ul>  
+                  
+              </div>
                 ) : (
                     <div>
                         <Link to={'/login'}>
