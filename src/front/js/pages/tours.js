@@ -18,7 +18,7 @@ export const Tours = () => {
                             </div>
                             <p className="card-text">This hotel Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia error aspernatur minus.</p>
                             <Link to="/tour/">
-                                <button className="btn btn-primary">VIEW HOTEL</button>
+                                <button className="btn btn-primary">VIEW DETAILS</button>
                             </Link>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ export const Tours = () => {
                             </div>
                             <p className="card-text">This hotel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo architecto.</p>
                             <Link to="/tour/">
-                                <button className="btn btn-primary">VIEW HOTEL</button>
+                                <button className="btn btn-primary">VIEW DETAILS</button>
                             </Link>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ export const Tours = () => {
                             </div>
                             <p className="card-text">This hotel Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia dicta consequatur dolorum non.</p>
                             <Link to="/tour/">
-                                <button className="btn btn-primary">VIEW HOTEL</button>
+                                <button className="btn btn-primary">VIEW DETAILS</button>
                             </Link>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ export const Tours = () => {
                             </div>
                             <p className="card-text">This hotel Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia error aspernatur minus.</p>
                             <Link to="/tour/">
-                                <button className="btn btn-primary">VIEW HOTEL</button>
+                                <button className="btn btn-primary">VIEW DETAILS</button>
                             </Link>
                         </div>
                     </div>
@@ -77,7 +77,7 @@ export const Tours = () => {
                             </div>
                             <p className="card-text">This hotel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo architecto.</p>
                             <Link to="/tour/">
-                                <button className="btn btn-primary">VIEW HOTEL</button>
+                                <button className="btn btn-primary">VIEW DETAILS</button>
                             </Link>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ export const Tours = () => {
                             </div>
                             <p className="card-text">This hotel Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia dicta consequatur dolorum non.</p>
                             <Link to="/tour/">
-                                <button className="btn btn-primary">VIEW HOTEL</button>
+                                <button className="btn btn-primary">VIEW DETAILS</button>
                             </Link>
                         </div>
                     </div>
