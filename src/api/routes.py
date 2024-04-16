@@ -162,7 +162,6 @@ def get_OneTour(tour_id):
     else:
         return jsonify({'mesage' : 'Tour no encontrado'}), 400
 
-
 #Crearemos un Nuevo Tours
 @api.route('/tours' ,methods = ['POST'])
 def create_Tour():
