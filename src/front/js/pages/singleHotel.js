@@ -19,6 +19,7 @@ export const SingleHotel = () => {
                             Want to reserve? Check your dates and continue
                         </button>
 
+                    
                         {/* <!-- Modal --> */}
                         <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered">

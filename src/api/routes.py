@@ -150,6 +150,7 @@ def get_tours():
     return jsonify(response_body), 200
 
 #Obtener un tour en especifico
+
 @api.route('/tours/<int:tour_id>', methods = ['GET'])
 def get_OneTour(tour_id):
 
@@ -160,6 +161,7 @@ def get_OneTour(tour_id):
         return jsonify(serialize_tour), 200
     else:
         return jsonify({'mesage' : 'Tour no encontrado'}), 400
+
 
 #Crearemos un Nuevo Tours
 @api.route('/tours' ,methods = ['POST'])
