@@ -7,7 +7,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
-
+import { Link as ScrollLink } from 'react-scroll';
 
 export const Navbar = () => {
     const { store, actions } = useContext(Context)
@@ -40,11 +40,11 @@ export const Navbar = () => {
                 <Link to='/'><img src="https://raw.githubusercontent.com/4GeeksAcademy/finalproyect-group3-pt26/main/src/front/img/travello%20white%20bg%20brand.PNG" style={{ width: "150px", height: "55px", opacity: "0.75 " }} /></Link>
             </div>
             <ul className="nav-menu">
-                <li><Link to='/' smooth={true} duration={500}>Home</Link></li>
-                <li><Link to='/info' smooth={true} duration={500} style={{ width: "130px" }}>About Us</Link></li>
+                <li><Link to='/' >Home</Link></li>
+                <li><Link to='/info' style={{ width: "130px" }}>About Us</Link></li>
 
-                <li><Link to='/travel' smooth={true} duration={500}>Travel</Link></li>
-                <li><Link to='/views' smooth={true} duration={500}>Contact</Link></li>
+                <li><Link to='/travel'>Travel</Link></li>
+                <li><Link to='/views'>Contact</Link></li>
 
             </ul>
             <div className="nav-icons">
@@ -80,10 +80,10 @@ export const Navbar = () => {
             <div className={nav ? 'mobile-menu active' : 'mobile-menu'}>
                 <ul className="mobile-nav">
 
-                    <li><Link to='/home' smooth={true} duration={500}>Home</Link></li>
-                    <li><Link to='/destinations' smooth={true} duration={500}>Destinations</Link></li>
-                    <li><Link to='/carousel' smooth={true} duration={500}>Travel</Link></li>
-                    <li><Link to='/login' smooth={true} duration={500}>Book</Link></li>
+                    <li><Link to='/home' >Home</Link></li>
+                    <li><Link to='/destinations'>Destinations</Link></li>
+                    <li><Link to='/carousel'>Travel</Link></li>
+                    <li><Link to='/login'>Book</Link></li>
                 </ul>
                 <div className="mobile-menu-bottom">
                     <div className="menu-icons">
