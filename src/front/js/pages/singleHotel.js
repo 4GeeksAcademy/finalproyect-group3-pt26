@@ -2,10 +2,11 @@ import React, { useState } from "react";
 
 export const SingleHotel = () => {
 
-    const [modal, setModal] = useState(false);
+    const [modal, setModal] = useState(true);
 
     const openModal = () => {
-        setModal(true);
+        setModal(!modal);
+        console.log(modal);
     }
 
     const closeModal = () => {
@@ -33,7 +34,7 @@ export const SingleHotel = () => {
 
                 {
                     modal &&
-                    <div className="modal" tabindex="-1">
+                    (<div className="modal" tabindex="-1">
                         <div className="modal-dialog">
                             <div className="modal-content">
                                 <div className="modal-header">
@@ -45,11 +46,11 @@ export const SingleHotel = () => {
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" onClick={closeModal} className="btn btn-secondary" data-bs-dismiss="modal">Book</button>
-                                    <button type="button" className="btn btn-primary">Close</button>
+                                    <button type="button" onClick={closeModal} className="btn btn-primary">Close</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>)
                 }
             </div>
         </>
