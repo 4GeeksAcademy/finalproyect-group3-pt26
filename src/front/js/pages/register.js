@@ -16,19 +16,19 @@ export const Register = () => {
                     <div className="row">
                         {/* <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Email</label> */}
                         <div className="col-sm-10">
-                            <input style={{ width: "315px", borderRadius: "22px" }} type="text" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Email" />
+                            <input style={{ width: "315px", borderRadius: "22px" }} type="text" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Full Name" />
                         </div>
                     </div>
                     <div className="row">
                         {/* <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Password</label> */}
                         <div className="col-sm-10">
-                            <input style={{ width: "315px", borderRadius: "22px" }} type="email" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Full Name" />
+                            <input style={{ width: "315px", borderRadius: "22px" }} type="email" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="email" />
                         </div>
                     </div>
                     <div className="row">
                         {/* <label for="colFormLabelLg" className="col-sm-2 col-form-label col-form-label-lg">Password</label> */}
                         <div className="col-sm-10">
-                            <input style={{ width: "315px", borderRadius: "22px" }} type="email" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Password" />
+                            <input style={{ width: "315px", borderRadius: "22px" }} type="password" className="form-control form-control-lg colorStyle" id="colFormLabelLg" placeholder="Password" />
                         </div>
                     </div>
                 </div>
