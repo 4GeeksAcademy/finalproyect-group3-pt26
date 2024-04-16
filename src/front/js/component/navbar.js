@@ -21,7 +21,9 @@ export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false) // servirapara controlar la visibilidad del estado abierto o cerrado
 
     const handleMenuToogle = () => {   /*aqui esto me cambiara el estado entre true o false*/
+    // console.log("Toggling menu");
         setMenuOpen(!menuOpen)
+        // console.log("Menu open:", menuOpen);
     }
 
     const handleLogout = async () => {   /*esto manejara la funcion o actions que defini en mi flux*/
@@ -37,20 +39,22 @@ export const Navbar = () => {
             <div className={nav ? 'logo dark' : 'logo'}>
                 <Link to='/'><img src="https://raw.githubusercontent.com/4GeeksAcademy/finalproyect-group3-pt26/main/src/front/img/travello%20white%20bg%20brand.PNG" style={{ width: "150px", height: "55px", opacity: "0.75 " }} /></Link>
             </div>
-            <ul className="nav-menu">
+            {/* <ul className="nav-menu">
                 <li><Link to='/' smooth={true} duration={500}>Home</Link></li>
                 <li><Link to='/info' smooth={true} duration={500} style={{ width: "130px" }}>About Us</Link></li>
-                {/* <li><Link to='/carousel' smooth={true} duration={500}>Our Services</Link></li> */}
+
                 <li><Link to='/travel' smooth={true} duration={500}>Travel</Link></li>
                 <li><Link to='/views' smooth={true} duration={500}>Contact</Link></li>
 
-            </ul>
+            </ul> */}
             <div className="nav-icons">
                 {store.isLogedds ? (
                  <div>
                  <span className="username-span" onClick={handleMenuToogle}>
                      {store.user.username}
                  </span> {/* Muestra el nombre de usuario */}
+
+                 {/* <BsPerson className='icon' onClick={() => { console.log("Icon clicked"); handleMenuToogle(); }} style={{ color: 'black' }} /> */}
                  <BsPerson className='icon' onClick={handleMenuToogle} style={{ color: 'black' }} />
                  {menuOpen && (
                      <div className="dropdown-menu">
@@ -61,10 +65,10 @@ export const Navbar = () => {
                 ) : (
                     <div>
                         <Link to={'/login'}>
-                            <button style={{ marginRight: "12px" }} smooth={true} duration={500}>Login</button>
+                            <button style={{ marginRight: "12px" }}>Login</button>
                         </Link>
                         <Link to={'/register'}>
-                            <button smooth={true} duration={500}>Register</button>
+                            <button >Register</button>
                         </Link>
                     </div>
                 )}
@@ -74,7 +78,7 @@ export const Navbar = () => {
 
             </div>
             <div className={nav ? 'mobile-menu active' : 'mobile-menu'}>
-                <ul className="mobile-nav">
+                {/* <ul className="mobile-nav">
 
                     <li><Link to='/home' smooth={true} duration={500}>Home</Link></li>
                     <li><Link to='/destinations' smooth={true} duration={500}>Destinations</Link></li>
@@ -82,7 +86,7 @@ export const Navbar = () => {
                     <li><Link to='/login' smooth={true} duration={500}>Book</Link></li>
 
 
-                </ul>
+                </ul> */}
                 <div className="mobile-menu-bottom">
                     <div className="menu-icons">
                         <button>Search</button>
