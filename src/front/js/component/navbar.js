@@ -84,8 +84,6 @@ export const Navbar = () => {
                     <li><Link to='/destinations' smooth={true} duration={500}>Destinations</Link></li>
                     <li><Link to='/carousel' smooth={true} duration={500}>Travel</Link></li>
                     <li><Link to='/login' smooth={true} duration={500}>Book</Link></li>
-
-
                 </ul>
                 <div className="mobile-menu-bottom">
                     <div className="menu-icons">
