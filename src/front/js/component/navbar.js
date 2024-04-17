@@ -53,7 +53,7 @@ export const Navbar = () => {
                         <span className="username-span" onClick={handleMenuToogle}>
                             {store.user && store.user.username}
                         </span>
-                        <BsPerson className="icon" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style={{ color: 'black' }} />
+                        <BsPerson className="svg-icon" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" />
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <li><Link className="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>
                         </ul>
