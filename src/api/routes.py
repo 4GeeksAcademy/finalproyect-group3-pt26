@@ -24,6 +24,51 @@ CORS(api)
 def sitemap():
     return generate_sitemap(api)
 
+#Login 
+@api.route("/login", methods=["POST"])
+def login():
+
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+
+    user = User.query.filter_by(email = email, password = password).first()
+
+    if user is None:
+        return jsonify({"msg": "Bad email or password"}), 401
+
+    access_token = create_access_token(identity = user.email, expires_delta = timedelta(hours =3))
+  
+    return jsonify({"token": access_token, "user_id": user.id, "username": user.username})
+
+#protected
+@api.route("/protected", methods=["GET"])
+@jwt_required() #no devuelve nada si no se proporciona el token, asegura que debe ser obligatorio el token para acceder
+def protected():
+    #Acceda a la identidad del usuario actual con get_jwt_identity
+    current_user_email = get_jwt_identity()
+
+    current_user =User.query.filter_by(email = current_user_email).first()
+
+    if current_user is None:
+        return jsonify({'message':'User Not Found'})
+    
+    return jsonify(logged_in_as= current_user.serialize()), 200
+
+# Ruta para cerrar sesión
+@api.route('/logout', methods=['POST'])
+@jwt_required()  
+def logout():
+    current_user = get_jwt_identity()
+    
+    # Crear una respuesta JSON con el mensaje de cierre de sesión
+    response = make_response(jsonify(logged_out_as=current_user, message="Successfully logged out"))
+    
+    # Eliminar la cookie que contiene el token
+    response.set_cookie('jwt_token', '', expires=0)  # Establece la cookie del token a vacío y la expira inmediatamente
+    
+    return response, 200
+
+
 #Obtenemos todos los usuarios
 @api.route('/users', methods=['GET'])
 def get_users():
@@ -95,51 +140,6 @@ def actualizar_user(user_id):
         return jsonify({'message': 'Error al actualizar un Usuario: {}'.format(str(e))}),400
     
     return jsonify({'message': 'Usuario actualizado Exitosamente', 'user':user.serialize()}),200
-
-#Login 
-@api.route("/login", methods=["POST"])
-def login():
-
-    email = request.json.get("email", None)
-    password = request.json.get("password", None)
-    username = request.json.get("username", None)
-    
-    user = User.query.filter_by(email = email, password = password).first()
-
-    if user is None:
-        return jsonify({"msg": "Bad email or password"}), 401
-
-    access_token = create_access_token(identity= user.email,  expires_delta = timedelta(hours =3))
-  
-    return jsonify({"token": access_token, "user_id": user.id, "username": user.username})
-
-#protected
-@api.route("/protected", methods=["GET"])
-@jwt_required() #no devuelve nada si no se proporciona el token, asegura que debe ser obligatorio el token para acceder
-def protected():
-    #Acceda a la identidad del usuario actual con get_jwt_identity
-    current_user_email = get_jwt_identity()
-
-    current_user =User.query.filter_by(email = current_user_email).first()
-
-    if current_user is None:
-        return jsonify({'message':'Bad Not Found'})
-    
-    return jsonify(logged_in_as= current_user.serialize()), 200
-
-# Ruta para cerrar sesión
-@api.route('/logout', methods=['POST'])
-@jwt_required()  
-def logout():
-    current_user = get_jwt_identity()
-    
-    # Crear una respuesta JSON con el mensaje de cierre de sesión
-    response = make_response(jsonify(logged_out_as=current_user, message="Successfully logged out"))
-    
-    # Eliminar la cookie que contiene el token
-    response.set_cookie('jwt_token', '', expires=0)  # Establece la cookie del token a vacío y la expira inmediatamente
-    
-    return response, 200
 
 #Obtenemos todos los Tour
 @api.route('/tours', methods=['GET'])
