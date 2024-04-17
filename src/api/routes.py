@@ -35,7 +35,7 @@ def login():
 
     if user is None:
         return jsonify({"msg": "Bad email or password"}), 401
-
+    
     access_token = create_access_token(identity = user.email, expires_delta = timedelta(hours =3))
   
     return jsonify({"token": access_token, "user_id": user.id, "username": user.username})

@@ -24,7 +24,7 @@ export const Login = () => {
         </div>
         <div style={{ textAlign: "center" }}>
             <h1>LOGIN</h1>
-
+            {/* {msg && <div className="alert alert-danger">{msg}</div>} */}
             <form>
                 <div className="container">
                     <div className="row">
