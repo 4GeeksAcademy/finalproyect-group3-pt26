@@ -25,12 +25,12 @@ export const Navbar = () => {
         setMenuOpen(!menuOpen)
 
     }
-    
+
 
     const handleLogout = async () => {   /*esto manejara la funcion o actions que defini en mi flux*/
         const open = await actions.handleLogout(navigate)
         if (open) {
-        navigate('/');
+            navigate('/');
         }
     }
 
@@ -49,16 +49,18 @@ export const Navbar = () => {
             </ul>
             <div className="nav-icons">
                 {store.isLogedds ? (
-                  <div className="dropdown">
-                  <span className="username-span" onClick={handleMenuToogle}>
-                      {store.user.username}
-                 </span>
-                          <BsPerson className="icon" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style={{ color: 'black' }} />
-                          <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                          <li>< Link class="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>
-                          </ul>  
-                  
-              </div>
+                    <div className="d-flex">
+                        <span className="username-span d-flex justify-content-center align-items-center" onClick={handleMenuToogle}>
+                            {store.user.username}
+                        </span>
+                        <div className="dropdown d-flex justify-content-center align-items-center">
+                            <BsPerson className="svg-icon" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" />
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <li>< Link class="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>
+                            </ul>
+                        </div>
+
+                    </div>
                 ) : (
                     <div>
                         <Link to={'/login'}>
