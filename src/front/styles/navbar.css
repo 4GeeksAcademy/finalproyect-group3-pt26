@@ -55,9 +55,20 @@
     display: none;
 }
 
-.icon {
-    font-size: 1.5rem;
-    cursor: pointer;
+.svg-icon {
+    margin-right: 35px;
+    height: 46px;
+    width: 53px;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #0077b685;
+    border: 1px solid #48cae4;
+    box-shadow: 3px 5px 1px rgba(70, 206, 235, 1.0);
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
 }
 
 .navbar button {
@@ -79,6 +90,27 @@
     color: #0077b6;
     font-weight: bold;
     font-size: 1.2rem;
+    margin-right: 35px;
+    padding: 7px;
+    border: 1px solid #48cae4;
+    box-shadow: 3px 5px 1px rgba(70, 206, 235, 1.0);
+    border-radius: 12px;
+    width: 121px;
+}
+
+.dropdown{
+    display: flex;
+}
+
+.nav-icons{
+    padding: 23px;
+}
+
+.dropdown-menu {
+    padding: 0;
+    border-radius: 11px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, .5);
+    margin-left: -54px;
 }
 
 @media screen and (max-width: 940px) {
