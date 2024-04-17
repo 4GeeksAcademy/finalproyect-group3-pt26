@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext"
 import "../../styles/navbar.css"; // Asegúrate de importar tus estilos CSS aquí si es necesario
@@ -20,17 +20,16 @@ export const Navbar = () => {
 
     const [menuOpen, setMenuOpen] = useState(false) // servirapara controlar la visibilidad del estado abierto o cerrado
 
+
     const handleMenuToogle = () => {   /*aqui esto me cambiara el estado entre true o false*/
 
         setMenuOpen(!menuOpen)
 
     }
-    
-
     const handleLogout = async () => {   /*esto manejara la funcion o actions que defini en mi flux*/
         const open = await actions.handleLogout(navigate)
         if (open) {
-        navigate('/');
+            navigate('/');
         }
     }
 
@@ -48,24 +47,24 @@ export const Navbar = () => {
 
             </ul>
             <div className="nav-icons">
-                {store.isLogedds ? (
-                  <div className="dropdown">
-                  <span className="username-span" onClick={handleMenuToogle}>
-                      {store.user.username}
-                 </span>
-                          <BsPerson className="icon" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style={{ color: 'black' }} />
-                          <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                          <li>< Link class="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>
-                          </ul>  
-                  
-              </div>
-                ) : (
+                {store.token && (
+                    <div className="dropdown">
+                        <span className="username-span" onClick={handleMenuToogle}>
+                            {store.user && store.user.username}
+                        </span>
+                        <BsPerson className="icon" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style={{ color: 'black' }} />
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><Link className="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>
+                        </ul>
+                    </div>
+                )}
+                {!store.token && (
                     <div>
                         <Link to={'/login'}>
                             <button style={{ marginRight: "12px" }}>Login</button>
                         </Link>
                         <Link to={'/register'}>
-                            <button >Register</button>
+                            <button>Register</button>
                         </Link>
                     </div>
                 )}

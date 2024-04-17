@@ -1,9 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			token:null,
+			token:null || localStorage.getItem("token"),
 			isLogedds: false,
 			message: null,
+			user: JSON.parse(localStorage.getItem("user")) || null
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -34,7 +35,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const data = await resp.json() 
 
 				if(resp.ok){
-
+					localStorage.setItem("token", data.token);
+					localStorage.setItem("user", JSON.stringify({ username: data.username }));
 					setStore({token: data.token, user: {
 						username: data.username // Suponiendo que recibes el nombre de usuario del servidor
 					} ,isLogedds: true})
@@ -43,7 +45,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				else{
 					return false
 				}
-
 
 			},
 			handleLogout: async (navigate)=>{
@@ -61,7 +62,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const data = await resp.json()
 
 					if(resp.ok){
-
+						localStorage.removeItem('token');
 						setStore({
 							token:null,
 							isLogedds: false,
