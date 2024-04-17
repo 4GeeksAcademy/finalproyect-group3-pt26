@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			token:null || localStorage.getItem("token"),
+			token: null || localStorage.getItem("token"),
 			isLogedds: false,
 			message: null,
 			user: JSON.parse(localStorage.getItem("user")) || null,
@@ -25,61 +25,64 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
-			Login: async(user) => {
-				const resp = await fetch(process.env.BACKEND_URL + "/api/login",{
+			Login: async (user) => {
+				const resp = await fetch(process.env.BACKEND_URL + "/api/login", {
 					method: "POST", // *GET, POST, PUT, DELETE, etc.
 					headers: {
-					  "Content-Type": "application/json",
+						"Content-Type": "application/json",
 					},
 					body: JSON.stringify(user), // body data type must match "Content-Type" header,tanbier se le puede pasar {email,y password}
 				})
-				const data = await resp.json() 
+				const data = await resp.json()
 
-				if(resp.ok){
+				if (resp.ok) {
 					localStorage.setItem("token", data.token);
 					localStorage.setItem("user", JSON.stringify({ username: data.username }));
-					setStore({token: data.token, user: {
-						username: data.username // Suponiendo que recibes el nombre de usuario del servidor
-					} ,isLogedds: true})
+					setStore({
+						token: data.token, user: {
+							username: data.username // Suponiendo que recibes el nombre de usuario del servidor
+						}, isLogedds: true
+					})
 					return true
 				}
-				else{
+				else {
 					return false
 				}
 
 			},
-			handleLogout: async (navigate)=>{
+			handleLogout: async (navigate) => {
 				const store = getStore()
 				try {
 
-					const resp = await fetch(process.env.BACKEND_URL + "/api/logout",{
-						method : "POST",
-						headers : {
+					const resp = await fetch(process.env.BACKEND_URL + "/api/logout", {
+						method: "POST",
+						headers: {
 							"Content-Type": "application/json",
-							"Authorization":"Bearer " + store.token
+							"Authorization": "Bearer " + store.token
 						}
 					})
-	
+
 					const data = await resp.json()
 
-					if(resp.ok){
+					if (resp.ok) {
 						localStorage.removeItem('token');
 						setStore({
-							token:null,
+							token: null,
 							isLogedds: false,
-							message: null })
-							navigate('/')
+							message: null
+						})
+						navigate('/')
 					}
 
-					else{
+					else {
 						console.error("Error al cerrar sesion", resp.statusText)
 					}
-					
-				}catch(error) {
-					console.error("Error al cerrar sesion",error)
+
+				} catch (error) {
+					console.error("Error al cerrar sesion", error)
 				}
 			},
-			handleSubmit: async({username, email, password}, navigate) => {
+			handleSubmit: async ({ username, email, password }, navigate) => {
 
 				if (!username || !email || !password) {
 					alert('Por favor, completa todos los campos del formulario.');
@@ -87,15 +90,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				try {
 
-					const resp = await fetch(process.env.BACKEND_URL + "/api/register",{
+					const resp = await fetch(process.env.BACKEND_URL + "/api/register", {
 						method: "POST", // *GET, POST, PUT, DELETE, etc.
 						headers: {
-						  "Content-Type": "application/json",
+							"Content-Type": "application/json",
 						},
-						body: JSON.stringify({username, email, password, is_active: true}), // body data type must match "Content-Type" header,tanbier se le puede pasar {email,y password}
+						body: JSON.stringify({ username, email, password, is_active: true }), // body data type must match "Content-Type" header,tanbier se le puede pasar {email,y password}
 					})
-					
-					if (resp.ok){
+
+					if (resp.ok) {
 						const data = await resp.json();
 						setStore(prevState => ({ ...prevState, register: data })); //me traigo la copia del estado anterior y modifico la data de registro
 						navigate('/login')
@@ -109,7 +112,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					}
 
-				}catch(error) {
+				} catch (error) {
 					alert('Error al registrar el usuario. Por favor, inténtalo de nuevo más tarde.');
 					console.log('Error al Registrar el Usuarion', error)
 				}
