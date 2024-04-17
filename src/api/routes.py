@@ -6,6 +6,7 @@ from flask import Blueprint
 from api.models import db, User, Tour, Hotel, Paquete, Reserva
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
+from datetime import timedelta
 
 #importado de la pagina
 from flask_jwt_extended import create_access_token
@@ -108,7 +109,8 @@ def login():
     if user is None:
         return jsonify({"msg": "Bad email or password"}), 401
 
-    access_token = create_access_token(identity= user.email)
+    access_token = create_access_token(identity= user.email,  expires_delta = timedelta(hours =3))
+  
     return jsonify({"token": access_token, "user_id": user.id, "username": user.username})
 
 #protected

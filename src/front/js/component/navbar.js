@@ -30,7 +30,6 @@ export const Navbar = () => {
         const open = await actions.handleLogout(navigate)
         if (open) {
             navigate('/');
-            navigate('/');
         }
     }
 

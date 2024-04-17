@@ -77,6 +77,47 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}catch(error) {
 					console.error("Error al cerrar sesion",error)
 				}
+			},
+			handleSubmit: async(navigate) => {
+				const { username, email, password } = form;
+				const form = {
+					username: fullName,
+					email: email,
+					password: password
+				}
+
+				// Validación de datos del formulario
+				if (!username || !email || !password) {
+					alert('Por favor, completa todos los campos del formulario.');
+					return;
+				}
+				try {
+
+					const resp = await fetch(process.env.BACKEND_URL + "/api/register",{
+						method: "POST", // *GET, POST, PUT, DELETE, etc.
+						headers: {
+						  "Content-Type": "application/json",
+						},
+						body: JSON.stringify(form), // body data type must match "Content-Type" header,tanbier se le puede pasar {email,y password}
+					})
+
+					if (resp.ok){
+						navigate('/login')
+						alert('Usuario registrado exitosamente. Por favor, inicia sesión.');
+
+					} else {
+
+						const errorData = await resp.json();
+						alert('Error al registrar el usuario: ' + errorData.message);
+						console.error("Error al registrar el usuario", resp.statusText);
+
+					}
+
+				}catch(error) {
+					alert('Error al registrar el usuario. Por favor, inténtalo de nuevo más tarde.');
+					console.log('Error al Registrar el Usuarion', error)
+				}
+
 			}
 
 		}
