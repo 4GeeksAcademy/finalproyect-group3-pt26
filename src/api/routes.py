@@ -54,6 +54,7 @@ def crear_usuario():
     username = register_data.get('username')
     email = register_data.get('email')
     password = request.json.get('password')
+    is_active = register_data.get('is_active', True)
 
     #crea una nueva instancia del modelo de usuario y desempaco **register_data
     new_user = User(**register_data) 

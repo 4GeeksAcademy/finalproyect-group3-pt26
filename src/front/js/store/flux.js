@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token:null || localStorage.getItem("token"),
 			isLogedds: false,
 			message: null,
-			user: JSON.parse(localStorage.getItem("user")) || null
+			user: JSON.parse(localStorage.getItem("user")) || null,
+			register: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -78,15 +79,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error("Error al cerrar sesion",error)
 				}
 			},
-			handleSubmit: async(navigate) => {
-				const { username, email, password } = form;
-				const form = {
-					username: fullName,
-					email: email,
-					password: password
-				}
+			handleSubmit: async({username, email, password}, navigate) => {
 
-				// Validación de datos del formulario
 				if (!username || !email || !password) {
 					alert('Por favor, completa todos los campos del formulario.');
 					return;
@@ -98,10 +92,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 						headers: {
 						  "Content-Type": "application/json",
 						},
-						body: JSON.stringify(form), // body data type must match "Content-Type" header,tanbier se le puede pasar {email,y password}
+						body: JSON.stringify({username, email, password, is_active: true}), // body data type must match "Content-Type" header,tanbier se le puede pasar {email,y password}
 					})
-
+					
 					if (resp.ok){
+						const data = await resp.json();
+						setStore(prevState => ({ ...prevState, register: data })); //me traigo la copia del estado anterior y modifico la data de registro
 						navigate('/login')
 						alert('Usuario registrado exitosamente. Por favor, inicia sesión.');
 

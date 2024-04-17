@@ -11,30 +11,28 @@ export const Register = () => {
 
     const navigate = useNavigate()
 
-    const [fullName , setFullName] =useState('')
+    const [username , setUsername] =useState('')
     const [email , setEmail] = useState('')
     const [password , setPassword] = useState('')
 
-    const handleFullNameChange =(event)=>{
-        setFullName (event.target.value)
+    const handleUsernameChange = (event) => {
+        setUsername(event.target.value);
     }
-
-    const handleEmailChange = (event)=>{
-        setEmail(event.target.value)
+    
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
     }
     
     const handlePasswordChange = (event) => {
-        setPassword(event.target.value)
+        setPassword(event.target.value);
     }
-
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const form = {
-            username: fullName,
-            email: email,
-            password: password
-        };
-        const open = await actions.handleSubmit(form, navigate);
+        console.log("Submit button clicked");
+        console.log("Username:", username);
+        console.log("Email:", email);
+        console.log("Password:", password);
+        const open = await actions.handleSubmit({ username, email, password }, navigate);
         if (open) {
             navigate('/login');
         }
@@ -47,14 +45,14 @@ export const Register = () => {
         <div style={{ textAlign: "center" }}>
             <h2>Register</h2>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-10">
                             <input style={{ width: "315px", borderRadius: "22px" }}
                              type="text" className="form-control form-control-lg colorStyle" placeholder="Full Name" 
-                             value={fullName}
-                             onChange={handleFullNameChange}
+                             value={username}
+                             onChange={handleUsernameChange}
                              
                              />
                         </div>
@@ -80,9 +78,9 @@ export const Register = () => {
                         </div>
                     </div>
                 </div>
-                <button type="submit" className='loginBoton' onClick={() => handleSubmit()}>Register</button>
+                <button type="submit" className='loginBoton'>Register</button>
             </form>
-            {/* <button  className='loginBoton'>Register</button> */}
+           
         </div>
     </div>
 }
