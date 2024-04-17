@@ -28,12 +28,11 @@ export const Register = () => {
     }
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log("Submit button clicked");
-        console.log("Username:", username);
-        console.log("Email:", email);
-        console.log("Password:", password);
         const open = await actions.handleSubmit({ username, email, password }, navigate);
         if (open) {
+            setUsername('')
+            setEmail('')
+            setPassword('')
             navigate('/login');
         }
     };
