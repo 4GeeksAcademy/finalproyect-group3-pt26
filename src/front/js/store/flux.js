@@ -7,8 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user: JSON.parse(localStorage.getItem("user")) || null,
 			register: [],
 			paquetes:[],
-			tour:[],
-			hotel:[]
+			tours:[],
+			hoteles:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -133,24 +133,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
-			tour: async () => {
+			tours: async () => {
 				try {
 
-					const resp = await fetch(process.env.BACKEND_URL + "/api/tour")
+					const resp = await fetch(process.env.BACKEND_URL + "/api/tours")
 					const data = await resp.json()
-					setStore({ paquetes: data })
+					setStore({ tours: data })
 					// siempre tenemos que devolver algo para resolver la promesa
 					return data;
 				} catch (error) {
 					console.log("Error loading message from backend", error)
 				}
 			},
-			paquetes: async () => {
+			hoteles: async () => {
 				try {
 
-					const resp = await fetch(process.env.BACKEND_URL + "/api/paquetes")
+					const resp = await fetch(process.env.BACKEND_URL + "/api/accommodations")
 					const data = await resp.json()
-					setStore({ paquetes: data })
+					setStore({ hoteles: data })
 					// siempre tenemos que devolver algo para resolver la promesa
 					return data;
 				} catch (error) {
