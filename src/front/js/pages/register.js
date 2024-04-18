@@ -72,14 +72,13 @@ export const Register = () => {
                                 type="password" className="form-control form-control-lg colorStyle" placeholder="Password"
                                 value={password}
                                 onChange={handlePasswordChange}
-
                             />
                         </div>
                     </div>
                 </div>
-                <Link to={"/login"}>
-                    <button type="submit" className='loginBoton'>Register</button>
-                </Link>
+                {/* <Link to={"/login"}> */}
+                <button type="submit" className='loginBoton'>Register</button>
+                {/* </Link> */}
             </form>
 
         </div>
