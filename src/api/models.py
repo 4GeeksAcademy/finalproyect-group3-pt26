@@ -19,7 +19,8 @@ class User(db.Model):
         return {
             "id": self.id,
             "username" : self.username,
-            "email": self.email
+            "email": self.email,
+             "todas_reservas": [reserva.serialize() for reserva in self.todas_reservas] if self.todas_reservas else None
         }
     
 class Hotel(db.Model):

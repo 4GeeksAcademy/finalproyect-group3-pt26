@@ -6,6 +6,7 @@ from flask import Blueprint
 from api.models import db, User, Tour, Hotel, Paquete, Reserva
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
+from datetime import datetime
 from datetime import timedelta
 
 #importado de la pagina
@@ -392,8 +393,62 @@ def eliminar_paquete(paquete_id):
         return jsonify({"msg": "se elimino el paquete"}), 200
     else : 
         return jsonify({"msg": "no se encontro el paquete"}), 404
+#Reservas
+#obtener todas las reservas
+@api.route('/api/reservations', methods = ['GET'])
+def get_all_reservations():
+    reservations = Reserva.query.all()
+    return jsonify([reservation.serialize() for reservation in reservations])
 
+#Obtener una reserva especifica por su id
 
+@api.route('/api/reservations/<int:reserva_id>', methods=['GET'])
+def get_reservation_by_id(reserva_id):
+    reservation = Reserva.query.get(reserva_id)
+    if reservation:
+        return jsonify(reservation.serialize())
+    else:
+        return jsonify({"msg":'Reserva no encontrada'}),404
+    
+# Crear una nueva reserva
+@api.route('/api/reservations', methods=['POST'])
+def create_reservation():
+    data = request.json
+    nueva_reserva = Reserva( fecha_inicio = datetime.strptime(data['fecha_inicio'], '%Y-%m-%d'),
+        fecha_final = datetime.strptime(data['fecha_final'], '%Y-%m-%d'), #strptime convierte una cadena de fecha y hora en un objeto datetime
+        id_user = data['id_user'],
+        id_tour = data['id_tour'],
+        id_paquete = data['id_paquete'],
+        id_hotel = data['id_hotel']
+        )
+           
+    db.session.add(nueva_reserva)
+    db.session.commit()
+    return jsonify(nueva_reserva.serialize()), 201
+
+# Actualizar la información de una reserva existente (solo fecha)
+@api.route('/api/reservations/<int:id>', methods=['PUT'])
+def update_reservation(id):
+    reservation = Reserva.query.get(id)
+    if reservation:
+        data = request.json
+        reservation.fecha_inicio = datetime.strptime(data['fecha_inicio'], '%Y-%m-%d')
+        reservation.fecha_final = datetime.strptime(data['fecha_final'], '%Y-%m-%d')
+        db.session.commit()
+        return jsonify(reservation.serialize()), 200
+    else:
+        return jsonify({'message': 'Reserva no encontrada'}), 404
+
+# Eliminar una reserva existente
+@api.route('/api/reservations/<int:id>', methods=['DELETE'])
+def delete_reservation(id):
+    reservation = Reserva.query.get(id)
+    if reservation:
+        db.session.delete(reservation)
+        db.session.commit()
+        return jsonify({'message': 'Reserva eliminada correctamente'}), 200
+    else:
+        return jsonify({'message': 'Reserva no encontrada'}), 404
 
 
 
