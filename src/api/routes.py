@@ -393,16 +393,20 @@ def eliminar_paquete(paquete_id):
         return jsonify({"msg": "se elimino el paquete"}), 200
     else : 
         return jsonify({"msg": "no se encontro el paquete"}), 404
+    
 #Reservas
 #obtener todas las reservas
-@api.route('/api/reservations', methods = ['GET'])
+@api.route('/reservations', methods = ['GET'])
 def get_all_reservations():
+
+
     reservations = Reserva.query.all()
-    return jsonify([reservation.serialize() for reservation in reservations])
+    response_body = [item.serialize() for item in reservations ]
+    return jsonify(response_body), 200
 
 #Obtener una reserva especifica por su id
 
-@api.route('/api/reservations/<int:reserva_id>', methods=['GET'])
+@api.route('/reservations/<int:reserva_id>', methods=['GET'])
 def get_reservation_by_id(reserva_id):
     reservation = Reserva.query.get(reserva_id)
     if reservation:
@@ -410,21 +414,21 @@ def get_reservation_by_id(reserva_id):
     else:
         return jsonify({"msg":'Reserva no encontrada'}),404
     
-# Crear una nueva reserva
-@api.route('/api/reservations', methods=['POST'])
-def create_reservation():
-    data = request.json
-    nueva_reserva = Reserva( fecha_inicio = datetime.strptime(data['fecha_inicio'], '%Y-%m-%d'),
-        fecha_final = datetime.strptime(data['fecha_final'], '%Y-%m-%d'), #strptime convierte una cadena de fecha y hora en un objeto datetime
-        id_user = data['id_user'],
-        id_tour = data['id_tour'],
-        id_paquete = data['id_paquete'],
-        id_hotel = data['id_hotel']
-        )
+# # Crear una nueva reserva
+# @api.route('/reservations', methods=['POST'])
+# def create_reservation():
+#     data = request.json
+#     nueva_reserva = Reserva( fecha_inicio = datetime.strptime(data['fecha_inicio'], '%Y-%m-%d'),
+#         fecha_final = datetime.strptime(data['fecha_final'], '%Y-%m-%d'), #strptime convierte una cadena de fecha y hora en un objeto datetime
+#         id_user = data['id_user'],
+#         id_tour = data['id_tour'],
+#         id_paquete = data['id_paquete'],
+#         id_hotel = data['id_hotel']
+#         )
            
-    db.session.add(nueva_reserva)
-    db.session.commit()
-    return jsonify(nueva_reserva.serialize()), 201
+#     db.session.add(nueva_reserva)
+#     db.session.commit()
+#     return jsonify(nueva_reserva.serialize()), 201
 
 # Actualizar la información de una reserva existente (solo fecha)
 @api.route('/api/reservations/<int:id>', methods=['PUT'])
@@ -450,12 +454,37 @@ def delete_reservation(id):
     else:
         return jsonify({'message': 'Reserva no encontrada'}), 404
 
+# añade uns reserva de Tour a un usuario actual
 
+@api.route('/reservations/tour/<int:tour_id>', methods=['POST'])
+@jwt_required()
+def add_new_tour_reserva(tour_id):
+    
+    current_user_email = get_jwt_identity()
 
+    current_user = User.query.filter_by(email=current_user_email).one_or_none()
 
+    if current_user is None:
+        return jsonify({'msg': 'User not found'}), 404
 
+    # Verificar si el tour existe
+    tour = Tour.query.filter_by(id=tour_id).one_or_none()
 
+    if tour is None:
+        return jsonify({'msg': 'Tour not found'}), 404
 
+    # Crear una nueva reserva asociando el usuario y el tour
+    nueva_reserva = Reserva(
+        fecha_inicio=request.json['fecha_inicio'],
+        fecha_final=request.json['fecha_final'],
+        id_user=current_user.id,
+        id_tour=tour_id
+    )
+
+    db.session.add(nueva_reserva)
+    db.session.commit()
+
+    return jsonify({'msg': 'Reservation created successfully'}), 201
 
 
 

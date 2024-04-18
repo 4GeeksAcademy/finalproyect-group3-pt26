@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 db = SQLAlchemy()
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True,autoincrement=True)
+    id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(120), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), unique=False, nullable=False)
@@ -124,16 +124,26 @@ class Reserva(db.Model):
     id_hotel = db.Column(db.Integer, db.ForeignKey('hotel.id'))
     hotel = relationship(Hotel)
 
-    def __init__(self,fecha_inicio,fecha_final):
+    def __init__(self,fecha_inicio,fecha_final, id_user, id_tour = None, id_paquete = None, id_hotel = None):
         self.fecha_inicio = fecha_inicio
         self.fecha_final = fecha_final
+        self.id_user = id_user
+        self.id_tour = id_tour
+        self.id_paquete = id_paquete
+        self.id_hotel = id_hotel
     
     def __repr__(self):
         return f'<Reserva id:{self.id}>'
     
     def serialize(self):
         return{
-            "id":self.id,
-            "fecha_inicio": self.fecha_inicio,
-            "fecha_final": self.fecha_final
+            "id": self.id,
+            "fecha_inicio": self.fecha_inicio.strftime('%Y-%m-%d'),  # Convertir fecha a formato de cadena
+            "fecha_final": self.fecha_final.strftime('%Y-%m-%d'),  
+            "id_user": self.user.email,
+            "id_tour":self.tour.name if self.tour else None,
+            "id_paquete": self.paquete.name if self.paquete else None,
+            "id_hotel": self.hotel.name if self.hotel else None
+
         }
+
