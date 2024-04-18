@@ -11,18 +11,18 @@ export const Register = () => {
 
     const navigate = useNavigate()
 
-    const [username , setUsername] =useState('')
-    const [email , setEmail] = useState('')
-    const [password , setPassword] = useState('')
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
     }
-    
+
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
     }
-    
+
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
     }
@@ -49,37 +49,39 @@ export const Register = () => {
                     <div className="row">
                         <div className="col-sm-10">
                             <input style={{ width: "315px", borderRadius: "22px" }}
-                             type="text" className="form-control form-control-lg colorStyle" placeholder="Full Name" 
-                             value={username}
-                             onChange={handleUsernameChange}
-                             
-                             />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-sm-10">
-                            <input style={{ width: "315px", borderRadius: "22px" }} 
-                            type="email" className="form-control form-control-lg colorStyle" placeholder="email" 
-                            value={email}
-                            onChange={handleEmailChange}
+                                type="text" className="form-control form-control-lg colorStyle" placeholder="Full Name"
+                                value={username}
+                                onChange={handleUsernameChange}
 
                             />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-sm-10">
-                            <input style={{ width: "315px", borderRadius: "22px" }} 
-                            type="password" className="form-control form-control-lg colorStyle"  placeholder="Password" 
-                            value={password}
-                            onChange={handlePasswordChange}
-                            
+                            <input style={{ width: "315px", borderRadius: "22px" }}
+                                type="email" className="form-control form-control-lg colorStyle" placeholder="email"
+                                value={email}
+                                onChange={handleEmailChange}
+
+                            />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-10">
+                            <input style={{ width: "315px", borderRadius: "22px" }}
+                                type="password" className="form-control form-control-lg colorStyle" placeholder="Password"
+                                value={password}
+                                onChange={handlePasswordChange}
+
                             />
                         </div>
                     </div>
                 </div>
-                <button type="submit" className='loginBoton'>Register</button>
+                <Link to={"/login"}>
+                    <button type="submit" className='loginBoton'>Register</button>
+                </Link>
             </form>
-           
+
         </div>
     </div>
 }
