@@ -414,22 +414,6 @@ def get_reservation_by_id(reserva_id):
     else:
         return jsonify({"msg":'Reserva no encontrada'}),404
     
-# # Crear una nueva reserva
-# @api.route('/reservations', methods=['POST'])
-# def create_reservation():
-#     data = request.json
-#     nueva_reserva = Reserva( fecha_inicio = datetime.strptime(data['fecha_inicio'], '%Y-%m-%d'),
-#         fecha_final = datetime.strptime(data['fecha_final'], '%Y-%m-%d'), #strptime convierte una cadena de fecha y hora en un objeto datetime
-#         id_user = data['id_user'],
-#         id_tour = data['id_tour'],
-#         id_paquete = data['id_paquete'],
-#         id_hotel = data['id_hotel']
-#         )
-           
-#     db.session.add(nueva_reserva)
-#     db.session.commit()
-#     return jsonify(nueva_reserva.serialize()), 201
-
 # Actualizar la información de una reserva existente (solo fecha)
 @api.route('/api/reservations/<int:id>', methods=['PUT'])
 def update_reservation(id):
