@@ -22,10 +22,11 @@ export const Contact = () => {
                             <div className="row">
                                 <h2 className="col CONname">Clisdermar</h2>
                                 <div className="row">
-                                    <div className="col-4"> <FaFacebook className="CONicon" /> </div>
-                                    <div className="col-4"> <FaInstagram className="CONicon" /> </div>
-                                    <div className="col-4"> <FaLinkedin className="CONicon" /> </div>
-                                    <div className="col-4"> <FaGithub className="CONicon" /> </div>
+                                    <div className="col-4 ConSpace"> <Link to="/"><FaFacebook className="CONicon" /></Link></div>
+                                    <div className="col-4 ConSpace"> <Link to=""><FaInstagram className="CONicon" /></Link></div>
+                                    <div className="col-4 ConSpace"> <Link to=""><FaLinkedin className="CONicon" /></Link></div>
+                                    <div className="col-4 ConSpace"> <Link to=""><FaGithub className="CONicon" /> </Link> </div>
+                                    <div className="col d-flex justify-content-center"><h4>Dev Fullstack</h4></div>
                                 </div>
                             </div>
                         </div>
@@ -37,17 +38,18 @@ export const Contact = () => {
 
 
             <div className="row CONrow">
-                <div className="col-6"></div>
-                <div className="col-6 CONbox" style={{ "boxShadow": "12px 12px 1px rgba(70, 206, 235, 1.0)" }}>
+                <div className="col-5"></div>
+                <div className="col-7 CONbox" style={{ "boxShadow": "12px 12px 1px rgba(70, 206, 235, 1.0)" }}>
                     <div className="row">
                         <div className="col-6" style={{ "padding": "5px" }}>
                             <div className="row">
                                 <h2 className="col CONname">Sebastian</h2>
                                 <div className="row">
-                                    <div className="col-4"> <FaFacebook className="CONicon" /> </div>
-                                    <div className="col-4"> <FaInstagram className="CONicon" /> </div>
-                                    <div className="col-4"> <FaLinkedin className="CONicon" /> </div>
-                                    <div className="col-4"> <FaGithub className="CONicon" /> </div>
+                                    <div className="col-4 ConSpace"> <Link to="/"><FaFacebook className="CONicon" /></Link></div>
+                                    <div className="col-4 ConSpace"> <Link to=""><FaInstagram className="CONicon" /></Link></div>
+                                    <div className="col-4 ConSpace"> <Link to=""><FaLinkedin className="CONicon" /></Link></div>
+                                    <div className="col-4 ConSpace"> <Link to=""><FaGithub className="CONicon" /> </Link> </div>
+                                    <div className="col d-flex justify-content-center"><h4>Dev Fullstack</h4></div>
                                 </div>
                             </div>
                         </div>
@@ -58,23 +60,24 @@ export const Contact = () => {
 
 
             <div className="row CONrow">
-                <div className="col-6 CONbox">
+                <div className="col-7 CONbox">
                     <div className="row">
                         <div className="col-6" style={{ "padding": "5px" }}>
                             <div className="row">
                                 <h2 className="col CONname">Anibal</h2>
                             </div>
                             <div className="row">
-                                <div className="col-4"> <FaFacebook className="CONicon" /> </div>
-                                <div className="col-4"> <FaInstagram className="CONicon" /> </div>
-                                <div className="col-4"> <FaLinkedin className="CONicon" /> </div>
-                                <div className="col-4"> <FaGithub className="CONicon" /> </div>
+                                <div className="col-4 ConSpace"> <Link to="/"><FaFacebook className="CONicon" /></Link></div>
+                                <div className="col-4 ConSpace"> <Link to=""><FaInstagram className="CONicon" /></Link></div>
+                                <div className="col-4 ConSpace"> <Link to=""><FaLinkedin className="CONicon" /></Link></div>
+                                <div className="col-4 ConSpace"> <Link to=""><FaGithub className="CONicon" /> </Link> </div>
+                                <div className="col d-flex justify-content-center"><h4>Dev Fullstack</h4></div>
                             </div>
                         </div>
                         <div className="col-6" style={{ "padding": "5px" }}><img className="CONimg" src="" alt="Anibal" /></div>
                     </div>
                 </div>
-                <div className="col-6"></div>
+                <div className="col-5"></div>
             </div>
         </div>
     </>)

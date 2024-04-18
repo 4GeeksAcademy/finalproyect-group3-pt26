@@ -179,4 +179,20 @@
 .CONname{
     color: #fff;
 }
+
+.CONicon{
+    fill: #fff;
+}
+
+.col h4{
+    color: #fff;
+}
+.col-4{
+    padding: 12px;
+}
+
+.ConSpace{
+    width: 50px;
+    margin: 4px;
+}
 /*FIN DE EL APARTADO DE CONTACT.JS TODOS LOS ESTILOS COMENZARAN EN CON*/
