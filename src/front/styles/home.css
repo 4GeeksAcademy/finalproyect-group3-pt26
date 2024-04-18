@@ -153,8 +153,46 @@
       }
   }
 
-
-
-
-
 /*FIN DE EL APARTADO DE TRAVEL.JS*/
+
+
+
+
+
+/*INICIO DE EL APARTADO DE CONTACT.JS  TODOS LOS ESTILOS COMENZARAN EN CON */
+.CONrow{
+    padding: 30px;
+}
+
+.CONbox{
+    height: 200px;
+    background: #7976c9a3;
+    border-radius: 33px;
+    box-shadow: -12px 12px 1px rgba(70, 206, 235, 1.0);
+}
+
+.CONimg{
+    width: 150px;
+    border-radius: 45px;
+}
+
+.CONname{
+    color: #fff;
+}
+
+.CONicon{
+    fill: #fff;
+}
+
+.col h4{
+    color: #fff;
+}
+.col-4{
+    padding: 12px;
+}
+
+.ConSpace{
+    width: 50px;
+    margin: 4px;
+}
+/*FIN DE EL APARTADO DE CONTACT.JS TODOS LOS ESTILOS COMENZARAN EN CON*/

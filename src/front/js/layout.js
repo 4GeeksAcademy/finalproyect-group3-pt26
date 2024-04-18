@@ -22,6 +22,7 @@ import { Tours } from "./pages/tours";
 import { SingleTour } from "./pages/singleTour";
 import { Packages } from "./pages/packages";
 import { SinglePackage } from "./pages/singlePackage";
+import { Contact } from "./pages/contact";
 
 
 //create your first component
@@ -51,6 +52,8 @@ const Layout = () => {
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Register />} path="/register" />
                         <Route element={<Travel />} path="/travel" />
+                        <Route element={<Contact />} path="/contact" />
+
                     </Routes>
                     <Footer />
                 </ScrollToTop>

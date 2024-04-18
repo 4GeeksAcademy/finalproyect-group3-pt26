@@ -42,7 +42,7 @@ def login():
     return jsonify({"token": access_token, "user_id": user.id, "username": user.username})
 
 #protected
-@api.route("/accommodation/", methods=["GET"])
+@api.route("/register", methods=["GET"])
 @jwt_required() #no devuelve nada si no se proporciona el token, asegura que debe ser obligatorio el token para acceder
 def protected():
     #Acceda a la identidad del usuario actual con get_jwt_identity

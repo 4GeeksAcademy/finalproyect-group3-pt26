@@ -102,7 +102,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						const data = await resp.json();
 						setStore(prevState => ({ ...prevState, register: data })); //me traigo la copia del estado anterior y modifico la data de registro
 						navigate('/login')
-						alert('Usuario registrado exitosamente. Por favor, inicia sesión.');
+						// alert('Usuario registrado exitosamente. Por favor, inicia sesión.');
 
 					} else {
 

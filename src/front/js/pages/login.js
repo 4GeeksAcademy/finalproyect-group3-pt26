@@ -13,11 +13,11 @@ export const Login = () => {
 
     const sendCredentials = async () => {
         const isLogedds = await actions.Login(user);
-        if(isLogedds){
+        if (isLogedds) {
             navigate('/')
-        } 
+        }
     }
-    
+
     return <div className='fatherLogin'>
         <div className='imageToLogin'>
             <img style={{ marginLeft: "30px" }} src='https://ps.w.org/login-customizer/assets/icon-256x256.png?rev=2455454' width={"100px"} height={"100px"} />
