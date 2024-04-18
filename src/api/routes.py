@@ -428,7 +428,7 @@ def update_reservation(id):
         return jsonify({'message': 'Reserva no encontrada'}), 404
 
 # Eliminar una reserva existente
-@api.route('/api/reservations/<int:id>', methods=['DELETE'])
+@api.route('/reservations/<int:id>', methods=['DELETE'])
 def delete_reservation(id):
     reservation = Reserva.query.get(id)
     if reservation:
@@ -463,6 +463,70 @@ def add_new_tour_reserva(tour_id):
         fecha_final=request.json['fecha_final'],
         id_user=current_user.id,
         id_tour=tour_id
+    )
+
+    db.session.add(nueva_reserva)
+    db.session.commit()
+
+    return jsonify({'msg': 'Reservation created successfully'}), 201
+
+# añade un paquete a un usuario actual
+
+@api.route('/reservations/paquete/<int:paquete_id>', methods=['POST'])
+@jwt_required()
+def add_new_paquete_reserva(paquete_id):
+    
+    current_user_email = get_jwt_identity()
+
+    current_user = User.query.filter_by(email=current_user_email).one_or_none()
+
+    if current_user is None:
+        return jsonify({'msg': 'User not found'}), 404
+
+    # Verificar si el paquete existe
+    paquete = Paquete.query.filter_by(id=paquete_id).one_or_none()
+
+    if paquete is None:
+        return jsonify({'msg': 'Paquete not found'}), 404
+
+    # Crear una nueva reserva asociando el usuario y el paquete
+    nueva_reserva = Reserva(
+        fecha_inicio=request.json['fecha_inicio'],
+        fecha_final=request.json['fecha_final'],
+        id_user=current_user.id,
+        id_paquete=paquete_id
+    )
+
+    db.session.add(nueva_reserva)
+    db.session.commit()
+
+    return jsonify({'msg': 'Reservation created successfully'}), 201
+
+# añade un hotel a un usuario actual
+
+@api.route('/reservations/hotel/<int:hotel_id>', methods=['POST'])
+@jwt_required()
+def add_new_hotel_reserva(hotel_id):
+    
+    current_user_email = get_jwt_identity()
+
+    current_user = User.query.filter_by(email=current_user_email).one_or_none()
+
+    if current_user is None:
+        return jsonify({'msg': 'User not found'}), 404
+
+    # Verificar si el hotel existe
+    hotel = Hotel.query.filter_by(id=hotel_id).one_or_none()
+
+    if hotel is None:
+        return jsonify({'msg': 'hotel not found'}), 404
+
+    # Crear una nueva reserva asociando el usuario y el paquete
+    nueva_reserva = Reserva(
+        fecha_inicio=request.json['fecha_inicio'],
+        fecha_final=request.json['fecha_final'],
+        id_user=current_user.id,
+        id_hotel=hotel_id
     )
 
     db.session.add(nueva_reserva)
