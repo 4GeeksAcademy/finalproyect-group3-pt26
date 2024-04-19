@@ -22,7 +22,7 @@ export const Tours = () => {
                                 <p className="card-text">{tour.descripcion}</p>
                                 <h3 className="card-title">{tour.duracion}</h3>
                                 <h4 className="card-title">{tour.precio}</h4>
-                                <Link to="/tour/">
+                                <Link to={`/tour/${tour.id}`}>
                                     <button className="btn btn-primary">VIEW DETAILS</button>
                                 </Link>
                             </div>

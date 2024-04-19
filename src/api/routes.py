@@ -155,7 +155,7 @@ def get_tours():
 
 #Obtener un tour en especifico
 
-@api.route('/tours/<int:tour_id>', methods = ['GET'])
+@api.route('/tour/<int:tour_id>', methods = ['GET'])
 def get_OneTour(tour_id):
 
     tour = Tour.query.get(tour_id)

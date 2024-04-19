@@ -53,7 +53,6 @@ const Layout = () => {
                         <Route element={<Register />} path="/register" />
                         <Route element={<Travel />} path="/travel" />
                         <Route element={<Contact />} path="/contact" />
-
                     </Routes>
                     <Footer />
                 </ScrollToTop>
