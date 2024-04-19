@@ -20,8 +20,7 @@ export const Accommodations = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{hot.name}</h5>
                                 <p className="card-text">{hot.descripcion}</p>
-                                <h3 className="card-title">{hot.duracion}</h3>
-                                <h4 className="card-title">{hot.precio}</h4>
+                                <p className="card-title">{hot.precio}$ per night</p>
                                 <Link to={`/accommodation/${hot.id}`}>
                                     <button className="btn btn-primary">VIEW DETAILS</button>
                                 </Link>
