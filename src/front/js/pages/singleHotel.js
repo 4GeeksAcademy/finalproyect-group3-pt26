@@ -12,6 +12,7 @@ export const SingleHotel = () => {
 
     const [checkIn, setCheckIn] = useState(null);
     const [checkOut, setCheckOut] = useState(null);
+    const [reserva, setReserva] = useState(null);
 
     const fetchSingleHotel = async () => {
         const response = await fetch(process.env.BACKEND_URL + `api/accommodation/${id}`)
@@ -43,6 +44,8 @@ export const SingleHotel = () => {
                 fecha_final: checkOut,
             })
         });
+        const data = await resp.json()
+        console.log(data);
         if (resp.ok) {
             console.log('Hotel reservation successfully made');
         } else {
