@@ -82,7 +82,7 @@ def get_users():
 
 #Obtenemos un usuario por su id
 
-@api.route('/users/<int:user_id>', methods=['GET'])
+@api.route('/user/<int:user_id>', methods=['GET'])
 def get_user_profile(user_id):
     user = User.query.get(user_id)
 
