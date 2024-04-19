@@ -43,13 +43,14 @@ export const SingleHotel = () => {
                                             <p>{singleHotel.descripcion}</p>
                                         </div>
                                     }
+                                    <div className='d-flex justify-content-center align-items-center'>
+                                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        Check and Book
+                                    </button>
+                                    </div>
                                 </div>
-
-                                <button type="button" className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                    Want to reserve? Check your dates and continue
-                                </button>
-
-
+                                
+                                    
                                 {/* <!-- Modal --> */}
                                 <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div className="modal-dialog modal-dialog-centered">
