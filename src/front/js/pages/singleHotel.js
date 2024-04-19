@@ -45,14 +45,14 @@ export const SingleHotel = () => {
             })
         });
         const data = await resp.json()
-        console.log(data);
+
         if (resp.ok) {
             console.log('Hotel reservation successfully made');
+            setReserva(data);
         } else {
             console.log('Error, please trying again or request assistance from a Travelo agent');
         }
     }
-
 
     return (
         <>
