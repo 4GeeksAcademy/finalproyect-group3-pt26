@@ -20,8 +20,7 @@ export const Tours = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{tour.name}</h5>
                                 <p className="card-text">{tour.descripcion}</p>
-                                <h3 className="card-title">{tour.duracion}</h3>
-                                <h4 className="card-title">{tour.precio}</h4>
+                                <p className="card-title">{tour.precio} $ per person</p>
                                 <Link to={`/tour/${tour.id}`}>
                                     <button className="btn btn-primary">VIEW DETAILS</button>
                                 </Link>

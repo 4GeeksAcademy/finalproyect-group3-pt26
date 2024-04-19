@@ -40,12 +40,10 @@ export const SingleTour = () => {
                                         <div style={{ textAlign: 'center', padding: '40px' }}>
                                             <h1>{tour.name}</h1>
                                             <p>{tour.descripcion}</p>
-                                            <p>{tour.duracion}</p>
-                                            <p>{tour.precio}</p>
                                         </div>
                                     }
                                 </div>
-                                <button type="button" className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                     Book
                                 </button>
                             </div>
