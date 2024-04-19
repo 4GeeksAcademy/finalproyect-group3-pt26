@@ -20,7 +20,7 @@ export const Packages = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{pkg.name}</h5>
                                 <p className="card-text">{pkg.descripcion}</p>
-                                <Link to="/package/">
+                                <Link to={`/package/${pkg.id}`}>
                                     <button className="btn btn-primary">VIEW DETAILS</button>
                                 </Link>
                             </div>
