@@ -6,9 +6,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			message: null,
 			user: JSON.parse(localStorage.getItem("user")) || null,
 			register: [],
-			paquetes:[],
-			tours:[],
-			hoteles:[]
+			paquetes: [],
+			tours: [],
+			accommodations: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -150,7 +150,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const resp = await fetch(process.env.BACKEND_URL + "/api/accommodations")
 					const data = await resp.json()
-					setStore({ hoteles: data })
+					setStore({ accommodations: data })
 					// siempre tenemos que devolver algo para resolver la promesa
 					return data;
 				} catch (error) {
