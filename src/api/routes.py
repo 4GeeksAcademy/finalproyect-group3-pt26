@@ -439,7 +439,6 @@ def delete_reservation(id):
         return jsonify({'message': 'Reserva no encontrada'}), 404
 
 # añade uns reserva de Tour a un usuario actual
-
 @api.route('/reservations/tour/<int:tour_id>', methods=['POST'])
 @jwt_required()
 def add_new_tour_reserva(tour_id):

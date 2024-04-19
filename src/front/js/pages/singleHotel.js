@@ -6,9 +6,12 @@ export const SingleHotel = () => {
 
     const { store, actions } = useContext(Context);
 
-    const { id } = useParams()
+    const { id } = useParams();
 
-    const [singleHotel, setSingleHotel] = useState(null)
+    const [singleHotel, setSingleHotel] = useState(null);
+
+    const [checkIn, setCheckIn] = useState(null);
+    const [checkOut, setCheckOut] = useState(null);
 
     const fetchSingleHotel = async () => {
         const response = await fetch(process.env.BACKEND_URL + `api/accommodation/${id}`)
@@ -16,9 +19,36 @@ export const SingleHotel = () => {
         setSingleHotel(data)
     }
 
+    const handleCheckIn = (e) => {
+        setCheckIn(e.target.value);
+    }
+
+    const handleCheckOut = (e) => {
+        setCheckOut(e.target.value);
+    }
+
     useEffect(() => {
         fetchSingleHotel()
     }, [])
+
+    const bookHotel = async () => {
+        const resp = await fetch(process.env.BACKEND_URL + `/api/reservations/hotel/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${store.token}`
+            },
+            body: JSON.stringify({
+                fecha_inicio: checkIn,
+                fecha_final: checkOut,
+            })
+        });
+        if (resp.ok) {
+            console.log('Hotel reservation successfully made');
+        } else {
+            console.log('Error, please trying again or request assistance from a Travelo agent');
+        }
+    }
 
 
     return (
@@ -44,13 +74,13 @@ export const SingleHotel = () => {
                                         </div>
                                     }
                                     <div className='d-flex justify-content-center align-items-center'>
-                                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        Check and Book
-                                    </button>
+                                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            Check and Book
+                                        </button>
                                     </div>
                                 </div>
-                                
-                                    
+
+
                                 {/* <!-- Modal --> */}
                                 <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div className="modal-dialog modal-dialog-centered">
@@ -63,17 +93,17 @@ export const SingleHotel = () => {
                                                 <div className="date">
                                                     <div className="input-wrap">
                                                         <label>Check-In</label>
-                                                        <input type="date" />
+                                                        <input type="date" onChange={handleCheckIn} />
                                                     </div>
                                                     <div className="input-wrap">
                                                         <label>Check-Out</label>
-                                                        <input type="date" />
+                                                        <input type="date" onChange={handleCheckOut} />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="modal-footer">
                                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" className="btn btn-primary">Book</button>
+                                                <button type="button" className="btn btn-primary" onClick={bookHotel}>Book</button>
                                             </div>
                                         </div>
                                     </div>
