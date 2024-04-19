@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
-export const Accommodations= () => {
+export const Accommodations = () => {
     const { store, actions } = useContext(Context);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export const Accommodations= () => {
                                 <p className="card-text">{hot.descripcion}</p>
                                 <h3 className="card-title">{hot.duracion}</h3>
                                 <h4 className="card-title">{hot.precio}</h4>
-                                <Link to="/accommodation/">
+                                <Link to={`/accommodation/${hot.id}`}>
                                     <button className="btn btn-primary">VIEW DETAILS</button>
                                 </Link>
                             </div>
