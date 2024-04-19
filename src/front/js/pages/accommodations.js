@@ -13,8 +13,8 @@ export const Accommodations= () => {
         <div className="container">
             <h1>Accommodations</h1>
             <div className="row row-cols-1 row-cols-md-3 g-4">
-                {store.accommodations && store.accommodations.map ((hot, id) => (
-                    <div className="col" key={id}>
+                {store.accommodations && store.accommodations.map((hot, index) => (
+                    <div className="col" key={index}>
                         <div className="card">
                             <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="..." />
                             <div className="card-body">

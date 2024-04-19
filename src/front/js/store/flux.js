@@ -8,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			register: [],
 			paquetes: [],
 			tours: [],
-			accommodations: []
+			accommodations: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction

@@ -248,22 +248,22 @@ def get_accomodations():
     for hotel in accomodations:
         accomodations_serialized.append(hotel.serialize())
 
-    response_body = {
-        "result" : accomodations_serialized
-    }
+    response_body = accomodations_serialized
 
     return jsonify(response_body), 200
 
 #Obtener un alojamiento específico por su ID
 @api.route('/accommodation/<int:accommodation_id>', methods=['GET'])
-def get_single_accommodation(accommodation_id):
+def get_OneHotel(accommodation_id):
 
-    single_accommodation = Hotel.query.get(accommodation_id)
-    if single_accommodation:
-        return jsonify({
-            "hotel": single_accommodation.serialize()
-        }), 200
-    else: return jsonify({"msg" : "Hotel not found"}), 404
+    accommodation = Hotel.query.get(accommodation_id)
+
+    if accommodation:
+        serialize_accommodation = accommodation.serialize()
+        return jsonify(serialize_accommodation), 200
+    else:
+        return jsonify({'mesage' : 'Accommodation no encontrado'}), 400
+    
 
 #Crear un nuevo alojamiento
 @api.route('/accommodations', methods=['POST'])

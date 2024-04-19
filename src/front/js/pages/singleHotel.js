@@ -1,9 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useContext,useState,useEffect  } from 'react';
 import { Context } from '../store/appContext';
+import { useParams } from "react-router-dom";
 
 export const SingleHotel = () => {
 
     const { store, actions } = useContext(Context);
+
+    const { id } = useParams()
+
+    const [singleHotel, setSingleHotel] = useState(null)
+
+    const fetchSingleHotel = async () => {
+        const response = await fetch(`https://didactic-space-engine-5vr6grx66592pv54-3001.app.github.dev/api/accommodation/${id}`)
+        const data = await response.json()
+        setSingleHotel(data.result)
+
+    }
+
+
+
+    useEffect(() => {
+        fetchSingleHotel()
+    }, [])
+
+
 
     return (
         <>
@@ -17,11 +37,18 @@ export const SingleHotel = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                <h1>Hotel Title</h1>
-                                <h4>Description</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur placeat rem enim suscipit, magnam ducimus vero error? Doloremque voluptatibus harum a accusamus consequuntur officiis minima mollitia inventore minus ex? Similique, veniam autem? Commodi magnam impedit nulla suscipit eius iusto tempore.</p>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime molestiae dolores perferendis voluptas nobis. Alias libero dicta nisi.</p>
-                                <h4 style={{ fontWeight: 'bold', color: '#2e887c' }}>Double room price per night 49$</h4>
+                                    <div className="col-12 col-md-6 ">
+                                        <img src={`https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`} className="w-90 img-thumbnail h-100px"  />
+                                    </div>
+                                    <div className="col-12 col-md-6 ">
+                                        {singleHotel &&
+                                    
+                                            <div style={{ textAlign: 'center', padding: '40px' }}>
+                                                <h1>{singleHotel.hotel.name}</h1>
+                                                <p>{singleHotel.hotel.descripcion}</p>
+                                            </div>
+                                        }
+                                    </div>
 
                                 <button type="button" className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                     Want to reserve? Check your dates and continue
@@ -49,17 +76,12 @@ export const SingleHotel = () => {
                                                 </div>
                                             </div>
                                             <div className="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Book</button>
+                                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" className="btn btn-primary">Book</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="col d-flex justify-content-center align-items-center">
-                                <img src="https://images.pexels.com/photos/2771935/pexels-photo-2771935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                    className="card-img-top" alt="..."
-                                    style={{ maxWidth: '80%', height: 'auto' }} />
                             </div>
                         </div>
                     </div>
