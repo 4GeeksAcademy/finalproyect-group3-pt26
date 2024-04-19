@@ -74,6 +74,7 @@ export const SingleHotel = () => {
                                         <div style={{ textAlign: 'center', padding: '40px' }}>
                                             <h1>{singleHotel.name}</h1>
                                             <p>{singleHotel.descripcion}</p>
+                                            <p>{singleHotel.precio}$ per night</p>
                                         </div>
                                     }
                                     <div className='d-flex justify-content-center align-items-center'>
@@ -85,7 +86,7 @@ export const SingleHotel = () => {
 
 
                                 {/* <!-- Modal --> */}
-                                <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div className="modal-dialog modal-dialog-centered">
                                         <div className="modal-content">
                                             <div className="modal-header">

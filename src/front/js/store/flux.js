@@ -1,3 +1,5 @@
+import { SingleTour } from "../pages/singleTour";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
