@@ -11,12 +11,11 @@ export const SingleHotel = () => {
     const [singleHotel, setSingleHotel] = useState(null)
 
     const fetchSingleHotel = async () => {
-        const response = await fetch(`https://didactic-space-engine-5vr6grx66592pv54-3001.app.github.dev/api/accommodation/${id}`)
+        const response = await fetch(`/api/accommodation/${id}`)
         const data = await response.json()
-        setSingleHotel(data.result)
+        setSingleHotel(data)
 
     }
-
 
 
     useEffect(() => {
@@ -44,8 +43,8 @@ export const SingleHotel = () => {
                                         {singleHotel &&
                                     
                                             <div style={{ textAlign: 'center', padding: '40px' }}>
-                                                <h1>{singleHotel.hotel.name}</h1>
-                                                <p>{singleHotel.hotel.descripcion}</p>
+                                                <h1>{singleHotel.name}</h1>
+                                                <p>{singleHotel.descripcion}</p>
                                             </div>
                                         }
                                     </div>

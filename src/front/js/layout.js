@@ -42,7 +42,7 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Info />} path="/info" />
                         <Route element={<Accommodations />} path="/accommodations" />
-                        <Route element={<SingleHotel />} path="/accommodation/" /> {/* Falta agregar el parámetro del id al path */}
+                        <Route element={<SingleHotel />} path="/accommodation/:id" /> {/* Falta agregar el parámetro del id al path */}
                         <Route element={<Tours />} path="/tours" />
                         <Route element={<SingleTour />} path="/tour/" /> {/* Falta agregar el parámetro del id al path */}
                         <Route element={<Packages />} path="/packages" />
