@@ -13,7 +13,7 @@ class User(db.Model):
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
     def __repr__(self):
-        return f'<User {self.email}>'
+        return f'{self.email}'
 
     def serialize(self):
         return {
@@ -40,7 +40,7 @@ class Hotel(db.Model):
         
 
     def __repr__(self):
-        return f'<Hotel name: {self.name} >'
+        return f'{self.name}'
     
     def serialize(self):
         return{
@@ -66,7 +66,7 @@ class Tour(db.Model):
         self.precio = precio
     
     def __repr__(self):
-        return f'<Tour name:{self.name}>'
+        return f'{self.name}'
     
     def serialize(self):
         return{
@@ -94,7 +94,7 @@ class Paquete(db.Model):
         self.precio = precio
     
     def __repr__(self):
-        return f'<Paquete name:{self.name}>'
+        return f'{self.name}'
     
     def serialize(self):
         return{
@@ -133,7 +133,7 @@ class Reserva(db.Model):
         self.id_hotel = id_hotel
     
     def __repr__(self):
-        return f'<Reserva id:{self.id}>'
+        return f'Reserva id:{self.id}'
     
     def serialize(self):
         return{
