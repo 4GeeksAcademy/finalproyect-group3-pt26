@@ -1,9 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../store/appContext';
+import { useParams } from 'react-router-dom';
 
 export const SinglePackage = () => {
 
     const { store, actions } = useContext(Context);
+
+    const { id } = useParams();
+    const [singlePaq, setSinglePaq] = useState();
+
+    const getSinglePaq = async () => {
+        const resp = await fetch(process.env.BACKEND_URL + `/api/paquete/${id}`)
+        const data = await resp.json()
+        setSinglePaq(data);
+    }
+
+    useEffect(() => {
+        getSinglePaq();
+    }, [])
 
     return (
         <>
@@ -13,7 +27,29 @@ export const SinglePackage = () => {
             }
             {
                 store.token &&
-                <h3 className='text-center'>Sorry about the delay, we're still working on this page</h3>
+                <>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <div className="col-12 col-md-6 ">
+                                    <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-90 img-thumbnail h-100px" />
+                                </div>
+                                <div className="col-12 col-md-6 ">
+                                    {singlePaq &&
+                                        <div style={{ textAlign: 'center', padding: '40px' }}>
+                                            <h1>{singlePaq.name}</h1>
+                                            <p>{singlePaq.descripcion}</p>
+                                            <p>{singlePaq.precio}$ per person</p>
+                                        </div>
+                                    }
+                                </div>
+                                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    Book
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </>
             }
         </>
     )
