@@ -53,9 +53,12 @@ export const Reservas = () => {
                 </div>
 
                 <div className="row fatherCardReserva">
-                    <div className="col-7">
+                    <div className="col-7 d-flex align-items-center justify-content-around">
                         <div>
-                           
+                            <img className='x' src='https://media.youtooproject.com/files/viajar-da-vida-a-la-vida-frase[1].jpg' />
+                        </div>
+                        <div>
+                            <h3 className='atreveteAVivir'>Atrevete a vivir!</h3>
                         </div>
                     </div>
                     <div className="col-5 cardReserva">
