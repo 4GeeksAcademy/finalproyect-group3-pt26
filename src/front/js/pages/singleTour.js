@@ -50,7 +50,7 @@ export const SingleTour = () => {
         const data = await resp.json()
 
         if (resp.ok) {
-            console.log('Hotel reservation successfully made');
+            console.log('Hotel reservation successfully made:',data);
             setReserva(data);
         } else {
             console.log('Error, please trying again or request assistance from a Travelo agent');

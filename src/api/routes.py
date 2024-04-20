@@ -14,6 +14,8 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask import make_response
+import jwt
+
 
 
 api = Blueprint('api', __name__)
@@ -533,7 +535,17 @@ def add_new_hotel_reserva(hotel_id):
 
     return jsonify({'msg': 'Reservation created successfully'}), 201
 
+#obtener todas las reservas asociadas a un usuario 
+@api.route('/users/<int:user_id>/reservations', methods=['GET'])
+def get_user_reservations(user_id):
 
-
-
+    user = User.query.filter_by(id=user_id).first()
+    if user:
+        user_reservations = user.todas_reservas
+        if user_reservations:
+            return jsonify([reserva.serialize() for reserva in user_reservations])
+        else:
+            return jsonify({"msg": "No se encontraron reservas para este usuario"}), 404
+    else:
+        return jsonify({"msg": "Usuario no encontrado"}), 404
 

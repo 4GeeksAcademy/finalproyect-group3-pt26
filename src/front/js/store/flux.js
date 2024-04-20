@@ -11,6 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			paquetes: [],
 			tours: [],
 			accommodations: [],
+			reservasUser:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -159,6 +160,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
+			ReservasUser: async (Id) => {
+				try {
+					const resp = await fetch(process.env.BACKEND_URL + `/api/users/${Id}/reservations`, {
+						method: "GET",
+						// headers: {
+						// 	"Authorization": "Bearer " + localStorage.getItem("token")
+						// }
+					});
+			
+					if (resp.ok) {
+						const data = await resp.json();
+						return data; // Devuelve las reservas obtenidas
+					} else {
+						console.error("Error al obtener las reservas del usuario");
+						return null;
+					}
+				} catch (error) {
+					console.error("Error al obtener las reservas del usuario", error);
+					return null;
+				}
+			},
+
 		}
 	};
 };
