@@ -101,6 +101,8 @@
 
 .dropdown{
     display: flex;
+    color: #023e8a;
+    font-weight: 900;
 }
 
 .nav-icons{

@@ -194,5 +194,29 @@
 .ConSpace{
     width: 50px;
     margin: 4px;
+    background: rgb(70 206 235);
+}
+
+.CONcontacto{
+    font-size: 33px;
+    padding: 15px;
+    box-shadow: rgb(70, 206, 235) 2px 4px 29px;
+    border-radius: 46px;
+    transform: rotate(11deg);
+}
+
+.form-control{
+    border-radius: 20px;
+}
+
+.form-container{
+    padding: 15px;
+    box-shadow: rgb(70, 206, 235) 2px 4px 29px;
+    border-radius: 46px;
+}
+
+.btn{
+   background: rgb(70, 206, 235);
+   color: #fff;
 }
 /*FIN DE EL APARTADO DE CONTACT.JS TODOS LOS ESTILOS COMENZARAN EN CON*/

@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			paquetes: [],
 			tours: [],
 			accommodations: [],
-			reservasUser:[]
+			reservasUser: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -161,27 +161,37 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			ReservasUser: async (Id) => {
-				try {
-					const resp = await fetch(process.env.BACKEND_URL + `/api/users/${Id}/reservations`, {
-						method: "GET",
-						// headers: {
-						// 	"Authorization": "Bearer " + localStorage.getItem("token")
-						// }
-					});
-			
-					if (resp.ok) {
-						const data = await resp.json();
-						return data; // Devuelve las reservas obtenidas
-					} else {
-						console.error("Error al obtener las reservas del usuario");
-						return null;
-					}
-				} catch (error) {
-					console.error("Error al obtener las reservas del usuario", error);
-					return null;
-				}
-			},
 
+				const store = getStore();
+				try {
+					const resp = await fetch(process.env.BACKEND_URL + `/api/users/${Id}/reservations`)
+					const data = await resp.json();
+					setStore({ reservasUser: data })
+				}
+				catch (error) {
+					console.log(Error, error);
+				}
+
+				// try {
+				// 	const resp = await fetch(process.env.BACKEND_URL + `/api/users/${Id}/reservations`, {
+				// 		method: "GET",
+				// 		// headers: {
+				// 		// 	"Authorization": "Bearer " + localStorage.getItem("token")
+				// 		// }
+				// 	});
+
+				// 	if (resp.ok) {
+				// 		const data = await resp.json();
+				// 		return data; // Devuelve las reservas obtenidas
+				// 	} else {
+				// 		console.error("Error al obtener las reservas del usuario");
+				// 		return null;
+				// 	}
+				// } catch (error) {
+				// 	console.error("Error al obtener las reservas del usuario", error);
+				// 	return null;
+				// }
+			},
 		}
 	};
 };
