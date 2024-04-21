@@ -10,7 +10,7 @@ export const Reservas = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        actions.ReservasUser()
+        actions.ReservasUser(id)
     }, []);
 
     return (
@@ -50,6 +50,23 @@ export const Reservas = () => {
                     </div>
 
                     <div className="container text-center">
+                        {store.reservasUser.map((reserva) => (
+                            <div key={reserva.id} className="row fatherCardReserva">
+                                <div className="col-5 cardReserva">
+                                    <div className="row">
+                                        <div className='col'><h3>Reserva</h3></div>
+                                        <div className='col'>Fecha de inicio: {reserva.fecha_inicio}</div>
+                                        <div className='col'>Fecha final: {reserva.fecha_final}</div>
+                                        <div className='col'>Tour: {reserva.id_tour}</div>
+                                        <div className='col'>Paquete: {reserva.id_paquete}</div>
+                                        <div className='col'>Hotel: {reserva.id_hotel}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* <div className="container text-center">
                         <div className="row fatherCardReserva">
                             <div className="col-5 cardReserva">
                                 <div className="row">
@@ -93,8 +110,8 @@ export const Reservas = () => {
                                     <img className='imgReservas' src='https://alejandria-resort.hoteles-santander.com/data/Images/OriginalPhoto/8184/818467/818467346/image-bucaramanga-hotel-alejandria-resort-10.JPEG' />
                                 </div>
                             </div>
-                        </div>
-                    </div >
+                        </div> */}
+                    {/* </div > */}
                 </>
             }
         </>
