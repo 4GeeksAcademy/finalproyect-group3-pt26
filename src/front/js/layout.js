@@ -24,7 +24,6 @@ import { Packages } from "./pages/packages";
 import { SinglePackage } from "./pages/singlePackage";
 import { Contact } from "./pages/contact";
 import { Reservas } from "./pages/reservas";
-import { Chatbot } from './pages/chatbot';
 
 
 //create your first component
@@ -57,6 +56,7 @@ const Layout = () => {
                         <Route element={<Contact />} path="/contact" />
                         <Route element={<Reservas />} path="/reservas" />
                     </Routes>
+                   
                     <Footer />
                 </ScrollToTop>
             </BrowserRouter>

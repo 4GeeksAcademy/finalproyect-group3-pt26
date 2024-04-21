@@ -10,6 +10,7 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+
 #Copiado desde la pag oficial
 from flask_jwt_extended import JWTManager
 
