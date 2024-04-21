@@ -10,7 +10,7 @@ export const Travel = () => {
     return (
         <>
             <div className="container TRcontainer">
-                <h1 className="row">¿Cual sera tu siguiente destino?</h1>
+                <h1 className="row" >¿Cual sera tu siguiente destino?</h1>
                 <img className="row TRimagen " src={travel} alt="" width={"350px"} height={"350px"} />
             </div>
             {/* AQUI ESTAN LAS CARDS DE LOS PAISES */}

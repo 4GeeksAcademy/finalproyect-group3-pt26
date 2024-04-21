@@ -28,7 +28,7 @@ export const Reservas = () => {
                         </video>
                         <div className="row">
                             <div className="col">
-                                <h1 className='text'>{`Encuentra las mejores y más exclusivas opciones con nosotros!`}</h1>
+                                <h1 className='text' style={{ "color": "white" }}>{`Encuentra las mejores y más exclusivas opciones con nosotros!`}</h1>
                             </div>
                         </div>
                         <div className='row' style={{ "width": "100%" }}>
