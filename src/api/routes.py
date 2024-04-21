@@ -15,7 +15,7 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask import make_response
 import jwt
-from chatbot_interactivo import get_response
+# from chatbot_interactivo import get_response
 
 
 api = Blueprint('api', __name__)
@@ -549,9 +549,9 @@ def get_user_reservations(user_id):
     else:
         return jsonify({"msg": "Usuario no encontrado"}), 404
     
-@api.route('/chatbot', methods=['POST'])
-def chatbot():
-    user_message = request.json['message']
-    response = get_response(user_message)
-    return jsonify({'response': response})
+# @api.route('/chatbot', methods=['POST'])
+# def chatbot():
+#     user_message = request.json['message']
+#     response = get_response(user_message)
+#     return jsonify({'response': response})
 

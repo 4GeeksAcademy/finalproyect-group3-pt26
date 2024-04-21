@@ -57,7 +57,6 @@ const Layout = () => {
                         <Route element={<Contact />} path="/contact" />
                         <Route element={<Reservas />} path="/reservas" />
                     </Routes>
-                    <Chatbot />
                     <Footer />
                 </ScrollToTop>
             </BrowserRouter>

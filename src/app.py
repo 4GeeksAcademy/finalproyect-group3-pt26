@@ -10,14 +10,10 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
-
-
-
-#copiado de la documentacion
+#Copiado desde la pag oficial
 from flask_jwt_extended import JWTManager
 
 # from models import Person
-
 
 ENV = "development" if os.getenv("FLASK_DEBUG") == "1" else "production"
 static_file_dir = os.path.join(os.path.dirname(
@@ -73,7 +69,7 @@ def sitemap():
 @app.route('/<path:path>', methods=['GET'])
 def serve_any_other_file(path):
     if not os.path.isfile(os.path.join(static_file_dir, path)):
-       path = 'index.html'
+        path = 'index.html'
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0  # avoid cache memory
     return response
