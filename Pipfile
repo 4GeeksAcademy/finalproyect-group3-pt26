@@ -19,6 +19,9 @@ cloudinary = "*"
 flask-admin = "*"
 typing-extensions = "*"
 flask-jwt-extended = "*"
+numpy = "*"
+tensorflow = "*"
+scikit-learn = "*"
 
 [requires]
 python_version = "3.10"
