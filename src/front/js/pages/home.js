@@ -8,7 +8,7 @@ import { Search } from "./search";
 import { Footer } from "../component/footer";
 import { Recomendaciones } from "./recomendaciones";
 import { Testimoniales } from "./testimoniales";
-import {Chatbot} from "./chatbot";
+
 
 
 export const Home = () => {
@@ -50,9 +50,7 @@ export const Home = () => {
 			<div >
 				<Testimoniales />
 			</div>
-			<div >
-				<Chatbot />
-			</div>
+			
 		</>
 	);
 };
