@@ -549,3 +549,5 @@ def get_user_reservations(user_id):
     else:
         return jsonify({"msg": "Usuario no encontrado"}), 404
     
+    
+    
