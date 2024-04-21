@@ -10,7 +10,7 @@ export const Reservas = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        actions.ReservasUser(id)
+        actions.reservasUser(id)
     }, []);
 
     return (

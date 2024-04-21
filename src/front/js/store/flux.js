@@ -160,20 +160,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
-			ReservasUser: async (id) => {
+			reservasUser: async (id) => {
 
 				const store = getStore();
-				try {
-					const resp = await fetch(process.env.BACKEND_URL + `/api/users/${Id}/reservations`)
-					const data = await resp.json();
-					setStore({ reservasUser: data })
-				}
-				catch (error) {
-					console.log(Error, error);
-				}
+				// try {
+				const resp = await fetch(process.env.BACKEND_URL + `/api/users/${id}/reservations`)
+				const data = await resp.json();
+				setStore({ reservasUser: data })
+				// console.log(data);
+				// }
+				// catch (error) {
+				// 	console.log(Error, error);
+				// }
 
 				// try {
-				// 	const resp = await fetch(process.env.BACKEND_URL + `/api/users/${Id}/reservations`, {
+				// 	const resp = await fetch(process.env.BACKEND_URL + `/api/users/${id}/reservations`, {
 				// 		method: "GET",
 				// 		// headers: {
 				// 		// 	"Authorization": "Bearer " + localStorage.getItem("token")
