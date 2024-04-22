@@ -7,11 +7,11 @@ import video from "../../img/reservas.mp4"
 export const Reservas = () => {
     const { store, actions } = useContext(Context);
 
-    const { id } = useParams();
+    // const { id } = useParams();
 
     useEffect(() => {
-        actions.ReservasUser(id)
-    }, [id]);
+        actions.ReservasUser()
+    }, []);
 
     return (
         <>
@@ -50,23 +50,28 @@ export const Reservas = () => {
                     </div>
 
                     <div className="container text-center">
+                
                         {store.reservasUser.map((reserva, id) => (
-                            <div key={reserva.id} className="row fatherCardReserva">
+                            <div key={id} className="row fatherCardReserva">
                                 <div className="col-5 cardReserva">
                                     <div className="row">
                                         <div className='col'><h3>Reserva</h3></div>
-                                        <div className='col'>Fecha de inicio: {reserva.fecha_inicio}</div>
-                                        <div className='col'>Fecha final: {reserva.fecha_final}</div>
-                                        <div className='col'>Tour: {reserva.id_tour}</div>
-                                        <div className='col'>Paquete: {reserva.id_paquete}</div>
-                                        <div className='col'>Hotel: {reserva.id_hotel}</div>
+                                        <div className='col'><img src="https://lesroches.edu/wp-content/uploads/2023/03/tour-1.png" alt="viajes" style={{ width: '288px' }} /></div>
+                                        {reserva.fecha_inicio ? <div className='col'>Fecha de inicio: {reserva.fecha_inicio}</div> : null}
+                                        {reserva.fecha_final ? <div className='col'>Fecha final: {reserva.fecha_final}</div> : null}
+                                        {reserva.id_tour ? <div className='col'>Tour: {reserva.id_tour}</div> : null}
+                                        {reserva.id_paquete ? <div className='col'>Paquete: {reserva.id_paquete}</div> : null}
+                                        {reserva.id_hotel ? <div className='col'>Hotel: {reserva.id_hotel}</div> : null}
+                                        <button>Cancelar</button>
                                     </div>
                                 </div>
                             </div>
+                        
                         ))}
                     </div>
+                    
 
-                    {/* <div className="container text-center">
+                    <div className="container text-center">
                         <div className="row fatherCardReserva">
                             <div className="col-5 cardReserva">
                                 <div className="row">
@@ -110,8 +115,8 @@ export const Reservas = () => {
                                     <img className='imgReservas' src='https://alejandria-resort.hoteles-santander.com/data/Images/OriginalPhoto/8184/818467/818467346/image-bucaramanga-hotel-alejandria-resort-10.JPEG' />
                                 </div>
                             </div>
-                        </div> */}
-                    {/* </div > */}
+                        </div> 
+                    </div >
                 </>
             }
         </>

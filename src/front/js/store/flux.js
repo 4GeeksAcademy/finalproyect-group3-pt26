@@ -174,7 +174,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if (resp.ok) {
 						const data = await resp.json();
-						return data; // Devuelve las reservas obtenidas
+						setStore({reservasUser: data })
+						
 					} else {
 						console.error("Error al obtener las reservas del usuario");
 						return null;
