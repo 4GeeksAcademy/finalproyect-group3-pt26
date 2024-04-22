@@ -21,7 +21,8 @@ import jwt
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
-cors = CORS(api, resources={r"/api/*": {"origins": "https://didactic-space-engine-5vr6grx66592pv54-3000.app.github.dev"}})
+# cors = CORS(api, resources={r"/api/*": {"origins": "https://didactic-space-engine-5vr6grx66592pv54-3000.app.github.dev"}})
+CORS(api)
 
 
 @api.route('/')
