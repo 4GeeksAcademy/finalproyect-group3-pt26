@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Context } from '../store/appContext';
 import { useParams } from "react-router-dom";
+import "../../styles/home.css";
 
 export const SingleHotel = () => {
 
@@ -49,6 +50,8 @@ export const SingleHotel = () => {
         if (resp.ok) {
             console.log('Hotel reservation successfully made');
             setReserva(data);
+            alert("Reserva Exitosa")
+
         } else {
             console.log('Error, please trying again or request assistance from a Travelo agent');
         }
@@ -65,20 +68,20 @@ export const SingleHotel = () => {
                 <>
                     <div className="container">
                         <div className="row">
-                            <div className="col">
+                            <div className="col d-flex flex-column align-items-center">
                                 <div className="col-12 col-md-6 ">
                                     <img src={`https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`} className="w-90 img-thumbnail h-100px" />
                                 </div>
                                 <div className="col-12 col-md-6 ">
                                     {singleHotel &&
-                                        <div style={{ textAlign: 'center', padding: '40px' }}>
-                                            <h1>{singleHotel.name}</h1>
-                                            <p>{singleHotel.descripcion}</p>
-                                            <p>{singleHotel.precio}$ per night</p>
+                                        <div className='d-flex flex-column align-items-center' style={{ textAlign: 'center', padding: '40px' }}>
+                                            <h1 className='h1SingleHotel' >{singleHotel.name}</h1>
+                                            <p className='pSingleHotel' >{singleHotel.descripcion}</p>
+                                            <p className='pSingleHotel' >{singleHotel.precio}$ per night</p>
                                         </div>
                                     }
                                     <div className='d-flex justify-content-center align-items-center'>
-                                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <button type="button" className="btn btnSingleHotel mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                             Check and Book
                                         </button>
                                     </div>
@@ -107,7 +110,7 @@ export const SingleHotel = () => {
                                             </div>
                                             <div className="modal-footer">
                                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" className="btn btn-primary" onClick={bookHotel}>Book</button>
+                                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={bookHotel}>Book</button>
                                             </div>
                                         </div>
                                     </div>

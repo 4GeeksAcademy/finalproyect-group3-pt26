@@ -221,3 +221,26 @@
    color: #fff;
 }
 /*FIN DE EL APARTADO DE CONTACT.JS TODOS LOS ESTILOS COMENZARAN EN CON*/
+
+
+
+/* INICIO ESTILOS SINGLE HOTEL */
+.h1SingleHotel{
+    border-bottom: 5px solid #4cc7d4;
+    border-radius: 10px;
+    width: 450px;
+}
+.pSingleHotel{
+    border-bottom: 3px solid #4cc7d4;
+    border-radius: 7px;
+    width: 340px;
+    margin: 10px;
+}
+.btnSingleHotel{
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+/* FIN SINGLE HOTEL */
