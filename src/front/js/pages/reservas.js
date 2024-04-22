@@ -48,7 +48,7 @@ export const Reservas = () => {
                     <div className='row' >
                         <div className='col d-flex justify-content-center'><span style={{ "fontSize": "60px", "borderBottom": "7px solid #48cae4" }} >Tus Reservas</span></div>
                     </div>
-
+      {/* mapeo que muestra las reservas */}
                     <div className="container text-center">
                 
                         {store.reservasUser.map((reserva, id) => (
@@ -69,7 +69,7 @@ export const Reservas = () => {
                         
                         ))}
                     </div>
-                    
+                    {/* ---> Fin del mapeo de Reservas<-- */}
 
                     <div className="container text-center">
                         <div className="row fatherCardReserva">
