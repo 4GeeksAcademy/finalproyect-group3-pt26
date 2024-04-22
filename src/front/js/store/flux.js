@@ -179,6 +179,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error("Error al obtener las reservas del usuario");
 						return null;
 					}
+					
 				} catch (error) {
 					console.error("Error al obtener las reservas del usuario", error);
 					return null;
