@@ -160,7 +160,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
-			ReservasUser: async () => {
+			reservasUser: async () => {
 
 				const store = getStore();
 
@@ -174,13 +174,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if (resp.ok) {
 						const data = await resp.json();
-						setStore({reservasUser: data })
-						
+						setStore({ reservasUser: data })
+
 					} else {
 						console.error("Error al obtener las reservas del usuario");
 						return null;
 					}
-					
+
 				} catch (error) {
 					console.error("Error al obtener las reservas del usuario", error);
 					return null;

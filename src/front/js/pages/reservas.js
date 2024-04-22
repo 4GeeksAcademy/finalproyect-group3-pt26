@@ -10,7 +10,7 @@ export const Reservas = () => {
     // const { id } = useParams();
 
     useEffect(() => {
-        actions.ReservasUser()
+        actions.reservasUser()
     }, []);
 
     return (
@@ -48,9 +48,9 @@ export const Reservas = () => {
                     <div className='row' >
                         <div className='col d-flex justify-content-center'><span style={{ "fontSize": "60px", "borderBottom": "7px solid #48cae4" }} >Tus Reservas</span></div>
                     </div>
-      {/* mapeo que muestra las reservas */}
+                    {/* mapeo que muestra las reservas */}
                     <div className="container text-center">
-                
+
                         {store.reservasUser.map((reserva, id) => (
                             <div key={id} className="row fatherCardReserva">
                                 <div className="col-5 cardReserva">
@@ -66,12 +66,12 @@ export const Reservas = () => {
                                     </div>
                                 </div>
                             </div>
-                        
+
                         ))}
                     </div>
                     {/* ---> Fin del mapeo de Reservas<-- */}
 
-                    <div className="container text-center">
+                    {/* <div className="container text-center">
                         <div className="row fatherCardReserva">
                             <div className="col-5 cardReserva">
                                 <div className="row">
@@ -116,7 +116,7 @@ export const Reservas = () => {
                                 </div>
                             </div>
                         </div> 
-                    </div >
+                    </div > */}
                 </>
             }
         </>
