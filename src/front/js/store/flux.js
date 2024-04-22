@@ -186,6 +186,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return null;
 				}
 			},
+
+			deleteReservation: async (id) => {
+				const store = getStore();
+				try {
+					const resp = await fetch(process.env.BACKEND_URL + `/reservations/${id}`, {
+						method: 'DELETE',
+						// headers: {
+						// 	'Authorization': `Bearer ${store.token}`,
+						// 	'Content-Type': 'application/json'
+						// }
+					});
+					if (!resp.ok) {
+						throw new Error('Failed to delete reservation');
+					}
+					const updatedReservas = store.reservasUser.filter(reserva => reserva.id !== id);
+					setStore({ reservasUser: updatedReservas });
+				} catch (error) {
+					console.error('Error deleting reservation:', error);
+				}
+			}
 		}
 	};
 };

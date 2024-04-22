@@ -7,11 +7,15 @@ import video from "../../img/reservas.mp4"
 export const Reservas = () => {
     const { store, actions } = useContext(Context);
 
-    // const { id } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
         actions.reservasUser()
     }, []);
+
+    const deleteRes = (id) => {
+        actions.deleteReservation(id);
+    }
 
     return (
         <>
@@ -62,7 +66,7 @@ export const Reservas = () => {
                                         {reserva.id_tour ? <div className='col'>Tour: {reserva.id_tour}</div> : null}
                                         {reserva.id_paquete ? <div className='col'>Paquete: {reserva.id_paquete}</div> : null}
                                         {reserva.id_hotel ? <div className='col'>Hotel: {reserva.id_hotel}</div> : null}
-                                        <button>Cancelar</button>
+                                        <button onClick={() => deleteRes(reserva.id)}>Cancelar</button>
                                     </div>
                                 </div>
                             </div>
