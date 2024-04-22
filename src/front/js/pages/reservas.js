@@ -11,7 +11,7 @@ export const Reservas = () => {
 
     useEffect(() => {
         actions.ReservasUser(id)
-    }, []);
+    }, [id]);
 
     return (
         <>
@@ -50,7 +50,7 @@ export const Reservas = () => {
                     </div>
 
                     <div className="container text-center">
-                        {store.reservasUser.map((reserva) => (
+                        {store.reservasUser.map((reserva, id) => (
                             <div key={reserva.id} className="row fatherCardReserva">
                                 <div className="col-5 cardReserva">
                                     <div className="row">

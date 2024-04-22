@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify, url_for
 from flask import Blueprint
 from api.models import db, User, Tour, Hotel, Paquete, Reserva
 from api.utils import generate_sitemap, APIException
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from datetime import datetime
 from datetime import timedelta
 
@@ -21,7 +21,8 @@ import jwt
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
-CORS(api)
+cors = CORS(api, resources={r"/api/*": {"origins": "https://didactic-space-engine-5vr6grx66592pv54-3000.app.github.dev"}})
+
 
 @api.route('/')
 def sitemap():
@@ -536,10 +537,27 @@ def add_new_hotel_reserva(hotel_id):
     return jsonify({'msg': 'Reservation created successfully'}), 201
 
 #obtener todas las reservas asociadas a un usuario 
-@api.route('/users/<int:user_id>/reservations', methods=['GET'])
-def get_user_reservations(user_id):
+# @api.route('/users/<int:user_id>/reservations', methods=['GET'])
+# def get_user_reservations(user_id):
+#     user = User.query.filter_by(id=user_id).first()
+    
+#     if user:
+#         user_reservations = user.todas_reservas
+#         if user_reservations:
+#             return jsonify([reserva.serialize() for reserva in user_reservations])
+#         else:
+#             return jsonify({"msg": "No se encontraron reservas para este usuario"}), 404
+#     else:
+#         return jsonify({"msg": "Usuario no encontrado"}), 404
 
-    user = User.query.filter_by(id=user_id).first()
+# @cross_origin
+@api.route('/users/reservations', methods=['GET'])
+@jwt_required()
+def get_user_reservations():
+    current_user_email = get_jwt_identity()
+
+    user = User.query.filter_by(email=current_user_email).first()
+    
     if user:
         user_reservations = user.todas_reservas
         if user_reservations:
@@ -548,6 +566,3 @@ def get_user_reservations(user_id):
             return jsonify({"msg": "No se encontraron reservas para este usuario"}), 404
     else:
         return jsonify({"msg": "Usuario no encontrado"}), 404
-    
-    
-    

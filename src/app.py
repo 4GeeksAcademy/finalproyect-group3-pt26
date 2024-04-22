@@ -11,11 +11,12 @@ from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
 
+
+
 #Copiado desde la pag oficial
 from flask_jwt_extended import JWTManager
 
-# from models import Person
-
+# from models import Persona
 ENV = "development" if os.getenv("FLASK_DEBUG") == "1" else "production"
 static_file_dir = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), '../public/')
