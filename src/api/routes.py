@@ -15,13 +15,13 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask import make_response
 import jwt
-
+from api.chatbot_interactivo import get_response
 
 
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
-# cors = CORS(api, resources={r"/api/*": {"origins": "https://didactic-space-engine-5vr6grx66592pv54-3000.app.github.dev"}})
+#cors = CORS(api, resources={r"/api/*": {"origins": "https://didactic-space-engine-5vr6grx66592pv54-3000.app.github.dev"}})
 CORS(api)
 
 
@@ -567,3 +567,15 @@ def get_user_reservations():
             return jsonify({"msg": "No se encontraron reservas para este usuario"}), 404
     else:
         return jsonify({"msg": "Usuario no encontrado"}), 404
+    
+#chatbot
+    
+@api.route('/chatbot', methods=['POST'])
+def chatbot():
+    data = request.get_json()
+    message = data['message']
+    response = get_response(message)
+    return jsonify({'response': response})
+
+if __name__ == '__main__':
+    api.run(debug=True)

@@ -1,0 +1,112 @@
+{
+    "intents": [
+        {
+            "tag": "saludo",
+            "patterns": [
+                "Hola",
+                "Cómo estás",
+                "¿Hay alguien ahí?",
+                "Ey",
+                "Hola",
+                "Hola",
+                "Buen día"
+            ],
+            "responses": [
+                "Hola, gracias por preguntar",
+                "Qué bueno verte de nuevo",
+                "Hola, ¿en qué puedo ayudar?",
+                "hola, gracias por contactarnos, ¿en qué puedo ayudar?"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "adiós",
+            "patterns": [
+                "Adiós",
+                "Hasta luego",
+                "Adiós",
+                "Un placer charlar contigo, adiós",
+                "Hasta la próxima"
+            ],
+            "responses": [
+                "¡Nos vemos!",
+                "Que tenga un lindo día",
+                "¡Adiós! Vuelve pronto."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "gracias",
+            "patterns": [
+                "Gracias",
+                "Gracias",
+                "Eso es útil",
+                "Genial gracias",
+                "Gracias por ayudarme"
+            ],
+            "responses": [
+                "¡Encantado de ayudarle!",
+                "¡En cualquier momento!",
+                "Mi placer"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "sin respuesta",
+            "patterns": [],
+            "responses": [
+                "Lo siento, no puedo entenderte",
+                "Por favor, dame más información sobre los paquetes, tours y alojamientos",
+                "No estoy seguro de comprender"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "opciones",
+            "patterns": [
+                "¿Cómo podrías ayudarme?",
+                "¿Podrías asesorarme con los paquetes?",
+                "¿Podrías asesorarme con los tours?",
+                "¿Podrías asesorarme con un alojamiento?",
+                "¿Podrías ayudarme con una reserva?"
+            ],
+            "responses": [
+                "Soy un asistente personal de la agencia de viajes TRAVELO..",
+                "Seré tu guía personal en cada proyecto de viaje que desees realizar.",
+                "Somos una agencia de viajes con múltiples servicios y variedad de precios y promociones."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "viajes",
+            "patterns": [
+                "¿Qué tipo de viajes con buenas tarifas ofrecen?",
+                "¿Puedes decirme cuál es el mejor paquete que ofrecen?",
+                "¿Puedes decirme cuál es el mejor alojamiento que ofrecen?",
+                "¿Puedes decirme cuál es el mejor tour que ofrecen?",
+                "¿Pueden ayudarme con una reserva?"
+            ],
+            "responses": [
+                "¡Sin duda, el mejor alojamiento que existe es el Hesperia, un hotel estrella!",
+                "¡Sin duda, el mejor tour que existe es el de Margarita!",
+                "¡Sin duda, el mejor paquete que existe es el de Dubai!",
+                "Soy fanático de Dubai. Es mi destino favorito. Si no me crees, pruébalo tú mismo."
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "broma",
+            "patterns": [
+                "Cuéntame un chiste",
+                "¿Puedes contarme un chiste?",
+                "Diviértete",
+                "Hazme reír con una broma graciosa",
+                "Cuéntame algo divertido"
+            ],
+            "responses": [
+                "¿Perdón por no responder? Estoy ocupado recolectando latas para mi próximo viaje."
+            ],
+            "context": [""]
+        }
+    ]
+}
