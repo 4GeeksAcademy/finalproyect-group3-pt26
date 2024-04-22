@@ -13,6 +13,7 @@ export const Reservas = () => {
 
     useEffect(() => {
         actions.reservasUser()
+            .then(reservas => setReservas(reservas));
     }, []);
 
     const deleteRes = (id) => {
