@@ -33,7 +33,7 @@ export const Contact = () => {
                         <div className="col-6" style={{ "padding": "5px" }}><img className="CONimg" src="https://ca.slack-edge.com/T0BFXMWMV-U066UAJES95-af7e07c113c8-512" alt="Clisdermar" /></div>
                     </div>
                 </div>
-                <div className="col-5 d-flex align-items-center"><div className="CONcontacto">Te gustaria contactar con nuestra empresa?</div></div>
+                <div className="col-5 d-flex align-items-center"><div className="CONcontacto">Contacta con Un Asesor</div></div>
             </div>
 
 

@@ -10,6 +10,7 @@ export const Reservas = () => {
     const { id } = useParams();
 
     const [showModal, setShowModal] = useState(false);
+    const [reservas, setReservas] = useState([]);
 
     useEffect(() => {
         actions.reservasUser()

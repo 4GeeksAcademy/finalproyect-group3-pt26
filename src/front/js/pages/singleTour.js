@@ -52,6 +52,7 @@ export const SingleTour = () => {
         if (resp.ok) {
             console.log('Hotel reservation successfully made:',data);
             setReserva(data);
+            alert("Reserva Exitosa")
         } else {
             console.log('Error, please trying again or request assistance from a Travelo agent');
         }
@@ -110,7 +111,7 @@ export const SingleTour = () => {
                                             </div>
                                             <div className="modal-footer">
                                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" className="btn btn-primary" onClick={bookTour}>Book</button>
+                                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={bookTour}>Book</button>
                                             </div>
                                         </div>
                                     </div>
