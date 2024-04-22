@@ -190,7 +190,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			deleteReservation: async (id) => {
 				const store = getStore();
 				try {
-					const resp = await fetch(process.env.BACKEND_URL + `/reservations/${id}`, {
+					const resp = await fetch(process.env.BACKEND_URL + `api/reservations/${id}`, {
 						method: 'DELETE',
 						// headers: {
 						// 	'Authorization': `Bearer ${store.token}`,
