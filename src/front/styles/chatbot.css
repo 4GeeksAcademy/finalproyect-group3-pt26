@@ -4,6 +4,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
+    
   }
   
   .chat-button {
@@ -25,13 +26,17 @@
   
   .chat-modal {
     position: fixed;
-    bottom: 90px;
+    bottom: 20px;
     right: 20px;
-    width: 300px;
+    width: 350px; /* Ajusta el ancho del modal según tus necesidades */
+    height: 500px; /* Ajusta la altura del modal según tus necesidades */
     border-radius: 10px;
     background-color: #f8f8f8;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Habilita la barra de desplazamiento vertical */
+    border: 1px solid #ccc; /* Borde del modal */
   }
+  
   
   .header {
     background-color: #007bff;
@@ -70,16 +75,19 @@
   
   .input-container {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Cambia la dirección de los elementos a columna */
+    align-items: stretch; /* Estira los elementos a lo largo del eje transversal */
     padding: 10px;
   }
   
+  
+  
+  
   .chat-input {
-    flex: 1;
     padding: 8px;
+    margin-bottom: 10px; /* Agrega un margen inferior para separar el input del botón */
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-right: 10px;
   }
   
   .send-button {
@@ -95,3 +103,4 @@
   .send-button:hover {
     background-color: #0056b3;
   }
+

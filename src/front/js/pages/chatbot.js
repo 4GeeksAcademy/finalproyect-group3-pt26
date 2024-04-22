@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
-import { MdClose, MdChat } from 'react-icons/md'; // Importa los iconos de cierre y chat
-import "../../styles/chatbot.css"; // Importa los estilos CSS
+import { MdClose, MdChat } from 'react-icons/md'; 
+import "../../styles/chatbot.css"; 
 
 export const Chatbot = () => {
   const [showModal, setShowModal] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const messagesEndRef = useRef(null);
 
   const toggleModal = () => setShowModal(!showModal);
 
@@ -14,17 +15,36 @@ export const Chatbot = () => {
 
   const sendMessage = async () => {
     if (inputValue.trim() === '') return;
-
-    setMessages([...messages, { text: inputValue, sender: 'user' }]);
+  
+    // Agregar el mensaje del usuario al historial de mensajes
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: inputValue, sender: 'user' },
+    ]);
     setInputValue('');
-
+  
     try {
       const response = await axios.post(chatbotUrl, { message: inputValue });
-      setMessages([...messages, { text: response.data.response, sender: 'bot' }]);
+      // Agregar la respuesta del bot al historial de mensajes
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: response.data.response, sender: 'bot' },
+      ]);
     } catch (error) {
       console.error('Error al enviar mensaje al chatbot:', error);
     }
+  }
+
+  const clearMessages = () => {
+    setMessages([]);
   };
+
+  useEffect(() => {
+    // Scroll automático hacia abajo cuando cambian los mensajes
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
 
   return (
     <div className={`chatbot-container ${showModal ? 'active' : ''}`}>
@@ -35,7 +55,7 @@ export const Chatbot = () => {
         <div className="chat-modal">
           <div className="header">
             <h3>Chatbot</h3>
-            <MdClose className="close-icon" onClick={toggleModal} />
+            <MdClose className="close-icon" onClick={() => { toggleModal(); clearMessages(); }} />
           </div>
           <div className="chat-messages">
             {messages.map((message, index) => (
@@ -43,6 +63,7 @@ export const Chatbot = () => {
                 {message.text}
               </div>
             ))}
+            <div ref={messagesEndRef} />
           </div>
           <div className="input-container">
             <input

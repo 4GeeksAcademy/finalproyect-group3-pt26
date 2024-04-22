@@ -9,7 +9,10 @@
                 "Ey",
                 "Hola",
                 "Hola",
-                "Buen día"
+                "Buen día",
+                "Buenas tardes",
+                "Buenas noches",
+                "¿Qué tal?"
             ],
             "responses": [
                 "Hola, gracias por preguntar",
@@ -30,7 +33,7 @@
             ],
             "responses": [
                 "¡Nos vemos!",
-                "Que tenga un lindo día",
+                "Que tenga un buen día",
                 "¡Adiós! Vuelve pronto."
             ],
             "context": [""]
@@ -39,25 +42,33 @@
             "tag": "gracias",
             "patterns": [
                 "Gracias",
-                "Gracias",
-                "Eso es útil",
-                "Genial gracias",
-                "Gracias por ayudarme"
+                "Muchas gracias",
+                "Te agradezco",
+                "Eso me ayuda mucho",
+                "Excelente, gracias"
             ],
             "responses": [
-                "¡Encantado de ayudarle!",
-                "¡En cualquier momento!",
-                "Mi placer"
+                "Lo siento, no puedo entenderte",
+                "Por favor, dame más información sobre los paquetes, tours y alojamientos",
+                "No estoy seguro de comprender" 
             ],
             "context": [""]
         },
         {
-            "tag": "sin respuesta",
+            "tag": "broma",
             "patterns": [],
             "responses": [
-                "Lo siento, no puedo entenderte",
-                "Por favor, dame más información sobre los paquetes, tours y alojamientos",
-                "No estoy seguro de comprender"
+              
+                 "¿Por qué los pájaros no usan Facebook? Porque ya tienen Twitter.",
+                "¿Qué hace una abeja en el gimnasio? ¡Zum-ba!",
+                "¿Cómo se llama un perro mago? ¡Labracadabrador!",
+                "¿Por qué los peces no pueden hacer tratos? Porque siempre están nadando en la red.",
+                "¿Qué le dice una iguana a su hermana gemela? ¡Iguanita!",
+                "¿Qué hace una abeja en el gimnasio? ¡Zum-ba!",
+                "¿Cómo se llama un pez sin ojos? ¡Psh!",
+                "¿Qué le dice un jardinero a otro? ¡Qué hay de nuevo, hortaliza!",
+                "¿Cómo llamas a una abeja que viene de América? USB.",
+                "¿Qué hace una abeja en el gimnasio? ¡Zum-ba!"
             ],
             "context": [""]
         },
@@ -87,10 +98,9 @@
                 "¿Pueden ayudarme con una reserva?"
             ],
             "responses": [
-                "¡Sin duda, el mejor alojamiento que existe es el Hesperia, un hotel estrella!",
-                "¡Sin duda, el mejor tour que existe es el de Margarita!",
-                "¡Sin duda, el mejor paquete que existe es el de Dubai!",
-                "Soy fanático de Dubai. Es mi destino favorito. Si no me crees, pruébalo tú mismo."
+                "Soy un asistente personal de la agencia de viajes TRAVELO..",
+                "Seré tu guía personal en cada proyecto de viaje que desees realizar.",
+                "Somos una agencia de viajes con múltiples servicios y variedad de precios y promociones."
             ],
             "context": [""]
         },
@@ -104,7 +114,33 @@
                 "Cuéntame algo divertido"
             ],
             "responses": [
-                "¿Perdón por no responder? Estoy ocupado recolectando latas para mi próximo viaje."
+                "¡Sin duda, el mejor alojamiento que existe es el Hesperia, un hotel estrella!",
+                "¡Sin duda, el mejor tour que existe es el de Margarita!",
+                "¡Sin duda, el mejor paquete que existe es el de Dubai!",
+                "Soy fanático de Dubai. Es mi destino favorito. Si no me crees, pruébalo tú mismo.",
+                "¡Encantado de ayudarte!",
+                "¡En cualquier momento!",
+                "Mi placer"
+
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "consultas_generales",
+            "patterns": [
+                "¿Puedes recomendarme un destino de playa?",
+                "¿Cuál es el mejor momento para visitar Europa?",
+                "¿Qué documentos necesito para viajar al extranjero?",
+                "¿Cuál es la mejor forma de encontrar vuelos económicos?",
+                "¿Qué actividades puedo hacer en [destino]?"
+            ],
+            "responses": [
+                "¡Por supuesto! Te recomendaría [Destino de playa]. Es conocido por sus hermosas playas, aguas cristalinas y una amplia gama de actividades acuáticas. ¡Es perfecto para unas vacaciones relajantes!",
+                "El mejor momento para visitar Europa realmente depende de tus preferencias. La primavera y el otoño suelen ser ideales debido al clima templado y menos turistas. Sin embargo, cada temporada tiene su encanto único.",
+                "Los documentos necesarios para viajar al extranjero pueden variar según el destino y tu país de origen. Generalmente, necesitarás un pasaporte válido y, en algunos casos, una visa. Es importante verificar los requisitos específicos de cada país antes de viajar.",
+                "Para encontrar vuelos económicos, te recomendaría utilizar sitios web y aplicaciones de comparación de precios, suscribirte a boletines de ofertas de aerolíneas y ser flexible con las fechas y destinos de viaje.",
+                "Las actividades que puedes hacer en [destino] son variadas y emocionantes. Desde explorar monumentos históricos hasta disfrutar de la gastronomía local, pasando por actividades al aire libre como senderismo, buceo o simplemente relajarte en la playa. ¡Hay algo para todos los gustos!"
+             
             ],
             "context": [""]
         }
