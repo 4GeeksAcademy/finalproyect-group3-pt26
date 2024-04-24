@@ -11,7 +11,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			paquetes: [],
 			tours: [],
 			accommodations: [],
-			reservasUser: []
+			reservasUser: [],
+			allUsers: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -205,6 +206,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.error('Error deleting reservation:', error);
 				}
+			},
+
+			getAllUsers: async () => {
+				const store = getStore();
+				const resp = await fetch(process.env.BACKEND_URL + "api/users")
+				const data = await resp.json()
+				setStore({ allUsers: data })
 			}
 		}
 	};
