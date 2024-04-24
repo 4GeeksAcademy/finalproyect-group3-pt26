@@ -32,7 +32,7 @@ export const Navbar = () => {
             navigate('/');
         }
     }
-    const handleReservas = async() =>{
+    const handleReservas = async () => {
 
     }
 
@@ -59,6 +59,7 @@ export const Navbar = () => {
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <li><Link className="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>
                             <li><Link to='/reservas' className="dropdown" href="#" onClick={handleReservas}>Reservas</Link></li>
+                            <li><Link to='/admin' className="dropdown">Admin</Link></li>
                         </ul>
                     </div>
                 )}
