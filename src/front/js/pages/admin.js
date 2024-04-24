@@ -10,7 +10,7 @@ export const Admin = () => {
         actions.getAllUsers();
     }, []);
 
-    const adminUser = store.token && store.user && store.user.email === 'admin@4geeks.com';
+    const adminUser = store.token && store.user && store.user.username === 'Admin';
 
     return (
         <>
