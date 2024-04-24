@@ -57,9 +57,9 @@ export const Navbar = () => {
                         </span>
                         <BsPerson className="svg-icon" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" />
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <li><Link className="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>
-                            <li><Link to='/reservas' className="dropdown" href="#" onClick={handleReservas}>Reservas</Link></li>
                             <li><Link to='/admin' className="dropdown">Admin</Link></li>
+                            <li><Link to='/reservas' className="dropdown" href="#" onClick={handleReservas}>Reservas</Link></li>
+                            <li><Link className="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>    
                         </ul>
                     </div>
                 )}
