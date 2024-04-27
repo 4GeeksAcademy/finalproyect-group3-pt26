@@ -20,9 +20,9 @@ from api.chatbot_interactivo import get_response
 import firebase_admin
 from firebase_admin import credentials, storage
 
-cred = credentials.Certificate("./googleservices.json")
+cred = credentials.Certificate("./google-services.json")
 firebase_admin.initialize_app(cred, {
-    'storageBucket': "travelo-f8bc8.appspot.com"
+    'storageBucket': "travelo-aaaa3.appspot.com"
 })
 bucket = storage.bucket()
 
@@ -610,7 +610,7 @@ def upload_file():
     from urllib.parse import quote
 
     # Generar la URL permanente manualmente
-    bucket_name = "travelo-f8bc8.appspot.com"
+    bucket_name = "travelo-aaaa3.appspot.com"
     encoded_image_name = quote(image.filename)
     url = f'https://storage.googleapis.com/{bucket_name}/{encoded_image_name}'
 
