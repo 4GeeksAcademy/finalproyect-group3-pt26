@@ -14,7 +14,7 @@ export const Travel = () => {
                 <img className="row TRimagen " src={travel} alt="" width={"350px"} height={"350px"} />
             </div>
             {/* AQUI ESTAN LAS CARDS DE LOS PAISES */}
-            <div className="container" style={{ marginTop: "40px" }}>
+            <div className="container" style={{ marginTop: "40px", "display": "contents" }}>
                 <h2 style={{ textAlign: "center" }}>Latinoamerica</h2>
                 <div className="row" >
                     <div className="col-4">
@@ -82,7 +82,7 @@ export const Travel = () => {
                 </div>
             </div>
 
-            <div className="container" style={{ marginTop: "40px" }}>
+            <div className="container" style={{ marginTop: "40px", "display": "contents" }}>
                 <h2 style={{ textAlign: "center" }}>Europa</h2>
                 <div className="row" >
                     <div className="col-4">

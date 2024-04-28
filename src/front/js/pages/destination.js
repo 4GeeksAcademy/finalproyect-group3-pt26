@@ -14,7 +14,7 @@ export const Destination = () => {
 						<div className="card-body">
 							<h4 className="text-center">Hotels reservations</h4>
 							<div className="d-flex justify-content-center">
-								<Link to={'/accommodations'} className="btn btn-primary">See options</Link>
+								<Link to={'/accommodations'} className="btn btn-primary" style={{ "borderRadius": "10px", "border": "none", "fontSize": "20px" }}>See options</Link>
 							</div>
 						</div>
 					</div>
@@ -24,7 +24,7 @@ export const Destination = () => {
 						<div className="card-body">
 							<h4 className="text-center">Tours</h4>
 							<div className="d-flex justify-content-center">
-								<Link to={'/tours'} className="btn btn-primary">See options</Link>
+								<Link to={'/tours'} className="btn btn-primary" style={{ "borderRadius": "10px", "border": "none", "fontSize": "20px" }}>See options</Link>
 							</div>
 						</div>
 					</div>
@@ -34,7 +34,7 @@ export const Destination = () => {
 						<div className="card-body">
 							<h4 className="text-center">Vacation Packages</h4>
 							<div className="d-flex justify-content-center">
-								<Link to={'/packages/'} className="btn btn-primary">See options</Link>
+								<Link to={'/packages/'} className="btn btn-primary" style={{ "borderRadius": "10px", "border": "none", "fontSize": "20px" }}>See options</Link>
 							</div>
 						</div>
 					</div>

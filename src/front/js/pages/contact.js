@@ -13,7 +13,7 @@ export const Contact = () => {
 
 
     return (<>
-        <div className="container text-center">
+        <div className="container text-center" style={{ "display": "contents" }}>
 
             <div className="row CONrow">
                 <div className="col-7 CONbox">

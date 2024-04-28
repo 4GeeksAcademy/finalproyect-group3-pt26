@@ -1,6 +1,7 @@
 section {
     margin: 5rem 0;
   }
+
   
   .title {
     text-align: center;
@@ -18,7 +19,7 @@ section {
     background-color: aliceblue;
     padding: 2rem;
     border-radius: 0.5rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: 0.3s ease-in-out;
   }
   

@@ -10,8 +10,8 @@ export const Search = () => {
             <div className="container">
                 <div className="left">
                     <h2>LUXURY INCLUDED VACATIONS FOR TWO PEOPLE</h2>
-                    <p>Come experience the very pinnacle of luxury Caribbean all-inclusive vacations for couples at Sandals Resorts. Our luxury beach resorts, set along the most gorgeous tropical settings and exquisite beaches in Saint Lucia, Jamaica, Antigua, The Bahamas, Grenada, Barbados and Curaçao, feature unlimited gourmet dining, unique bars serving premium liquors and wines, and every land and water sport, including complimentary green fees at our golf resorts and PADI® certified scuba diving at most resorts. If you are planning a wedding, Sandals is the leader in Caribbean destination weddings and honeymoon packages.</p>
-                    <div className="search-col-2">
+                    <p>"Embark on an unforgettable journey to luxury and relaxation with our exclusive all-inclusive vacations for two. Indulge in world-class accommodations, gourmet dining experiences, and endless activities tailored to create cherished memories for you and your loved one. From stunning beachfront resorts to secluded hideaways, our destinations offer the perfect setting for romance and rejuvenation. Whether you're celebrating a special occasion or simply seeking a well-deserved escape, our luxury packages ensure that every moment is filled with elegance and bliss. Treat yourselves to the ultimate getaway and let us pamper you with the finest amenities and personalized service, ensuring that your dream vacation becomes a reality."</p>
+                    <div className="search-col-2 d-flex justify-content-around">
                         <div className="box">
                             <div>
                                 <img src={Gold} alt="/" style={{ marginRight: '1rem' }} />
@@ -36,7 +36,7 @@ export const Search = () => {
                         <p className="timer">12 HOURS LEFT!</p>
                         <p className="offers">VIEW ALL CURRENT OFFERS</p>
                     </div>
-                    <form>
+                    <form className="d-flex  flex-column">
                         <div className="input-wrap">
                             <label>Destination</label>
                             <select>
@@ -52,11 +52,11 @@ export const Search = () => {
                         <div className="date">
                             <div className="input-wrap">
                                 <label>Check-In</label>
-                                <input type="date" />
+                                <input type="date" style={{ "width": "250px" }} />
                             </div>
                             <div className="input-wrap">
                                 <label>Check-Out</label>
-                                <input type="date" />
+                                <input type="date" style={{ "width": "250px" }} />
                             </div>
                         </div>
                         <button>Rates & Availabilities </button>
