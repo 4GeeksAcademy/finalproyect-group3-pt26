@@ -5,65 +5,51 @@ import { Link } from 'react-router-dom';
 export const Admin = () => {
 
     const { store, actions } = useContext(Context);
-    const { loading, setLoading } = useState(true);
+    // const { loading, setLoading } = useState(true);
 
     useEffect(() => {
         actions.getAllUsers()
-            .then(() => setLoading(!loading))
-            .catch((err) => console.error(err))
+            // .then(() => setLoading(!loading))
+            // .catch((err) => console.error(err))
     }, []);
 
     const adminUser = store.token && store.user && store.user.username === 'Admin';
-
     return (
         <>
             {
                 !adminUser ? (
                     <h4 className='text-center'>You cannot access this view. It is for admins only.</h4>
                 ) : (
-                    <div className="container">
-                        <h1 className="text-center">Registered Users</h1>
-                        {loading ? (
-                            <p>Loading users data...</p>
-                        ) : (
-                            <div>
-                                {store.allUsers.map(user => (
-                                    <div key={user.id} className="user-container">
-                                        <h4>Username: {user.username}</h4>
-                                        <p>Email: {user.email}</p>
-                                        {user.todas_reservas && user.todas_reservas.length > 0 ? (
-                                            <>
-                                                <h4>Reservations:</h4>
-                                                <table className="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Hotel</th>
-                                                            <th>Fecha de Inicio</th>
-                                                            <th>Fecha de Fin</th>
-                                                            <th>Tour</th>
-                                                            <th>Package</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        {user.todas_reservas.map(reserva => (
-                                                            <tr key={reserva.id}>
-                                                                <td>{reserva.id_hotel ? (<p>{reserva.id_hotel}</p>) : (<p>None</p>)}</td>
-                                                                <td>{reserva.fecha_inicio}</td>
-                                                                <td>{reserva.fecha_final}</td>
-                                                                <td>{reserva.id_tour ? (<p>{reserva.id_tour}</p>) : (<p>None</p>)}</td>
-                                                                <td>{reserva.id_paquete ? (<p>{reserva.id_paquete}</p>) : (<p>None</p>)}</td>
-                                                            </tr>
-                                                        ))}
-                                                    </tbody>
-                                                </table>
-                                            </>
-                                        ) : (
-                                            <p>No reservations found.</p>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        )}
+                    <div>
+
+                    <h3 style={{ marginLeft: "6rem" }}>Dashboard</h3>
+                    <div className="d-flex flex-row justify-content-center mt-3">
+                        
+                        <div className="card text-white bg-primary mb-3" style={{ maxWidth: "18rem",  marginRight: "1rem" }}>
+                            <div className="card-header">User</div>
+                            <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" className="card-img-top" alt="Imagen del usuario" />
+                            
+                           
+                        </div>
+                        <div className="card text-white bg-secondary mb-3 " style={{ maxWidth: "18rem", marginRight: "1rem" }}>
+                            <div className="card-header">Booking</div>
+                            <img src="https://static.vecteezy.com/system/resources/previews/032/430/083/non_2x/booking-icon-vector.jpg" className="card-img-top" alt="Imagen del booking" />
+                        </div>
+                        <div className="card text-white bg-success mb-3" style={{ maxWidth: "18rem", marginRight: "1rem"  }}>
+                            <div className="card-header">Add Tours</div>
+                            <img src="https://e7.pngegg.com/pngimages/916/856/png-clipart-travel-package-tour-computer-icons-vacation-traveler-angle-text.png" className="card-img-top" alt="Imagen de Tour" />
+                            
+                        </div>
+                        <div className="card text-white bg-danger mb-3 mr-1rem" style={{ maxWidth: "18rem",  marginRight: "1rem"  }}>
+                            <div className="card-header">Add Hotel</div>
+                            <img src="https://previews.123rf.com/images/vectorstockvadim/vectorstockvadim2007/vectorstockvadim200706677/150970301-blanco-icono-de-reserva-de-hotel-en-l%C3%ADnea-aislado-con-sombra-larga-concepto-de-dise%C3%B1o-de-reserva-en.jpg" className="card-img-top" alt="Imagen del Hotel" />
+                        </div>
+                        <div className="card text-white bg-info mb-3 mr-1rem" style={{ maxWidth: "18rem",  marginRight: "1rem"  }}>
+                            <div className="card-header">Add Packages</div>
+                            <img src="https://cdn-icons-png.freepik.com/512/7051/7051465.png" className="card-img-top" alt="Imagen de Packages" />
+                           
+                        </div>
+                    </div>
                     </div>
                 )
             }
