@@ -4,7 +4,6 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 
-
 import { Home } from "./pages/home";
 import { Accommodations } from "./pages/accommodations";
 import { Single } from "./pages/single";
@@ -28,10 +27,12 @@ import { Chatbot } from "./pages/chatbot";
 import { Admin } from "./pages/admin";
 
 
+
 //create your first component
 const Layout = () => {
     //the basename is used when your project is published in a subdirectory and not in the root of the domain
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
+
     const basename = process.env.BASENAME || "";
 
     if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
@@ -40,7 +41,8 @@ const Layout = () => {
         <div style={{ display: "grid", height: "100%", alignContent: "space-between" }}>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-                    <Navbar />
+                 <Navbar />
+                   
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Info />} path="/info" />
@@ -58,9 +60,12 @@ const Layout = () => {
                         <Route element={<Contact />} path="/contact" />
                         <Route element={<Reservas />} path="/reservas" />
                         <Route element={<Admin />} path="/admin" />
+                        
+
                     </Routes>
+                       
                     <Chatbot />
-                    <Footer />
+                     <Footer /> 
                 </ScrollToTop>
             </BrowserRouter>
 
