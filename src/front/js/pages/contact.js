@@ -23,9 +23,9 @@ export const Contact = () => {
                                 <h2 className="col CONname">Clisdermar</h2>
                                 <div className="row">
                                     <div className="col-4 ConSpace"> <Link to="/"><FaFacebook className="CONicon" /></Link></div>
-                                    <div className="col-4 ConSpace"> <Link to=""><FaInstagram className="CONicon" /></Link></div>
-                                    <div className="col-4 ConSpace"> <Link to=""><FaLinkedin className="CONicon" /></Link></div>
-                                    <div className="col-4 ConSpace"> <Link to=""><FaGithub className="CONicon" /> </Link> </div>
+                                    <div className="col-4 ConSpace"> <Link to="/"><FaInstagram className="CONicon" /></Link></div>
+                                    <div className="col-4 ConSpace"> <Link to="/"><FaLinkedin className="CONicon" /></Link></div>
+                                    <div className="col-4 ConSpace"> <Link to="/"><FaGithub className="CONicon" /> </Link> </div>
                                     <div className="col d-flex justify-content-center"><h4>Dev Fullstack</h4></div>
                                 </div>
                             </div>
