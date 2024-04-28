@@ -6,10 +6,12 @@ import Gold from '../../img/gold.png'
 
 export const Search = () => {
     return (
-        <div name='book' className='search'>
-            <div className="container">
+
+        <div>
+            <h2 className="title">LUXURY INCLUDED VACATIONS FOR TWO PEOPLE</h2>
+
+            <div name='book' className='search'>
                 <div className="left">
-                    <h2>LUXURY INCLUDED VACATIONS FOR TWO PEOPLE</h2>
                     <p>"Embark on an unforgettable journey to luxury and relaxation with our exclusive all-inclusive vacations for two. Indulge in world-class accommodations, gourmet dining experiences, and endless activities tailored to create cherished memories for you and your loved one. From stunning beachfront resorts to secluded hideaways, our destinations offer the perfect setting for romance and rejuvenation. Whether you're celebrating a special occasion or simply seeking a well-deserved escape, our luxury packages ensure that every moment is filled with elegance and bliss. Treat yourselves to the ultimate getaway and let us pamper you with the finest amenities and personalized service, ensuring that your dream vacation becomes a reality."</p>
                     <div className="search-col-2 d-flex justify-content-around">
                         <div className="box">
@@ -64,5 +66,6 @@ export const Search = () => {
                 </div>
             </div>
         </div>
+
     )
 }

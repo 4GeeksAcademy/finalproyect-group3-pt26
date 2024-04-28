@@ -1,6 +1,6 @@
-.container{
+/* .container{
     max-width: 1500px !important
-}
+} */
 
 .bg-image{
     margin: 50px 1px 50px 0px;
@@ -17,7 +17,7 @@
 }
 
 h2{
-    color: white;
+    color: rgb(12, 12, 12);
     font-size: 43px;
 }
 
