@@ -5,13 +5,7 @@ import { Link } from 'react-router-dom';
 export const Admin = () => {
 
     const { store, actions } = useContext(Context);
-    // const { loading, setLoading } = useState(true);
-
-    // useEffect(() => {
-    //     actions.getAllUsers()
-    //         // .then(() => setLoading(!loading))
-    //         // .catch((err) => console.error(err))
-    // }, []);
+   
 
     const adminUser = store.token && store.user && store.user.username === 'Admin';
     return (

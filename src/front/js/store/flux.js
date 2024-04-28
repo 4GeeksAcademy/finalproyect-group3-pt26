@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			accommodations: [],
 			reservasUser: [],
 			allUsers: [],
-			allReservations:[]
+			allReservations: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
