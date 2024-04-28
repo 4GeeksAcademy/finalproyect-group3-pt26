@@ -12,7 +12,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			tours: [],
 			accommodations: [],
 			reservasUser: [],
-			allUsers: []
+			allUsers: [],
+			allReservations:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -213,7 +214,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const resp = await fetch(process.env.BACKEND_URL + "api/users")
 				const data = await resp.json()
 				setStore({ allUsers: data })
+			},
+
+			getAllReservations: async () => {
+				try {
+					const resp = await fetch(`${process.env.BACKEND_URL}/api/reservations`);
+					if (!resp.ok) {
+						throw new Error('Failed to fetch reservations');
+					}
+					const data = await resp.json();
+					// Actualizar el estado global con las reservas obtenidas
+					setStore({ allReservations: data });
+				} catch (error) {
+					console.error('Error fetching reservations:', error);
+					// Manejar el error según tus necesidades
+				}
 			}
+
+
 		}
 	};
 };

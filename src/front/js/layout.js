@@ -25,6 +25,11 @@ import { Contact } from "./pages/contact";
 import { Reservas } from "./pages/reservas";
 import { Chatbot } from "./pages/chatbot";
 import { Admin} from "./pages/admin";
+import { AdminBooking } from "./pages/adminBooking";
+import { AdminUser } from "./pages/adminUser";
+import { AdminTour } from "./pages/adminTour";
+import { AdminHotel } from "./pages/adminHotel";
+import { AdminPackages } from "./pages/adminPackages";
 
 
 
@@ -59,7 +64,11 @@ const Layout = () => {
                         <Route element={<Contact />} path="/contact" />
                         <Route element={<Reservas />} path="/reservas" />
                         <Route element={<Admin />} path="/admin" />
-                        
+                        <Route element={<AdminBooking />} path="/booking" />
+                        <Route element={<AdminUser />} path="/user" />
+                        <Route element={<AdminTour />} path="/add-tours" />
+                        <Route element={<AdminHotel />} path="/add-hotel" />
+                        <Route element={<AdminPackages />} path="/add-packages" />
 
                     </Routes>
                        
