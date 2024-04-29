@@ -1,0 +1,7 @@
+@media screen and (max-width: 768px) {
+    .card-header {
+        max-width: 100%; /* Reducir el ancho máximo */
+        margin-right: 0; /* Eliminar el margen derecho */
+        margin-bottom: 1rem; /* Agregar margen inferior para separar las tarjetas verticalmente */
+    }
+}

@@ -16,7 +16,7 @@ export const AdminUser = () => {
                 {store.allUsers.length > 0 ? (
                     <>
                         <h4>Users:</h4>
-                        <table className="table">
+                        <table className="table table-info table-striped">
                             <thead>
                                 <tr>
                                     <th>Id User</th>

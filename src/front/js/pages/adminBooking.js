@@ -16,13 +16,13 @@ export const AdminBooking = () => {
                 {store.allReservations.length > 0 ? (
                     <>
                         <h4>Reservations:</h4>
-                        <table className="table">
+                        <table className="table table-info table-striped">
                             <thead>
                                 <tr>
-                                    <th>Id Reserva</th>
+                                    <th style={{ whiteSpace: 'nowrap'}}>Id Reserva</th>
                                     <th>User</th>
-                                    <th>Fecha de Inicio</th>
-                                    <th>Fecha de Fin</th>
+                                    <th style={{ whiteSpace: 'nowrap'}}>Fecha de Inicio</th>
+                                    <th style={{ whiteSpace: 'nowrap'}}>Fecha de Fin</th>
                                     <th>Tour</th>
                                     <th>Package</th>
                                     <th>Hotel</th>
@@ -31,7 +31,7 @@ export const AdminBooking = () => {
                             <tbody>
                                 {store.allReservations.map(reserva => (
                                     <tr key={reserva.id}>
-                                        <td>{reserva.id}</td>
+                                        <th>{reserva.id}</th>
                                         <td>{reserva.id_user}</td>
                                         <td>{reserva.fecha_inicio}</td>
                                         <td>{reserva.fecha_final}</td>
