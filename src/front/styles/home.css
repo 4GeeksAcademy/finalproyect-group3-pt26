@@ -237,19 +237,49 @@ p{
    color: #fff;
 }
 
-@media (max-width: 992px) {
-    .CONbox {
-        margin-bottom: 20px;
-    }
-}
+/* Estilos para pantallas pequeñas */
 @media (max-width: 576px) {
-    .CONbox {
-        padding: 15px;
+    .ConSpace{
+        width: 43px;
+        padding: 10px;
     }
-    .CONicon {
-        font-size: 1.5rem;
+  }
+  
+  /* Estilos para pantallas medianas */
+  @media (min-width: 576px) and (max-width: 768px) {
+    .CONresp{
+        display: flex;
+        flex-wrap: wrap;
+        width: 128px;
+        margin: 0px;
+        padding: 0px;
     }
-}
+    .h4Resp{
+        font-size: 0px;
+    }
+    .form-container {
+        width: 222px;
+    }
+  }
+  
+  /* Estilos para pantallas grandes */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .CONresp{
+        display: flex;
+        flex-wrap: wrap;
+        width: 128px;
+        margin: 0px !important;
+        padding: 0px;
+    }
+    .h4Resp{
+        font-size: 0px;
+    }
+    .CONimg {
+        width: 127px;
+        border-radius: 45px;
+        margin: 50px;
+    }
+  }
 /*FIN DE EL APARTADO DE CONTACT.JS TODOS LOS ESTILOS COMENZARAN EN CON*/
 
 
