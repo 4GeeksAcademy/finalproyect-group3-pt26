@@ -19,12 +19,14 @@ from api.chatbot_interactivo import get_response
 
 import firebase_admin
 from firebase_admin import credentials, storage
+import firebase_admin
+from firebase_admin import credentials, storage
 
-cred = credentials.Certificate("./google-services.json")
-firebase_admin.initialize_app(cred, {
-    'storageBucket': "travelo-b9953.appspot.com"
-})
-bucket = storage.bucket()
+# cred = credentials.Certificate("./google-services.json")
+# firebase_admin.initialize_app(cred, {
+#     'storageBucket': "travelo-aaaa3.appspot.com"
+# })
+# bucket = storage.bucket()
 
 # firebase_admin.initialize_app(cred)
 # bucket = storage.bucket("travelo-f8bc8.appspot.com")
@@ -609,10 +611,10 @@ def upload_file():
     url = blob.public_url
     from urllib.parse import quote
 
-    # Generar la URL permanente manualmente
-    bucket_name = "travelo-b9953.appspot.com"
-    encoded_image_name = quote(image.filename)
-    url = f'https://storage.googleapis.com/{bucket_name}/{encoded_image_name}'
+#     # Generar la URL permanente manualmente
+#     bucket_name = "travelo-aaaa3.appspot.com"
+#     encoded_image_name = quote(image.filename)
+#     url = f'https://storage.googleapis.com/{bucket_name}/{encoded_image_name}'
 
     # Retornar la URL permanente
     return jsonify({"success": "Image loaded successfully", "url": url}), 201
