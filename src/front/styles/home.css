@@ -102,6 +102,7 @@ p{
 /* CSS DE TRAVEL.JS "NOTA: todos los estilos de travel van a empezar con TR como inicial de las clases por ejemplo (TRbox)" */
 
 .TRcard{
+    width: 410px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -5,8 +5,7 @@ import "../../styles/destination.css";
 
 export const Destination = () => {
 	return (
-		<div className="container">
-			<div className="row m-4">
+			<div className="row ">
 				<h1 className="text-center">Our services</h1>
 
 				<div className=" col-4 card ourServices mt-1 col-4 p-2">
@@ -39,7 +38,6 @@ export const Destination = () => {
 					</div>
 				</div>
 			</div>
-		</div>
 	);
 
 };
