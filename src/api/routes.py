@@ -591,18 +591,11 @@ def chatbot():
 if __name__ == '__main__':
     api.run(debug=True)
 
-
-#images'
-@api.route('/image', methods=['POST'])
-def upload_file():
-    image = request.files.get('image', None)
 #images'
 @api.route('/image', methods=['POST'])
 def upload_file():
     image = request.files.get('image', None)
 
-    if image ==  None:
-        return 'No image in the request', 400
     if image ==  None:
         return 'No image in the request', 400
     
@@ -610,14 +603,7 @@ def upload_file():
     blob = bucket.blob(image.filename)
     blob.upload_from_file(image, content_type=image.content_type)
     blob.make_public()
-    # Subir la imagen al Bucket
-    blob = bucket.blob(image.filename)
-    blob.upload_from_file(image, content_type=image.content_type)
-    blob.make_public()
 
-    # Generar la URL permanente
-    url = blob.public_url
-    from urllib.parse import quote
     # Generar la URL permanente
     url = blob.public_url
     from urllib.parse import quote
@@ -627,7 +613,5 @@ def upload_file():
     encoded_image_name = quote(image.filename)
     url = f'https://storage.googleapis.com/{bucket_name}/{encoded_image_name}'
 
-    # Retornar la URL permanente
-    return jsonify({"success": "Image loaded successfully", "url": url}), 201
     # Retornar la URL permanente
     return jsonify({"success": "Image loaded successfully", "url": url}), 201
