@@ -1,13 +1,30 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import { storage } from '../firebase';
 
 export const Accommodations = () => {
     const { store, actions } = useContext(Context);
+    const [imageURL, setImageURL] = useState(null);
 
     useEffect(() => {
         actions.hoteles();
     }, [actions]);
+
+    const getImageURL = async () => {
+        try {
+            const image = storage.refFromURL('gs://travelo-aaaa3.appspot.com/466471328.jpg')
+            const url = await image.getDownloadURL();
+            setImageURL(url);
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
+
+    useEffect(() => {
+        getImageURL();
+    }, [])
 
     return (
         <div className="container">
@@ -16,7 +33,11 @@ export const Accommodations = () => {
                 {store.accommodations && store.accommodations.map((hot, id) => (
                     <div className="col" key={id}>
                         <div className="card">
-                            <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="..." />
+                            {imageURL ? (
+                                <img src={imageURL} className="card-img-top" alt="..." />
+                            ) : (
+                                <p>Loading image..</p>
+                            )}
                             <div className="card-body">
                                 <h5 className="card-title">{hot.name}</h5>
                                 <p className="card-text">{hot.descripcion}</p>
