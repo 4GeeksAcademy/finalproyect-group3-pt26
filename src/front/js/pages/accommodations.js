@@ -13,7 +13,7 @@ export const Accommodations = () => {
 
     const getImageURL = async () => {
         try {
-            const image = storage.refFromURL('gs://travelo-b9953.appspot.com/1.png')
+            const image = storage.refFromURL('gs://travelo-b9953.appspot.com/el mejor.png')
             const url = await image.getDownloadURL();
             setImageURL(url);
         }
@@ -31,19 +31,19 @@ export const Accommodations = () => {
             <h1>Accommodations</h1>
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 {store.accommodations && store.accommodations.map((hot, id) => (
-                    <div className="col" key={id}>
+                    <div className="col acomodationBox" key={id}>
                         <div className="card">
                             {imageURL ? (
-                                <img src={imageURL} className="card-img-top" alt="..." />
+                                <img src={imageURL} className="card-img-top" style={{ marginTop: "10px" }} alt="..." />
                             ) : (
                                 <p>Loading image..</p>
                             )}
-                            <div className="card-body">
+                            <div className="card-body d-flex flex-column align-items-center">
                                 <h5 className="card-title">{hot.name}</h5>
-                                <p className="card-text">{hot.descripcion}</p>
-                                <p className="card-title">{hot.precio}$ per night</p>
+                                <p className="card-text text-center">{hot.descripcion}</p>
+                                <p className="card-title text-center">{hot.precio}$ per night</p>
                                 <Link to={`/accommodation/${hot.id}`}>
-                                    <button className="btn btn-primary">VIEW DETAILS</button>
+                                    <button className="btn btn-primary border-0">VIEW DETAILS</button>
                                 </Link>
                             </div>
                         </div>

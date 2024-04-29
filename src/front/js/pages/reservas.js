@@ -50,7 +50,7 @@ export const Reservas = () => {
                         <div className='row' style={{ "width": "100%" }}>
                             <div className='col-3' ></div>
                             <div className='col-6 d-flex flex-column align-items-center'>
-                                <h2>¿Quieres hacer mas reservas?</h2>
+                                <h2 style={{ color: "white" }}>¿Quieres hacer mas reservas?</h2>
                                 <div>
                                     <Link to={'/accommodations'} ><button className='buttonClas' >Hoteles</button></Link>
                                     <Link to={'/tours'} ><button className='buttonClas' >Tours</button></Link>
