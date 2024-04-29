@@ -13,7 +13,7 @@ export const Accommodations = () => {
 
     const getImageURL = async () => {
         try {
-            const image = storage.refFromURL('gs://travelo-aaaa3.appspot.com/466471328.jpg')
+            const image = storage.refFromURL('gs://travelo-b9953.appspot.com/1.png')
             const url = await image.getDownloadURL();
             setImageURL(url);
         }
