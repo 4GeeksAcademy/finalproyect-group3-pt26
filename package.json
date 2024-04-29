@@ -79,9 +79,12 @@
 		"@fortawesome/free-solid-svg-icons": "^6.5.2",
 		"@fortawesome/react-fontawesome": "^0.2.0",
 		"axios": "^1.6.8",
+<<<<<<< HEAD
 		"bootstrap": "^5.3.3",
 		"firebase": "^10.11.1",
 		"firebase-storage": "^1.1.4",
+=======
+>>>>>>> 1de47972f274bf5041c9d89ac579ef67609c8afc
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",

@@ -24,7 +24,7 @@ export const Home = () => {
 				<div className="overlay"></div>
 				<div className="content">
 					<h1>First Class Travel</h1>
-					<h2>The world is yours, discover it with us</h2>
+					<h2 className="h2Home">The world is yours, discover it with us</h2>
 					<form className="form">
 						<div>
 							<input type="text" placeholder='Search Destinations' />

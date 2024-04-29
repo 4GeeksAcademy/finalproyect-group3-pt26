@@ -21,30 +21,35 @@
     background-color: var(--background-color);
     padding: 50px 0;
     border-radius: 20px;
+    display: flex;
   }
   
-  .container {
+  /* .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-  }
+   
+  } */
   
   .left,
   .right {
     width: 100%;
   }
   
-  .left h2 {
+  /* .title {
     font-size: 33px;
     color: var(--primary-color);
     margin-bottom: 20px;
-    text-align: center;
-  }
+    display: flex;
+    justify-content: center;
+
+  }  */
   
   .left p {
     font-size: 16px;
     color: var(--text-color);
     line-height: 1.6;
+    margin-left: 40px;
   }
   
   .box {
@@ -143,10 +148,7 @@
   }
   
   @media (min-width: 768px) {
-    .container {
-      display: flex;
-      justify-content: space-between;
-    }
+   
   
     .left,
     .right {

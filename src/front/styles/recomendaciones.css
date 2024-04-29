@@ -4,7 +4,7 @@
   
   .tituloReco {
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
   }
   .tituloDest{
     font-size: 20px;
@@ -33,6 +33,7 @@
   }
   
   .packages ul li.active {
+  
     border-bottom: 0.5rem solid #8338ec;
   }
   
