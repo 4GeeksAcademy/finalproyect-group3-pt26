@@ -22,7 +22,7 @@ from firebase_admin import credentials, storage
 
 cred = credentials.Certificate("./google-services.json")
 firebase_admin.initialize_app(cred, {
-    'storageBucket': "travelo-e189a.appspot.com"
+    'storageBucket': "travelo-69d3a.appspot.com"
 })
 bucket = storage.bucket()
 
@@ -609,7 +609,7 @@ def upload_file():
     from urllib.parse import quote
 
     # Generar la URL permanente manualmente
-    bucket_name = "travelo-e189a.appspot.com"
+    bucket_name = "travelo-69d3a.appspot.com"
     encoded_image_name = quote(image.filename)
     url = f'https://storage.googleapis.com/{bucket_name}/{encoded_image_name}'
 

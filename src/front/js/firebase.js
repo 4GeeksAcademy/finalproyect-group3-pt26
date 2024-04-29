@@ -5,13 +5,12 @@ import "firebase/compat/storage";
 // import 'firebase-storage'; // Importa el módulo de almacenamiento si lo necesitas
 // Configura tu objeto de configuración de Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyAnv-fPVNZgACM_J346PYxmUAhPrlU3qXw",
-    authDomain: "travelo-e189a.firebaseapp.com",
-    projectId: "travelo-e189a",
-    storageBucket: "travelo-e189a.appspot.com",
-    messagingSenderId: "360896695546",
-    appId: "1:360896695546:web:283972c63cc0dd5bab4d43",
-    measurementId: "G-BZEEJXRXDZ"
+    apiKey: "AIzaSyBLTkqQCoE31ydNEbZOSZLDYRvZRHeRD6w",
+    authDomain: "travelo-69d3a.firebaseapp.com",
+    projectId: "travelo-69d3a",
+    storageBucket: "travelo-69d3a.appspot.com",
+    messagingSenderId: "945376240672",
+    appId: "1:945376240672:web:4973b518d4354353b58845"
 };
 // Inicializa Firebase si aún no está inicializado
 if (!firebase.apps.length) {
