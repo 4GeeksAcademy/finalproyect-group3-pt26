@@ -17,14 +17,14 @@ from flask import make_response
 import jwt
 from api.chatbot_interactivo import get_response
 
-# import firebase_admin
-# from firebase_admin import credentials, storage
+import firebase_admin
+from firebase_admin import credentials, storage
 
-# cred = credentials.Certificate("./google-services.json")
-# firebase_admin.initialize_app(cred, {
-#     'storageBucket': "travelo-aaaa3.appspot.com"
-# })
-# bucket = storage.bucket()
+cred = credentials.Certificate("./google-services.json")
+firebase_admin.initialize_app(cred, {
+    'storageBucket': "travelo-b9953.appspot.com"
+})
+bucket = storage.bucket()
 
 # firebase_admin.initialize_app(cred)
 # bucket = storage.bucket("travelo-f8bc8.appspot.com")
@@ -592,27 +592,27 @@ if __name__ == '__main__':
     api.run(debug=True)
 
 
-# #images'
-# @api.route('/image', methods=['POST'])
-# def upload_file():
-#     image = request.files.get('image', None)
+#images'
+@api.route('/image', methods=['POST'])
+def upload_file():
+    image = request.files.get('image', None)
 
-#     if image ==  None:
-#         return 'No image in the request', 400
+    if image ==  None:
+        return 'No image in the request', 400
     
-#     # Subir la imagen al Bucket
-#     blob = bucket.blob(image.filename)
-#     blob.upload_from_file(image, content_type=image.content_type)
-#     blob.make_public()
+    # Subir la imagen al Bucket
+    blob = bucket.blob(image.filename)
+    blob.upload_from_file(image, content_type=image.content_type)
+    blob.make_public()
 
-#     # Generar la URL permanente
-#     url = blob.public_url
-#     from urllib.parse import quote
+    # Generar la URL permanente
+    url = blob.public_url
+    from urllib.parse import quote
 
-#     # Generar la URL permanente manualmente
-#     bucket_name = "travelo-aaaa3.appspot.com"
-#     encoded_image_name = quote(image.filename)
-#     url = f'https://storage.googleapis.com/{bucket_name}/{encoded_image_name}'
+    # Generar la URL permanente manualmente
+    bucket_name = "travelo-b9953.appspot.com"
+    encoded_image_name = quote(image.filename)
+    url = f'https://storage.googleapis.com/{bucket_name}/{encoded_image_name}'
 
-#     # Retornar la URL permanente
-#     return jsonify({"success": "Image loaded successfully", "url": url}), 201
+    # Retornar la URL permanente
+    return jsonify({"success": "Image loaded successfully", "url": url}), 201

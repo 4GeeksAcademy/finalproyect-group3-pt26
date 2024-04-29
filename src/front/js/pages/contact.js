@@ -2,19 +2,9 @@ import React from "react";
 import "../../styles/home.css";
 import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
 import { Link } from "react-router-dom";
-
-
-
-
-
-
-
 export const Contact = () => {
-
-
     return (<>
         <div className="container text-center" style={{ "display": "contents" }}>
-
             <div className="row CONrow">
                 <div className="col-7 CONbox">
                     <div className="row">
@@ -35,8 +25,6 @@ export const Contact = () => {
                 </div>
                 <div className="col-5 d-flex align-items-center"><div className="CONcontacto">Contacta con Un Asesor</div></div>
             </div>
-
-
             <div className="row CONrow d-flex align-items-center">
                 <div className="col-5">
                     {/* FORMULARIO */}
@@ -82,8 +70,6 @@ export const Contact = () => {
                     </div>
                 </div>
             </div>
-
-
             <div className="row CONrow" style={{ "marginBottom": "78px" }}>
                 <div className="col-7 CONbox">
                     <div className="row">
