@@ -54,11 +54,11 @@ export const Search = () => {
                         <div className="date">
                             <div className="input-wrap">
                                 <label>Check-In</label>
-                                <input type="date" style={{ "width": "250px" }} />
+                                <input type="date" style={{ "width": "265px" }} />
                             </div>
                             <div className="input-wrap">
                                 <label>Check-Out</label>
-                                <input type="date" style={{ "width": "250px" }} />
+                                <input type="date" style={{ "width": "265px" }} />
                             </div>
                         </div>
                         <button>Rates & Availabilities </button>

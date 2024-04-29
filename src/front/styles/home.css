@@ -101,14 +101,13 @@ p{
 
 /* CSS DE TRAVEL.JS "NOTA: todos los estilos de travel van a empezar con TR como inicial de las clases por ejemplo (TRbox)" */
 
-/* .col-4{
+.TRcard{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
     border-radius: 1rem;
     transition: 0.3s ease-in-out;
-} */
+}
 .col-4:hover{
     transform: translateX(0.02rem) translateY(-0.5rem);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -151,8 +150,7 @@ p{
 }
 
 @media screen and (max-width: 768px) {
-    .row {
-      width: 100%;
+    .TRrow {
       max-width: 100%;
       flex-direction: column;
       display: flex;
@@ -205,7 +203,13 @@ p{
 .ConSpace{
     width: 50px;
     margin: 4px;
-    background: rgb(70 206 235);
+    background: rgb(141 138 198);
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+.ConSpace:hover{
+    transform: translateX(0.02rem) translateY(-0.5rem);
+   box-shadow:  rgb(157 34 231) 4px 6px 1px;
 }
 
 .CONcontacto{
@@ -231,6 +235,20 @@ p{
 .btn{
    background: rgb(70, 206, 235);
    color: #fff;
+}
+
+@media (max-width: 992px) {
+    .CONbox {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 576px) {
+    .CONbox {
+        padding: 15px;
+    }
+    .CONicon {
+        font-size: 1.5rem;
+    }
 }
 /*FIN DE EL APARTADO DE CONTACT.JS TODOS LOS ESTILOS COMENZARAN EN CON*/
 

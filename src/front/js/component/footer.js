@@ -1,41 +1,48 @@
-import React from 'react'
-import '../../styles/footer.css'
+import React, { Component } from "react";
+import "../../styles/footer.css";
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
-
-
-export const Footer = ()=> {
+import { Link } from "react-router-dom";
+export const Footer = () => {
     return (
-        <div className='footer'>
-            <div className="container">
-                <div className="top">
-                    <h3>Travelo</h3>
-                    <div className="social">
-                        <FaFacebook className='icon' />
-                        <FaInstagram className='icon' />
-                        <FaTwitter className='icon' />
-                        <FaPinterest className='icon' />
-                        <FaYoutube className='icon' />
+        <footer className="footer">
+            <div className="row d-flex justify-content-between">
+                <div className="col-4 col-4-footer">
+                    <div className="row" >
+                        <div className="col" >
+                            <ul>
+                                <li className="listFooterFather" ><Link className="listFooter" to="/">Aviso Legal</Link></li>
+                                <li className="listFooterFather" ><Link className="listFooter" to="/">Política de Privacidad</Link></li>
+                                <li className="listFooterFather" ><Link className="listFooter" to="/">Política de Cookies</Link></li>
+                                <li className="listFooterFather" ><Link className="listFooter" to="/">Política de Calidad</Link></li>
+                                <li className="listFooterFather" ><Link className="listFooter" to="/">Declaración Accesibilidad</Link></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div className="bottom">
-                    <div className="left">
-                        <ul>
-                            <li>About</li>
-                            <li>Partnerships</li>
-
-                        </ul>
+                <div className=" col-4 col-4-footer">
+                    <div className="row " >
+                        <div className="d-flex justify-content-center"> <img src="https://raw.githubusercontent.com/4GeeksAcademy/finalproyect-group3-pt26/main/src/front/img/travello%20white%20bg%20brand.PNG" width="165px" height="60px" style={{ "borderRadius": "10px", "margin": "10px" }} />  </div>
+                        <div className="d-flex justify-content-center">
+                            <div> < FaFacebook className="iconFooter" /></div>
+                            <div> < FaInstagram className="iconFooter" /> </div>
+                            <div> < FaPinterest className="iconFooter" /> </div>
+                            <div> < FaTwitter className="iconFooter" /> </div>
+                            <div> < FaYoutube className="iconFooter" /> </div>
+                        </div>
+                        <p className="pFooter">© 2024 Travelo. Todos los derechos reservados.</p>
                     </div>
-                    <div className="right">
-                        <ul>
-                            <li>Contact</li>
-                            <li>Terms</li>
-                            <li>Policy</li>
+                </div>
+                <div className="col-4 col-4-footer">
+                    <div className="row" >
+                        <ul className="d-flex flex-column">
+                            <li className="listFooterFather" ><Link className="listFooter" to="/">Home</Link></li>
+                            <li className="listFooterFather" ><Link className="listFooter" to="/">About us</Link></li>
+                            <li className="listFooterFather" ><Link className="listFooter" to="/">Travel</Link></li>
+                            <li className="listFooterFather" ><Link className="listFooter" to="/">Contacts</Link></li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     )
-}
-
-export default Footer
+};
