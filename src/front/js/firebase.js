@@ -5,12 +5,12 @@ import "firebase/compat/storage";
 // import 'firebase-storage'; // Importa el módulo de almacenamiento si lo necesitas
 // Configura tu objeto de configuración de Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyBLTkqQCoE31ydNEbZOSZLDYRvZRHeRD6w",
-    authDomain: "travelo-69d3a.firebaseapp.com",
-    projectId: "travelo-69d3a",
-    storageBucket: "travelo-69d3a.appspot.com",
-    messagingSenderId: "945376240672",
-    appId: "1:945376240672:web:4973b518d4354353b58845"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    appId: process.env.APP_ID
 };
 // Inicializa Firebase si aún no está inicializado
 if (!firebase.apps.length) {
