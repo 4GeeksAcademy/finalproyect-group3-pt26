@@ -16,7 +16,7 @@ export const SingleHotel = () => {
     const [reserva, setReserva] = useState(null);
 
     const fetchSingleHotel = async () => {
-        const response = await fetch(process.env.BACKEND_URL + `api/accommodation/${id}`)
+        const response = await fetch(process.env.BACKEND_URL + `/api/accommodation/${id}`)
         const data = await response.json()
         setSingleHotel(data)
     }

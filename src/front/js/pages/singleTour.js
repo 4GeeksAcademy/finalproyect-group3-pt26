@@ -17,7 +17,7 @@ export const SingleTour = () => {
   
 
     const getSingleTour = async () => {
-        const resp = await fetch(process.env.BACKEND_URL + `api/tour/${id}`)
+        const resp = await fetch(process.env.BACKEND_URL + `/api/tour/${id}`)
         const data = await resp.json()
         setTour(data);
     }

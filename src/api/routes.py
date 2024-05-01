@@ -33,7 +33,7 @@ bucket = storage.bucket()
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
-#cors = CORS(api, resources={r"/api/*": {"origins": "https://didactic-space-engine-5vr6grx66592pv54-3000.app.github.dev"}})
+# cors = CORS(api, resources={r"/api/*": {"origins": "https://improved-train-q9v4p4gwr4hxg5q-3001.app.github.dev/"}})
 CORS(api)
 
 @api.route('/')
@@ -182,32 +182,23 @@ def get_OneTour(tour_id):
         return jsonify({'mesage' : 'Tour no encontrado'}), 400
     
 #Crearemos un Nuevo Tours
-@api.route('/tours' ,methods = ['POST'])
+@api.route('/tours', methods=['POST'])
 def create_Tour():
-
-    tour_data = request.json   #Capturo los datos de mi body
-
-    if not tour_data:
-
-        return({'message' : 'No se proporcionaron los datos para crear el nuevo Tour'})
-     
-    new_tour = Tour(**tour_data) # desempaquetado de diccionario y creo una nueva instancia
-
-    db.session.add(new_tour)
-
     try:
-          db.session.commit()
-    
+        tour_data = request.json
+        if not tour_data:
+            return jsonify({'message': 'No se proporcionaron los datos para crear el nuevo Tour'}), 400
+
+        new_tour = Tour(**tour_data)
+        db.session.add(new_tour)
+        db.session.commit()
+
+        return jsonify({'message': 'Tour creado exitosamente', 'tour': new_tour.serialize()}), 201
+
     except Exception as e:
-
-          # En caso de error, hacer rollback y devolver un mensaje de error
         db.session.rollback()
-
         return jsonify({'message': 'Error al crear el tour: {}'.format(str(e))}), 500
     
-    #devuelvo repuesta con exito
-    return jsonify({'message': 'Tour creado exitosamente', 'tour': new_tour.serialize()}), 201
-
  # Modificacion de Tour   
 @api.route('/tours/<int:tour_id>', methods = ['PUT'])
 def actualizacion_tour(tour_id):
