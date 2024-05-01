@@ -27,6 +27,14 @@ export const AdminTour = () => {
         console.log("Tour creado");
         const newTour = await response.json();
         actions.tours();
+
+        setTourData({
+          name: '',
+          descripcion: '',
+          duration: '',
+          price: ''
+        });
+        
       } else {
         throw new Error("Error al crear el tour: " + response.statusText);
       }
