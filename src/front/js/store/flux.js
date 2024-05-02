@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			accommodations: [],
 			reservasUser: [],
 			allUsers: [],
-			allReservations: []
+			allReservations: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -229,9 +229,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error('Error fetching reservations:', error);
 					// Manejar el error según tus necesidades
 				}
-			}
-
-
+			},
 		}
 	};
 };
