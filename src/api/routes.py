@@ -307,6 +307,7 @@ def update_accommodation(accommodation_id):
     if 'descripcion' in data: hotel.descripcion = data['descripcion']
     if 'duracion' in data: hotel.duracion = data['duracion']
     if 'precio' in data: hotel.precio = data['precio']
+    if 'imageURL' in data: hotel.imageURL = data['imageURL']
 
     try:
         db.session.commit()
