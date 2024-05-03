@@ -66,67 +66,60 @@ export const SingleHotel = () => {
             }
             {
                 store.token &&
-                <>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col d-flex flex-column align-items-center">
-                                <div className="col-12 col-md-6 ">
-                                    {singleHotel &&
-                                        <img src={singleHotel.imageURL} className="w-90 img-thumbnail h-100px" />
-                                    }
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                            {singleHotel &&
+                                <img src={singleHotel.imageURL} className="img-thumbnail" style={{ maxHeight: '300px', width: 'auto' }} alt={singleHotel.name} />
+                            }
+                        </div>
+                        <div className="col-12 col-md-6 d-flex flex-column align-items-center">
+                            {singleHotel &&
+                                <div className='text-center p-4'>
+                                    <h1>{singleHotel.name}</h1>
+                                    <p>{singleHotel.descripcion}</p>
+                                    <p>{singleHotel.precio}$ per night</p>
+                                    <button type="button" className="btn btnSingleHotel mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        Check and Book
+                                    </button>
                                 </div>
-                                <div className="col-12 col-md-6 ">
-                                    {singleHotel &&
-                                        <div className='d-flex flex-column align-items-center' style={{ textAlign: 'center', padding: '40px' }}>
-                                            <h1 className='h1SingleHotel' >{singleHotel.name}</h1>
-                                            <p className='pSingleHotel' >{singleHotel.descripcion}</p>
-                                            <p className='pSingleHotel' >{singleHotel.precio}$ per night</p>
-                                        </div>
-                                    }
-                                    <div className='d-flex justify-content-center align-items-center'>
-                                        <button type="button" className="btn btnSingleHotel mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                            Check and Book
-                                        </button>
-                                    </div>
-                                </div>
-
-
-                                {/* <!-- Modal --> */}
-                                <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div className="modal-dialog modal-dialog-centered">
-                                        <div className="modal-content">
-                                            <div className="modal-header">
-                                                <h5 className="modal-title" id="staticBackdropLabel">Reserva</h5>
-                                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div className="modal-body">
-                                                <div className="date">
-                                                    <div className="input-wrap">
-                                                        <label>Check-In</label>
-                                                        <input type="date" onChange={handleCheckIn} />
-                                                    </div>
-                                                    <div className="input-wrap">
-                                                        <label>Check-Out</label>
-                                                        <input type="date" onChange={handleCheckOut} />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="modal-footer">
-                                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={bookHotel}>Book</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            }
                         </div>
                     </div>
-                </>
+                </div>
             }
             <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
                 <Link to={'/accommodations'}>
                     <button type="button" className="btn btn-secondary">Go back</button>
                 </Link>
+            </div>
+
+            {/* Modal */}
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="staticBackdropLabel">Reserva</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <div className="date">
+                                <div className="input-wrap">
+                                    <label>Check-In</label>
+                                    <input type="date" onChange={handleCheckIn} />
+                                </div>
+                                <div className="input-wrap">
+                                    <label>Check-Out</label>
+                                    <input type="date" onChange={handleCheckOut} />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={bookHotel}>Book</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );
