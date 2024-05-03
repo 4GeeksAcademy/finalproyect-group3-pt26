@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../store/appContext'
 import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const SingleTour = () => {
 
@@ -122,6 +123,11 @@ export const SingleTour = () => {
                     </div>
                 </>
             }
+            <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
+                <Link to={'/tours'}>
+                    <button type="button" className="btn btn-secondary">Go back</button>
+                </Link>
+            </div>
         </>
     )
 }
