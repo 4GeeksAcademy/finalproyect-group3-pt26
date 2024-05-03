@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { storage } from '../firebase';
 
 export const Accommodations = () => {
     const { store, actions } = useContext(Context);
-    const [imageURL, setImageURL] = useState({}); // cambié estado inicial de null a {} para almacenar URLs por alojamiento
 
     useEffect(() => {
         actions.hoteles();
@@ -18,7 +16,7 @@ export const Accommodations = () => {
                 {store.accommodations && store.accommodations.map((hot, id) => (
                     <div className="col" key={id}>
                         <div className="card">
-                        <img src={hot.imageURL} className="card-img-top" alt="..." />
+                            <img src={hot.imageURL} className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">{hot.name}</h5>
                                 <p className="card-text">{hot.descripcion}</p>

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
-import { Link, json } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const AdminTour = () => {
   const { store, actions } = useContext(Context);

@@ -383,6 +383,7 @@ def modificar_paquete(paquete_id):
     if 'descripcion' in data: modificar_pq.descripcion = data['descripcion']
     if 'duracion' in data: modificar_pq.duracion = data['duracion']
     if 'precio' in data: modificar_pq.precio = data['precio']
+    if 'imageURL' in data: modificar_pq.imageURL = data['imageURL']
 
     try:
         db.session.commit()
