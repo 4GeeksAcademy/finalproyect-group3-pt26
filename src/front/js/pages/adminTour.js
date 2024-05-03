@@ -44,7 +44,6 @@ export const AdminTour = () => {
         },
         body: JSON.stringify({
           ...tourData,
-          // image: serverResponse  // Agregar la URL de la imagen al objeto tourData
         })
       });
 
@@ -58,9 +57,9 @@ export const AdminTour = () => {
         setTourData({
           name: '',
           descripcion: '',
-          duration: '',
-          price: '',
-          image: ''
+          duracion: '',
+          precio: '',
+          imageURL: ''
         });
 
       } else {

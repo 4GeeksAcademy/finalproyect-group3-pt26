@@ -16,7 +16,7 @@ export const Tours = () => {
                 {store.tours.map((tour, id) => (
                     <div className="col" key={id}>
                         <div className="card">
-                            <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="..." />
+                            <img src={tour.imageURL} className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">{tour.name}</h5>
                                 <p className="card-text">{tour.descripcion}</p>
