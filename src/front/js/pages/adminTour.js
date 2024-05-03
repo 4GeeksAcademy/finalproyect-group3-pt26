@@ -9,7 +9,7 @@ export const AdminTour = () => {
     descripcion: '',
     duracion: '',
     precio: '',
-    image: ''
+    imageURL: ''
   });
 
   const [file, setFile] = useState(null);
@@ -29,7 +29,7 @@ export const AdminTour = () => {
       });
       const data = await resp.json()
       setServerResponse(data.url)
-      setTourData({ ...tourData, imagen: data.url })
+      setTourData({ ...tourData, imageURL: data.url })
     } catch (error) {
       setServerResponse(error.message);
     }
@@ -42,7 +42,10 @@ export const AdminTour = () => {
         headers: {
           'Content-Type': 'application/json' // Asegúrate de incluir este encabezado
         },
-        body: JSON.stringify(tourData)
+        body: JSON.stringify({
+          ...tourData,
+          // image: serverResponse  // Agregar la URL de la imagen al objeto tourData
+        })
       });
 
       console.log("Respuesta completa:", response);

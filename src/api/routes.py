@@ -219,6 +219,7 @@ def actualizacion_tour(tour_id):
     tour.descripcion = tour_data.get('descripcion', tour.descripcion)
     tour.duracion = tour_data.get ('duracion', tour.duracion)
     tour.precio = tour_data.get ('precio', tour.precio)
+    tour.imageURL = tour_data.get ('imageURL', tour.imageURL)
 
     try:
         db.session.commit()
