@@ -30,13 +30,15 @@ class Hotel(db.Model):
     descripcion = db.Column(db.String(250),nullable = False)
     duracion = db.Column(db.String(250),nullable = False)
     precio = db.Column(db.Float,nullable = False)
+    imageURL = db.Column(db.String(500), nullable = False)
 
-    def __init__(self,name,descripcion,duracion,precio):
+    def __init__(self,name,descripcion,duracion,precio, imageURL):
 
         self.name = name
         self.descripcion = descripcion
         self.duracion = duracion
         self.precio = precio
+        self.imageURL = imageURL
         
 
     def __repr__(self):
@@ -48,7 +50,8 @@ class Hotel(db.Model):
             "name": self.name,
             "descripcion" : self.descripcion,
             "duracion": self.duracion,
-            "precio": self.precio
+            "precio": self.precio,
+            "imageURL": self.imageURL
         }
     
 class Tour(db.Model):
@@ -88,13 +91,15 @@ class Paquete(db.Model):
     descripcion = db.Column(db.String(250),nullable = False)
     duracion = db.Column(db.String(250),nullable = False)
     precio = db.Column(db.Float,nullable = False)
+    imageURL = db.Column(db.String(500), nullable = False)
     
-    def __init__(self,name,destino,descripcion,duracion,precio):
+    def __init__(self,name,destino,descripcion,duracion,precio, imageURL):
         self.name = name
         self.destino = destino
         self.descripcion = descripcion
         self.duracion = duracion
         self.precio = precio
+        self.imageURL = imageURL
     
     def __repr__(self):
         return f'{self.name}'
@@ -106,7 +111,8 @@ class Paquete(db.Model):
             "destino" : self.destino,
             "descripcion": self.descripcion,
             "duracion": self.duracion,
-            "precio": self.precio
+            "precio": self.precio,
+            "imageURL": self.imageURL
         }
 
 class Reserva(db.Model):
