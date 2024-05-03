@@ -11,28 +11,6 @@ export const Accommodations = () => {
         actions.hoteles();
     }, [actions]);
 
-    const getImageURL = async (hotelId) => {
-        try {
-            const imageRef = storage.refFromURL(`gs://travelo-69d3a.appspot.com/${hotelId}.jpg`);
-            const url = await imageRef.getDownloadURL();
-            setImageURL(prevState => ({
-                ...prevState,
-                [hotelId]: url // Almacena la URL usando el hotelId como clave
-            }));
-        } catch (error) {
-            console.error(`Error fetching image for hotel ${hotelId}:`, error);
-        }
-    };
-
-    useEffect(() => {
-        // Obtener las URLs de imágenes para cada alojamiento
-        if (store.accommodations) {
-            store.accommodations.forEach((hotel) => {
-                getImageURL(hotel.id);
-            });
-        }
-    }, [store.accommodations]);
-
     return (
         <div className="container">
             <h1>Accommodations</h1>
@@ -40,11 +18,7 @@ export const Accommodations = () => {
                 {store.accommodations && store.accommodations.map((hot, id) => (
                     <div className="col" key={id}>
                         <div className="card">
-                            {imageURL[hot.id] ? (
-                                <img src={imageURL[hot.id]} className="card-img-top" alt="Accommodation" />
-                            ) : (
-                                <p>Loading image..</p>
-                            )}
+                        <img src={hot.imageURL} className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">{hot.name}</h5>
                                 <p className="card-text">{hot.descripcion}</p>

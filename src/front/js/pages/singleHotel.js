@@ -70,7 +70,9 @@ export const SingleHotel = () => {
                         <div className="row">
                             <div className="col d-flex flex-column align-items-center">
                                 <div className="col-12 col-md-6 ">
-                                    <img src={`https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`} className="w-90 img-thumbnail h-100px" />
+                                    {singleHotel &&
+                                        <img src={singleHotel.imageURL} className="w-90 img-thumbnail h-100px" />
+                                    }
                                 </div>
                                 <div className="col-12 col-md-6 ">
                                     {singleHotel &&
