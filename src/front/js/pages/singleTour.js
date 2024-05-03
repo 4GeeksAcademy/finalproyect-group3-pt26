@@ -14,7 +14,7 @@ export const SingleTour = () => {
     const [checkOut, setCheckOut] = useState(null);
     const [reserva, setReserva] = useState(null);
 
-  
+
 
     const getSingleTour = async () => {
         const resp = await fetch(process.env.BACKEND_URL + `/api/tour/${id}`)
@@ -50,7 +50,7 @@ export const SingleTour = () => {
         const data = await resp.json()
 
         if (resp.ok) {
-            console.log('Hotel reservation successfully made:',data);
+            console.log('Hotel reservation successfully made:', data);
             setReserva(data);
             alert("Reserva Exitosa")
         } else {
@@ -71,7 +71,9 @@ export const SingleTour = () => {
                         <div className="row">
                             <div className="col">
                                 <div className="col-12 col-md-6 ">
-                                    <img src={`https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`} className="w-90 img-thumbnail h-100px" />
+                                    {tour &&
+                                        <img src={tour.imageURL} className="w-90 img-thumbnail h-100px" />
+                                    }
                                 </div>
                                 <div className="col-12 col-md-6 ">
                                     {tour &&
@@ -79,45 +81,45 @@ export const SingleTour = () => {
                                             <h1>{tour.name}</h1>
                                             <p>{tour.descripcion}</p>
                                             <p>{tour.precio}$</p>
-                                         </div>
+                                        </div>
                                     }
-                                <div className='d-flex justify-content-center align-items-center'>
+                                    <div className='d-flex justify-content-center align-items-center'>
                                         <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                             Check and Book
                                         </button>
                                     </div>
-                        </div>
-                    </div>
+                                </div>
+                            </div>
 
-                     {/* <!-- Modal --> */}
-                     <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div className="modal-dialog modal-dialog-centered">
-                                        <div className="modal-content">
-                                            <div className="modal-header">
-                                                <h5 className="modal-title" id="staticBackdropLabel">Reserva</h5>
-                                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div className="modal-body">
-                                                <div className="date">
-                                                    <div className="input-wrap">
-                                                        <label>Check-In</label>
-                                                        <input type="date" onChange={handleCheckIn} />
-                                                    </div>
-                                                    <div className="input-wrap">
-                                                        <label>Check-Out</label>
-                                                        <input type="date" onChange={handleCheckOut} />
-                                                    </div>
+                            {/* <!-- Modal --> */}
+                            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div className="modal-dialog modal-dialog-centered">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h5 className="modal-title" id="staticBackdropLabel">Reserva</h5>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div className="modal-body">
+                                            <div className="date">
+                                                <div className="input-wrap">
+                                                    <label>Check-In</label>
+                                                    <input type="date" onChange={handleCheckIn} />
+                                                </div>
+                                                <div className="input-wrap">
+                                                    <label>Check-Out</label>
+                                                    <input type="date" onChange={handleCheckOut} />
                                                 </div>
                                             </div>
-                                            <div className="modal-footer">
-                                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={bookTour}>Book</button>
-                                            </div>
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={bookTour}>Book</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </>
             }
         </>
