@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
@@ -38,7 +38,7 @@ export const AdminPackages = () => {
 
     const handleCreatePackage = async () => {
         try {
-            const response = await fetch(process.env.BACKEND_URL + "/api/paquetes", {
+            const response = await fetch(process.env.BACKEND_URL + "/api/paquete", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json' // Asegúrate de incluir este encabezado

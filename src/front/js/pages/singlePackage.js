@@ -67,7 +67,9 @@ export const SinglePackage = () => {
                         <div className="row">
                             <div className="col">
                                 <div className="col-12 col-md-6 ">
-                                    <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-90 img-thumbnail h-100px" />
+                                    {singlePaq &&
+                                        <img src={singlePaq.imageURL} className="w-90 img-thumbnail h-100px" />
+                                    }
                                 </div>
                                 <div className="col-12 col-md-6 ">
                                     {singlePaq &&
@@ -79,40 +81,40 @@ export const SinglePackage = () => {
                                     }
                                 </div>
                                 <div className='d-flex justify-content-center align-items-center'>
-                                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                            Check and Book
-                                        </button>
+                                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        Check and Book
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     {/* <!-- Modal --> */}
                     <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div className="modal-dialog modal-dialog-centered">
-                                        <div className="modal-content">
-                                            <div className="modal-header">
-                                                <h5 className="modal-title" id="staticBackdropLabel">Reserva</h5>
-                                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div className="modal-body">
-                                                <div className="date">
-                                                    <div className="input-wrap">
-                                                        <label>Check-In</label>
-                                                        <input type="date" onChange={handleCheckIn} />
-                                                    </div>
-                                                    <div className="input-wrap">
-                                                        <label>Check-Out</label>
-                                                        <input type="date" onChange={handleCheckOut} />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="modal-footer">
-                                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={bookPackage}>Book</button>
-                                            </div>
+                        <div className="modal-dialog modal-dialog-centered">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="staticBackdropLabel">Reserva</h5>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div className="modal-body">
+                                    <div className="date">
+                                        <div className="input-wrap">
+                                            <label>Check-In</label>
+                                            <input type="date" onChange={handleCheckIn} />
+                                        </div>
+                                        <div className="input-wrap">
+                                            <label>Check-Out</label>
+                                            <input type="date" onChange={handleCheckOut} />
                                         </div>
                                     </div>
                                 </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={bookPackage}>Book</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </>
             }
         </>
