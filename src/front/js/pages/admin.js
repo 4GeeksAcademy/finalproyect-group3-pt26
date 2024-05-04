@@ -38,6 +38,7 @@ export const Admin = () => {
                                 <div className="card-header">Add Packages</div>
                                 <img src="https://cdn-icons-png.freepik.com/512/7051/7051465.png" className="card-img-top" alt="Imagen de Packages" />
                             </Link>
+                           
                         </div>
                     </div>
                 )
