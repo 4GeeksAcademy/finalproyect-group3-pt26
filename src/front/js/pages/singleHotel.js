@@ -79,11 +79,11 @@ export const SingleHotel = () => {
                                     <h1>{singleHotel.name}</h1>
                                     <p>{singleHotel.descripcion}</p>
                                     <p>{singleHotel.precio}$ per night</p>
-                                    <button type="button" className="btn btnSingleHotel mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        Check and Book
-                                    </button>
                                 </div>
                             }
+                            <button type="button" className="btn btnSingleHotel mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Check and Book
+                            </button>
                         </div>
                     </div>
                 </div>
