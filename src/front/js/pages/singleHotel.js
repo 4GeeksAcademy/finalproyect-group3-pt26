@@ -84,6 +84,8 @@ export const SingleHotel = () => {
                             <button type="button" className="btn btnSingleHotel mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                 Check and Book
                             </button>
+
+
                         </div>
                     </div>
                 </div>
