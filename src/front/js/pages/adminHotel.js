@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import "../../styles/home.css";
 
 export const AdminHotel = () => {
     const { store, actions } = useContext(Context);
@@ -73,49 +74,49 @@ export const AdminHotel = () => {
     return (
         <>
             <div className="d-flex justify-content-center ">
-                <div className="card border border-3" style={{ width: '30rem' }} >
-                    <img className="rounded-0 img-fluid" src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="..." />
-                    <div className="card-body">
+                <div className="card border border-3 boxFather" style={{ width: '30rem' }} >
+                    <img className="rounded-3 img-fluid" src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="..." />
+                    <div className="card-name">
                         <input type="texto" className="form-control"
-                            placeholder="Name" style={{ width: '300px', height: '30px', borderRadius: '0' }}
+                            placeholder="Name" style={{ width: '100%', height: '30px', borderRadius: '10px' }}
                             value={hotelData.name}
                             onChange={(e) => setHotelData({ ...hotelData, name: e.target.value })}
                         />
                     </div>
-                    <ul className="list-group list-group-flush">
+                    <ul className="card-name">
                         <textarea className="form-control mb-3" id="exampleFormControlTextarea1" rows="3"
                             placeholder="Description"
-                            style={{ borderRadius: '0' }}
+                            style={{ borderRadius: '10px' }}
                             value={hotelData.descripcion}
                             onChange={(e) => setHotelData({ ...hotelData, descripcion: e.target.value })}
                         ></textarea>
-                        <li> <input type="texto" className="form-control" placeholder="Duracion"
-                            style={{ width: '300px', height: '30px', borderRadius: '0' }}
+                        <li className="adminLi"> <input type="texto" className="form-control" placeholder="Duracion"
+                            style={{ width: '100%', height: '30px', borderRadius: '10px' }}
 
                             value={hotelData.duracion}
                             onChange={(e) => setHotelData({ ...hotelData, duracion: e.target.value })} />
                         </li>
-                        <li><input type="texto" className="form-control"
-                            placeholder="Precio" style={{ width: '100px', height: '30px', borderRadius: '0' }}
+                        <li className="adminLi d-flex justify-content-center"><input type="texto" className="form-control"
+                            placeholder="Precio" style={{ width: '230px', height: '30px', borderRadius: '10px' }}
                             value={hotelData.precio}
                             onChange={(e) => setHotelData({ ...hotelData, precio: e.target.value })}
                         />
                         </li>
                     </ul>
 
-                    <div>
+                    <div className="d-flex flex-column align-items-center">
                         <input type="file" onChange={e => handleFiles(e.target.files)} />
                         {file &&
                             <img src={URL.createObjectURL(file)} alt="img-preview" style={{ maxWidth: '30rem' }} />
                         }
                         {serverResponse}
-                        <button onClick={() => handleSubmit()} className="btn btn-success">Upload</button>
+                        <button onClick={() => handleSubmit()} className="btn btn-success btnAdmin">Upload</button>
                     </div>
 
 
-                    <div className="card-body">
+                    <div className="card-body d-flex justify-content-center">
                         {/* <!-- Button trigger modal --> */}
-                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={handleCreateHotel}>
+                        <button type="button" className="btn btn-primary" style={{ borderRadius: "10px", border: "none" }} data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={handleCreateHotel}>
                             Create Accommodation
                         </button>
 
@@ -138,10 +139,10 @@ export const AdminHotel = () => {
             </div>
             <div className="d-flex justify-content-between" style={{ width: '30rem', margin: 'auto', paddingTop: '1rem', paddingBottom: '1rem' }}>
                 <Link to={'/admin'}>
-                    <button type="button" className="btn btn-secondary">Go back</button>
+                    <button type="button" className="btn btn-secondary borderAdmin">Go back</button>
                 </Link>
                 <Link to={'/accommodations'}>
-                    <button type="button" className="btn btn-secondary">Hotels view</button>
+                    <button type="button" className="btn btn-secondary borderAdmin">Hotels view</button>
                 </Link>
             </div>
         </>

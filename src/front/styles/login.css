@@ -2,6 +2,10 @@
     margin: 15px;
 }
 
+.colorStyle{
+    width: 315px;
+}
+
 .transition{
     transition-property: transform;
     transition-duration: 250ms;
@@ -17,7 +21,6 @@
 
 .fatherLogin{
     display: flex;
-    height: 300px;
     width: 800px;
     align-items: center;
     justify-content: center;
@@ -33,9 +36,21 @@
     }
   }
 
-  @media screen and (max-width:940px) {
+  @media (min-width: 375px) and (max-width: 763px) {
     .fatherLogin {
-      width: 100%;
+        padding: 20px;
+        width: 80%;
+        max-width: 100%;
+        margin: 260px 10%;
+    }
+    .colorStyle{
+        width: 215px;
+    }
+  }
+
+  @media (min-width: 763px) and (max-width: 1024px) {
+    .fatherLogin {
+      width: 75%;
       max-width: 100%;
     }
   }

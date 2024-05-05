@@ -44,7 +44,7 @@ export const Register = () => {
         <div style={{ textAlign: "center" }}>
             <h2>Register</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form style={{ background: "transparent" }} onSubmit={handleSubmit}>
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-10">
