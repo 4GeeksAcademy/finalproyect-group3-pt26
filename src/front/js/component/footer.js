@@ -23,11 +23,11 @@ export const Footer = () => {
                     <div className="row " >
                         <div className="d-flex justify-content-center"> <img src="https://raw.githubusercontent.com/4GeeksAcademy/finalproyect-group3-pt26/main/src/front/img/travello%20white%20bg%20brand.PNG" width="165px" height="60px" style={{ "borderRadius": "10px", "margin": "10px" }} />  </div>
                         <div className="d-flex justify-content-center">
-                            <div> < FaFacebook className="iconFooter" /></div>
-                            <div> < FaInstagram className="iconFooter" /> </div>
-                            <div> < FaPinterest className="iconFooter" /> </div>
-                            <div> < FaTwitter className="iconFooter" /> </div>
-                            <div> < FaYoutube className="iconFooter" /> </div>
+                            <Link to='https://es-la.facebook.com/login/device-based/regular/login/'> < FaFacebook className="iconFooter" /></Link>
+                            <Link to='https://www.instagram.com/'> < FaInstagram className="iconFooter" /> </Link>
+                            <Link to='https://www.pinterest.com/pinterest/'> < FaPinterest className="iconFooter" /> </Link>
+                            <Link to='https://twitter.com/'> < FaTwitter className="iconFooter" /> </Link>
+                            <Link to='https://www.youtube.com/'> < FaYoutube className="iconFooter" /> </Link>
                         </div>
                         <p className="pFooter">© 2024 Travelo. Todos los derechos reservados.</p>
                     </div>
