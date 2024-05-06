@@ -30,7 +30,7 @@ export const AdminUser = () => {
                                         <td>{user.id}</td>
                                         <td>{user.username}</td>
                                         <td>{user.email}</td>
-                                      
+
                                     </tr>
                                 ))}
                             </tbody>
@@ -39,6 +39,11 @@ export const AdminUser = () => {
                 ) : (
                     <p>No reservations found.</p>
                 )}
+            </div>
+            <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
+                <Link to={'/admin'}>
+                    <button type="button" className="btn btn-secondary">Go back</button>
+                </Link>
             </div>
         </div>
     );

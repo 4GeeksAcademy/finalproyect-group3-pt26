@@ -19,10 +19,10 @@ export const AdminBooking = () => {
                         <table className="table table-info table-striped">
                             <thead>
                                 <tr>
-                                    <th style={{ whiteSpace: 'nowrap'}}>Id Reserva</th>
+                                    <th style={{ whiteSpace: 'nowrap' }}>Id Reserva</th>
                                     <th>User</th>
-                                    <th style={{ whiteSpace: 'nowrap'}}>Fecha de Inicio</th>
-                                    <th style={{ whiteSpace: 'nowrap'}}>Fecha de Fin</th>
+                                    <th style={{ whiteSpace: 'nowrap' }}>Fecha de Inicio</th>
+                                    <th style={{ whiteSpace: 'nowrap' }}>Fecha de Fin</th>
                                     <th>Tour</th>
                                     <th>Package</th>
                                     <th>Hotel</th>
@@ -46,6 +46,11 @@ export const AdminBooking = () => {
                 ) : (
                     <p>No reservations found.</p>
                 )}
+            </div>
+            <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
+                <Link to={'/admin'}>
+                    <button type="button" className="btn btn-secondary">Go back</button>
+                </Link>
             </div>
         </div>
     );
