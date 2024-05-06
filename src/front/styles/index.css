@@ -10,6 +10,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -17,10 +18,12 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
 ::-webkit-scrollbar {
   width: 0.6rem;
   background-color: #14213d;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: #4539e6;
 }
@@ -37,25 +40,25 @@ a {
 h1 {
   font-size: 3.5rem;
 }
+
 h2 {
   font-size: 2rem;
 }
 
-.container {
+/* .container {
   max-width: 1240px;
   margin: auto;
   padding: 0 1rem;
- 
-}
+
+} */
 
 
 @media screen and (max-width: 940px) {
   h1 {
     font-size: 2.5rem;
   }
+
   h2 {
     font-size: 1.5rem;
   }
 }
-
-
