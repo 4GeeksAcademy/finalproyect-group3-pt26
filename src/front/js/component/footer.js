@@ -36,9 +36,9 @@ export const Footer = () => {
                     <div className="row" >
                         <ul className="d-flex flex-column">
                             <li className="listFooterFather" ><Link className="listFooter" to="/">Home</Link></li>
-                            <li className="listFooterFather" ><Link className="listFooter" to="/">About us</Link></li>
-                            <li className="listFooterFather" ><Link className="listFooter" to="/">Travel</Link></li>
-                            <li className="listFooterFather" ><Link className="listFooter" to="/">Contacts</Link></li>
+                            <li className="listFooterFather" ><Link className="listFooter" to="/info">About us</Link></li>
+                            <li className="listFooterFather" ><Link className="listFooter" to="/travel">Travel</Link></li>
+                            <li className="listFooterFather" ><Link className="listFooter" to="/contact">Contacts</Link></li>
                         </ul>
                     </div>
                 </div>
