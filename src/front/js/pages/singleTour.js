@@ -58,34 +58,34 @@ export const SingleTour = () => {
 
     return (
         <>
-            {
-                !store.token &&
-                <h4 className='text-center'>You have to log in first to access this page</h4>
-            }
-            {
-                store.token &&
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-                            {tour &&
-                                <img src={tour.imageURL} className="img-thumbnail" style={{ maxHeight: '300px', width: 'auto' }} alt={tour.name} />
-                            }
-                        </div>
-                        <div className="col-12 col-md-6 d-flex flex-column align-items-center">
-                            {tour &&
-                                <div className='text-center p-4'>
-                                    <h1>{tour.name}</h1>
-                                    <p>{tour.descripcion}</p>
-                                    <p>{tour.precio}$ </p>
-                                </div>
-                            }
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                        {tour &&
+                            <img src={tour.imageURL} className="img-thumbnail" style={{ maxHeight: '300px', width: 'auto' }} alt={tour.name} />
+                        }
+                    </div>
+                    <div className="col-12 col-md-6 d-flex flex-column align-items-center">
+                        {tour &&
+                            <div className='text-center p-4'>
+                                <h1>{tour.name}</h1>
+                                <p>{tour.descripcion}</p>
+                                <p>{tour.precio}$ </p>
+                            </div>
+                        }
+                        {store.token ? (
                             <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                 Check and Book
                             </button>
-                        </div>
+                        ) : (
+                            <Link to="/login">
+                                <button type="button" className="btn btnSingleHotel mb-4">Check and Book</button>
+                            </Link>
+                        )}
                     </div>
                 </div>
-            }
+            </div>
+
             <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
                 <Link to={'/tours'}>
                     <button type="button" className="btn btn-secondary">Go back</button>
