@@ -55,7 +55,7 @@ export const Home = () => {
 			<div >
 				<Chatbot />
 			</div>
-			
+
 		</>
 	);
 };

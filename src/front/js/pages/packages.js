@@ -11,7 +11,7 @@ export const Packages = () => {
 
     return (
         <div className="container">
-            <h1>Packages</h1>
+            <h1 style={{ textAlign: 'center' }}>Packages</h1>
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 {store.paquetes.map((pkg, id) => (
                     <div className="col" key={id}>

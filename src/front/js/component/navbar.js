@@ -8,7 +8,6 @@ import { BsPerson } from 'react-icons/bs';
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
 
-
 export const Navbar = () => {
     const { store, actions } = useContext(Context)
 
@@ -36,72 +35,81 @@ export const Navbar = () => {
 
     }
 
+    const adminUser = store.token && store.user && store.user.username === 'Admin';
+
     return (
-        <div className={nav ? 'navbar navbar-bg' : 'navbar'}>
-            <div className={nav ? 'logo dark' : 'logo'}>
-                <Link to='/'><img src="https://raw.githubusercontent.com/4GeeksAcademy/finalproyect-group3-pt26/main/src/front/img/travello%20white%20bg%20brand.PNG" style={{ width: "150px", height: "55px", opacity: "0.75 " }} /></Link>
-            </div>
-            <ul className="nav-menu">
-                <li><Link to='/' >Home</Link></li>
-                <li><Link to='/info' style={{ width: "130px" }}>About Us</Link></li>
+        <>
+            <div className={nav ? 'navbar navbar-bg' : 'navbar'}>
+                <div className={nav ? 'logo dark' : 'logo'}>
+                    <Link to='/'><img src="https://raw.githubusercontent.com/4GeeksAcademy/finalproyect-group3-pt26/main/src/front/img/travello%20white%20bg%20brand.PNG" style={{ width: "150px", height: "55px", opacity: "0.75 " }} /></Link>
+                </div>
+                <ul className="nav-menu">
+                    <li><Link to='/' >Home</Link></li>
+                    <li><Link to='/info' style={{ width: "130px" }}>About Us</Link></li>
 
-                <li><Link to='/travel'>Travel</Link></li>
-                <li><Link to='/contact'>Contact</Link></li>
+                    <li><Link to='/travel'>Travel</Link></li>
+                    <li><Link to='/contact'>Contact</Link></li>
 
-            </ul>
-            <div className="nav-icons">
-                {store.token && (
-                    <div className="dropdown">
-                        <span className="username-span" onClick={handleMenuToogle}>
-                            {store.user && store.user.username}
-                        </span>
-                        <BsPerson className="svg-icon" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" />
-                        <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <li><Link to='/admin' className="dropdown">Admin</Link></li>
-                            <li><Link to='/reservas' className="dropdown" href="#" onClick={handleReservas}>Reservas</Link></li>
-                            <li><Link className="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>    
-                        </ul>
-                    </div>
-                )}
-                {!store.token && (
-                    <div>
-                        <Link to={'/login'}>
-                            <button style={{ marginRight: "12px" }}>Login</button>
-                        </Link>
-                        <Link to={'/register'}>
-                            <button>Register</button>
-                        </Link>
-                    </div>
-                )}
-            </div>
-            <div className="hamburger" onClick={handleNav}>
-                {!nav ? (<HiOutlineMenuAlt4 className='ícon' />) : (<AiOutlineClose style={{ color: '#000' }} className="icon" />)}
-
-            </div>
-            <div className={nav ? 'mobile-menu active' : 'mobile-menu'}>
-                <ul className="mobile-nav">
-
-                    <li><Link to='/home' >Home</Link></li>
-                    <li><Link to='/destinations'>Destinations</Link></li>
-                    <li><Link to='/carousel'>Travel</Link></li>
-                    <li><Link to='/login'>Book</Link></li>
                 </ul>
-                <div className="mobile-menu-bottom">
-                    <div className="menu-icons">
-                        <button>Search</button>
-                        <button>Account</button>
-                    </div>
-                    <div className="social-icons">
-                        <FaFacebook className='icon' />
-                        <FaInstagram className='icon' />
-                        <FaTwitter className='icon' />
-                        <FaPinterest className='icon' />
-                        <FaYoutube className='icon' />
-                    </div>
+                <div className="nav-icons">
+                    {store.token && (
+                        <div className="dropdown">
+                            <span className="username-span" onClick={handleMenuToogle}>
+                                {store.user && store.user.username}
+                            </span>
+                            <BsPerson className="svg-icon" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" />
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+                                <li>
+                                    {
+                                        adminUser &&
+                                        <Link to='/admin' className="dropdown">Admin</Link>
+                                    }
+                                </li>
+                                <li><Link to='/reservas' className="dropdown" href="#" onClick={handleReservas}>Reservas</Link></li>
+                                <li><Link className="dropdown" href="#" onClick={handleLogout}>Logout</Link></li>
+                            </ul>
+                        </div>
+                    )}
+                    {!store.token && (
+                        <div>
+                            <Link to={'/login'}>
+                                <button style={{ marginRight: "12px" }}>Login</button>
+                            </Link>
+                            <Link to={'/register'}>
+                                <button>Register</button>
+                            </Link>
+                        </div>
+                    )}
+                </div>
+                <div className="hamburger" onClick={handleNav}>
+                    {!nav ? (<HiOutlineMenuAlt4 className='ícon' />) : (<AiOutlineClose style={{ color: '#000' }} className="icon" />)}
 
                 </div>
-            </div>
-        </div>
+                <div className={nav ? 'mobile-menu active' : 'mobile-menu'}>
+                    <ul className="mobile-nav">
 
+                        <li><Link to='/home' >Home</Link></li>
+                        <li><Link to='/destinations'>Destinations</Link></li>
+                        <li><Link to='/carousel'>Travel</Link></li>
+                        <li><Link to='/login'>Book</Link></li>
+                    </ul>
+                    <div className="mobile-menu-bottom">
+                        <div className="menu-icons">
+                            <button>Search</button>
+                            <button>Account</button>
+                        </div>
+                        <div className="social-icons">
+                            <FaFacebook className='icon' />
+                            <FaInstagram className='icon' />
+                            <FaTwitter className='icon' />
+                            <FaPinterest className='icon' />
+                            <FaYoutube className='icon' />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </>
     )
 };

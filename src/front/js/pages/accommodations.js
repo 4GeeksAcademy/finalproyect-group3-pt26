@@ -11,7 +11,7 @@ export const Accommodations = () => {
 
     return (
         <div className="container">
-            <h1>Accommodations</h1>
+            <h1 style={{ textAlign: 'center' }}>Accommodations</h1>
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 {store.accommodations && store.accommodations.map((hot, id) => (
                     <div className="col" key={id}>

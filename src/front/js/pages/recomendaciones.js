@@ -73,9 +73,9 @@ export const Recomendaciones = () => {
       </div>
       <div className="packages">
         <ul>
-          {packages.map((pkg,index) => {
+          {packages.map((pkg, index) => {
             return (
-              <li key={index} 
+              <li key={index}
                 className={active === index + 1 ? "active" : ""}
                 onClick={() => setActive(index + 1)}
               >
@@ -86,9 +86,9 @@ export const Recomendaciones = () => {
         </ul>
       </div>
       <div className="destinations">
-        {data.map((destination,index) => {
+        {data.map((destination, index) => {
           return (
-            <div className="destination"  key={index}>
+            <div className="destination" key={index}>
               <img src={destination.image} alt="" />
               <h3 className="tituloDest">{destination.title}</h3>
               <p>{destination.subTitle}</p>
@@ -98,7 +98,7 @@ export const Recomendaciones = () => {
                   <img src={info2} alt="" />
                   <img src={info3} alt="" />
                 </div>
-                <h4 style={{fontSize:'20px'}}>{destination.cost}</h4>
+                <h4 style={{ fontSize: '20px' }}>{destination.cost}</h4>
               </div>
               <div className="distance">
                 <span>1000 Kms</span>
