@@ -10,8 +10,7 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
-
-
+from flask_mail import Mail, Message
 
 #Copiado desde la pag oficial
 from flask_jwt_extended import JWTManager
@@ -22,6 +21,43 @@ static_file_dir = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), '../public/')
 
 app = Flask(__name__)
+
+app.config['MAIL_SERVER']= 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = os.getenv("SMTP_USERNAME")
+app.config['MAIL_PASSWORD'] = os.getenv("SMTP_PASSWORD")
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+
+mail = Mail(app)
+
+@app.route("/sendemail", methods=['POST'])
+def index():
+    sender = os.getenv("SMTP_USERNAME")
+    msg = Message(
+        subject='Hello from Travelo!', sender=sender,
+        recipients=['traveloagency24@gmail.com']
+    )
+    
+    html_body =f'''
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <title>Correo electrónico HTML</title>
+            </head>
+            <body style="font-family: Arial, sans-serif;">
+                <h1>Email sending from Travelo!</h1>
+                <p style="margin-bottom: 10px;">Hey, sending you this email from Travelo, let us know if it works.</p>
+                <a href="#" style="color: #007bff; text-decoration: none;">www.travelo.com</a>
+                <p>Atentamente,<br>Travelo Team</p>
+            </body>
+            </html>
+    '''
+    msg.html = html_body
+    mail.send(msg)
+    return "Message sent!", 200
+
 #importado dsde la pag oficial
 app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
 jwt = JWTManager(app)
