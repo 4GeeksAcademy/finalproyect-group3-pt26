@@ -140,6 +140,8 @@ class Reserva(db.Model):
         self.id_tour = id_tour
         self.id_paquete = id_paquete
         self.id_hotel = id_hotel
+        
+    
     
     def __repr__(self):
         return f'Reserva id:{self.id}'
@@ -153,6 +155,7 @@ class Reserva(db.Model):
             "id_tour":self.tour.name if self.tour else None,
             "id_paquete": self.paquete.name if self.paquete else None,
             "id_hotel": self.hotel.name if self.hotel else None
+
 
         }
 

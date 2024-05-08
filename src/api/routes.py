@@ -34,9 +34,8 @@ bucket = storage.bucket()
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
-# cors = CORS(api, resources={r"/api/*": {"origins": "https://improved-train-q9v4p4gwr4hxg5q-3001.app.github.dev/"}})
+# cors = CORS(api, resources={r"/api/*": {"origins": "https://opulent-guacamole-wv56r5g6ppwh96jq-3000.app.github.dev/"}})
 CORS(api)
-
 
 
 @api.route('/')
