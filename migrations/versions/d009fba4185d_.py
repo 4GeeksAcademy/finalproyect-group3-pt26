@@ -1,14 +1,8 @@
 """empty message
 
-<<<<<<<< HEAD:migrations/versions/6ac07aac9e0f_.py
-Revision ID: 6ac07aac9e0f
+Revision ID: d009fba4185d
 Revises: 
-Create Date: 2024-05-04 23:15:24.735660
-========
-Revision ID: e22aa01d2d9f
-Revises: 
-Create Date: 2024-05-04 15:45:22.657724
->>>>>>>> a3a7f7a01154bd50b65dd212dfa4c5f9d148e085:migrations/versions/e22aa01d2d9f_.py
+Create Date: 2024-05-08 22:25:41.285318
 
 """
 from alembic import op
@@ -16,11 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-<<<<<<<< HEAD:migrations/versions/6ac07aac9e0f_.py
-revision = '6ac07aac9e0f'
-========
-revision = 'e22aa01d2d9f'
->>>>>>>> a3a7f7a01154bd50b65dd212dfa4c5f9d148e085:migrations/versions/e22aa01d2d9f_.py
+revision = 'd009fba4185d'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -69,6 +59,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('fecha_inicio', sa.DateTime(), nullable=False),
     sa.Column('fecha_final', sa.DateTime(), nullable=False),
+    sa.Column('imageURL', sa.String(length=500), nullable=False),
     sa.Column('id_user', sa.Integer(), nullable=True),
     sa.Column('id_tour', sa.Integer(), nullable=True),
     sa.Column('id_paquete', sa.Integer(), nullable=True),

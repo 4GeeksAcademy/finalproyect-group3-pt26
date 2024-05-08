@@ -28,10 +28,10 @@ export const Register = () => {
         const newPassword = event.target.value;
         setPassword(newPassword);
 
-        if (newPassword.length >= 6) {
+        if (newPassword.length >= 5) {
             setPasswordError('');
         } else {
-            setPasswordError('La contraseña debe tener al menos 6 caracteres.');
+            setPasswordError('La contraseña debe tener al menos 5 caracteres.');
         }
     }
 

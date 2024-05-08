@@ -11,9 +11,10 @@ from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
 from flask_mail import Mail, Message
-
+from flask_cors import CORS, cross_origin
 #Copiado desde la pag oficial
 from flask_jwt_extended import JWTManager
+
 
 # from models import Persona
 ENV = "development" if os.getenv("FLASK_DEBUG") == "1" else "production"
@@ -21,6 +22,7 @@ static_file_dir = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), '../public/')
 
 app = Flask(__name__)
+CORS(app)
 
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
@@ -31,14 +33,21 @@ app.config['MAIL_USE_SSL'] = False
 
 mail = Mail(app)
 
-@app.route("/sendemail", methods=['POST'])
-def index():
+@app.route('/sendemail', methods=['POST'])
+def send_email():
+    # Obtener los datos del cuerpo de la solicitud
+    data = request.json
+    nombre = data.get('nombre')
+    email = data.get('email')
+    mensaje = data.get('mensaje')
+
+    # Construir el correo electrónico personalizado
     sender = os.getenv("SMTP_USERNAME")
     msg = Message(
-        subject='Hello from Travelo!', sender=sender,
+        subject='Mensaje de {}'.format(nombre),
+        sender=sender,
         recipients=['traveloagency24@gmail.com']
     )
-    
     html_body =f'''
             <!DOCTYPE html>
             <html lang="es">
@@ -48,14 +57,19 @@ def index():
             </head>
             <body style="font-family: Arial, sans-serif;">
                 <h1>Email sending from Travelo!</h1>
-                <p style="margin-bottom: 10px;">Hey, sending you this email from Travelo, let us know if it works.</p>
-                <a href="#" style="color: #007bff; text-decoration: none;">www.travelo.com</a>
+                <p style="margin-bottom: 10px;">Hola {nombre},</p>
+                <p style="margin-bottom: 10px;">Acabamos de recibir un mensaje de tu parte:</p>
+                <p>{mensaje}</p>
+                <p>Puedes responder a este correo electrónico para contactar a {nombre} a la dirección de correo electrónico {email}.</p>
                 <p>Atentamente,<br>Travelo Team</p>
             </body>
             </html>
     '''
     msg.html = html_body
+    
+    # Enviar el correo electrónico
     mail.send(msg)
+    
     return "Message sent!", 200
 
 #importado dsde la pag oficial
