@@ -89,15 +89,16 @@ export const Navbar = () => {
                 <div className={nav ? 'mobile-menu active' : 'mobile-menu'}>
                     <ul className="mobile-nav">
 
-                        <li><Link to='/home' >Home</Link></li>
-                        <li><Link to='/destinations'>Destinations</Link></li>
-                        <li><Link to='/carousel'>Travel</Link></li>
-                        <li><Link to='/login'>Book</Link></li>
+                        <li><Link to='/' >Home</Link></li>
+                        <li><Link to='/info'>About Us</Link></li>
+                        <li><Link to='/travel'>Travel</Link></li>
+                        <li><Link to='/contact'>Contact</Link></li>
                     </ul>
                     <div className="mobile-menu-bottom">
                         <div className="menu-icons">
-                            <button>Search</button>
-                            <button>Account</button>
+                            <button><Link to='/login'>Login</Link></button>
+                            <button><Link to='/register'>Register</Link></button>
+                            
                         </div>
                         <div className="social-icons">
                             <FaFacebook className='icon' />
