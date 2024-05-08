@@ -98,7 +98,7 @@ export const Navbar = () => {
                         <div className="menu-icons">
                             <button><Link to='/login'>Login</Link></button>
                             <button><Link to='/register'>Register</Link></button>
-                            
+
                         </div>
                         <div className="social-icons">
                             <FaFacebook className='icon' />
