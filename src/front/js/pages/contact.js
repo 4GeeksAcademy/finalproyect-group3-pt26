@@ -1,8 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/home.css";
 import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
 import { Link } from "react-router-dom";
+
 export const Contact = () => {
+
+    const [form, setForm] = useState({
+        nombre: '',
+        email: '',
+        mensaje: ''
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setForm({ ...form, [name]: value })
+    };
+
+    const emailFetch = async () => {
+        try {
+            const response = await fetch(process.env.BACKEND_URL + "/sendemail", {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(form)
+            })
+            if (response.ok) {
+                alert('Message sent successfully');
+                setForm({
+                    nombre: '',
+                    email: '',
+                    mensaje: ''
+                })
+            }
+            else {
+                throw new Error('Error sending the message');
+            }
+        }
+        catch (error) {
+            console.log(error);
+            alert('Error sending the message');
+        }
+    }
+
+
     return (
         <div className=" container">
 
@@ -17,7 +58,9 @@ export const Contact = () => {
                     <label htmlFor="nombre">Nombre</label>
                     <input
                         type="text"
-                        placeholder="Tu Nombre"
+                        name="nombre"
+                        value={form.nombre}
+                        onChange={handleInputChange}
                         style={{ width: '100%', padding: '0.5rem', boxSizing: 'border-box' }}
                     />
                 </div>
@@ -26,7 +69,9 @@ export const Contact = () => {
                     <label htmlFor="email">Email</label>
                     <input
                         type="email"
-                        placeholder="Tu E-mail"
+                        name="email"
+                        value={form.email}
+                        onChange={handleInputChange}
                         style={{ width: '100%', padding: '0.5rem', boxSizing: 'border-box' }}
                     />
                 </div>
@@ -35,25 +80,14 @@ export const Contact = () => {
                     <label htmlFor="mensaje">Mensaje</label>
                     <textarea
                         rows="6"
+                        name="mensaje"
+                        value={form.mensaje}
+                        onChange={handleInputChange}
                         style={{ width: '100%', padding: '0.5rem', boxSizing: 'border-box' }}
                     ></textarea>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <input
-                        type="submit"
-                        value="Enviar"
-                        style={{
-                            width: '10%',
-                            padding: '0.5rem',
-                            backgroundColor: '#007bff',
-                            color: '#fff',
-                            border: 'none',
-                            borderRadius: '4px',
-                            cursor: 'pointer'
-                        }}
-                    />
-                </div>
+                <button onClick={emailFetch}>Enviar</button>
             </form>
         </div>
     )
