@@ -14,6 +14,7 @@ export const Register = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [passwordError, setPasswordError] = useState('');
 
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
@@ -24,10 +25,21 @@ export const Register = () => {
     }
 
     const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
+        const newPassword = event.target.value;
+        setPassword(newPassword);
+
+        if (newPassword.length >= 6) {
+            setPasswordError('');
+        } else {
+            setPasswordError('La contraseña debe tener al menos 6 caracteres.');
+        }
     }
+
     const handleSubmit = async (event) => {
         event.preventDefault();
+        if (passwordError) {
+            return;
+        }
         const open = await actions.handleSubmit({ username, email, password }, navigate);
         if (open) {
             setUsername('')
@@ -66,14 +78,23 @@ export const Register = () => {
                             />
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-sm-10">
+                    <div className="row ">
+                        <div className="col-sm-10 ">
                             <input style={{ width: "315px", borderRadius: "22px" }}
-                                type="password" className="form-control form-control-lg colorStyle" placeholder="Password"
+                                type="password" id="validationTooltip01" required className="form-control form-control-lg colorStyle " placeholder="Password"
                                 value={password}
                                 onChange={handlePasswordChange}
+
                             />
                         </div>
+
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-sm-10">
+                        {passwordError && (
+                            <div style={{ color: 'red', marginTop: '5px' }}>{passwordError}</div>
+                        )}
                     </div>
                 </div>
                 {/* <Link to={"/login"}> */}

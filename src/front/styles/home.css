@@ -1,35 +1,34 @@
-.home{
+.home {
     width: 100%;
-    color:#fff;
+    color: #fff;
     position: relative;
-   
 }
 
-p{
+p {
     font-size: 20px;
 }
 
-.h2Home{
+.h2Home {
     color: #fff;
 }
 
-.overlay{
-    background-color: rgb(0, 0, 0,0.03);
-    position:absolute;
+.overlay {
+    background-color: rgba(0, 0, 0, 0.03);
+    position: absolute;
     width: 100%;
     height: 100%;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
 }
 
-#video{
+#video {
     width: 100%;
     height: 100vh;
     object-fit: cover;
     z-index: -1;
 }
 
-.home .content{
+.home .content {
     position: absolute;
     top: 0;
     height: 100vh;
@@ -59,20 +58,20 @@ p{
 .form input[type=text] {
     border: transparent;
     background-color: transparent;
-    width: 400px;
+    width: 100%; /* Cambiar el ancho a 100% para que se ajuste al ancho del contenedor */
     font-size: 1.2rem;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .form input[type=text]:focus {
     outline: none;
 }
 
-@media screen and (max-width: 940px) {
+/* Media query para pantallas con un ancho máximo de 740px */
+@media screen and (max-width: 740px) {
     .form input[type=text] {
-        max-width: 275px;
+        max-width: 275px; /* Reducir el ancho máximo del input en pantallas más pequeñas */
     }
-
 }
 
 .carrusel{
@@ -108,16 +107,19 @@ p{
     justify-content: center;
     border-radius: 1rem;
     transition: 0.3s ease-in-out;
+    background-color:aliceblue;
 }
 .col-4:hover{
     transform: translateX(0.02rem) translateY(-0.5rem);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   
 }
 .ConSpace{
-    background-color: #8338ec14;
+    background-color: aliceblue;
 }
 .card{
     border: none;
+    background:aliceblue
 }
 
 .card-img-top{
@@ -132,6 +134,7 @@ p{
     margin-top: 30px;
     flex-direction: column;
     align-items: center;
+   
 }
 
 .TRimagen {
@@ -152,16 +155,17 @@ p{
 
 @media screen and (max-width: 768px) {
     .TRrow {
-      max-width: 100%;
-      flex-direction: column;
-      display: flex;
-      align-content: center;
-    }
-    .col-4 {
-        width: 100%;
         max-width: 100%;
-      }
-  }
+        flex-direction: column;
+        display: flex;
+        align-content: center;
+    }
+
+    .TRcard {
+        width: 100%; /* Cambiar el ancho de las tarjetas para que ocupen todo el ancho disponible */
+        margin-bottom: 20px; /* Agregar espacio entre las tarjetas */
+    }
+}
 
 /*FIN DE EL APARTADO DE TRAVEL.JS*/
 

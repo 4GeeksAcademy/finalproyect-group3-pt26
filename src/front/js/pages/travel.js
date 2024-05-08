@@ -16,8 +16,8 @@ export const Travel = () => {
             {/* AQUI ESTAN LAS CARDS DE LOS PAISES */}
             <div className="container" style={{ marginTop: "40px", "display": "contents" }}>
                 <h2 style={{ textAlign: "center" }}>Latinoamerica</h2>
-                <div className="row TRrow d-flex justify-content-center" >
-                    <div className="col-4 TRcard">
+                <div className="row TRrow d-flex justify-content-center " >
+                    <div className="col-4 TRcard ">
                         <div className="card" style={{ width: "18rem" }}>
                             <img src="https://i.pinimg.com/564x/f5/cd/10/f5cd10e82b98c4c7fc3077694e1d554a.jpg" className="card-img-top" alt="..." width={"450px"} height={"350px"} />
                             <div className="card-body d-flex flex-column align-items-center">

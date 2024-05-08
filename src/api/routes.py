@@ -17,6 +17,7 @@ from flask import make_response
 import jwt
 from api.chatbot_interactivo import get_response
 
+
 import firebase_admin
 from firebase_admin import credentials, storage
 
@@ -35,6 +36,8 @@ api = Blueprint('api', __name__)
 # Allow CORS requests to this API
 # cors = CORS(api, resources={r"/api/*": {"origins": "https://improved-train-q9v4p4gwr4hxg5q-3001.app.github.dev/"}})
 CORS(api)
+
+
 
 @api.route('/')
 def sitemap():
@@ -556,7 +559,7 @@ def add_new_hotel_reserva(hotel_id):
 #     else:
 #         return jsonify({"msg": "Usuario no encontrado"}), 404
 
-# @cross_origin
+
 @api.route('/users/reservations', methods=['GET'])
 @jwt_required()
 def get_user_reservations():
