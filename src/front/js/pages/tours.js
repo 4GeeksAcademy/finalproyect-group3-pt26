@@ -22,7 +22,7 @@ export const Tours = () => {
                                 <p className="card-text">{tour.descripcion}</p>
                                 <p className="card-title">{tour.precio} $ per person</p>
                                 <Link to={`/tour/${tour.id}`}>
-                                    <button className="btn btn-primary">VIEW DETAILS</button>
+                                    <button>VIEW DETAILS</button>
                                 </Link>
                             </div>
                         </div>
@@ -31,7 +31,7 @@ export const Tours = () => {
             </div>
             <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
                 <Link to={'/'}>
-                    <button type="button" className="btn btn-secondary">Go back</button>
+                    <button>Go back</button>
                 </Link>
             </div>
         </div>

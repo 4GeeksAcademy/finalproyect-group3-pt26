@@ -473,7 +473,6 @@ def add_new_tour_reserva(tour_id):
         fecha_final=request.json['fecha_final'],
         id_user=current_user.id,
         id_tour=tour_id,
-        id_imageURL=request.json('imageURL')
     )
 
     db.session.add(nueva_reserva)
@@ -506,7 +505,6 @@ def add_new_paquete_reserva(paquete_id):
         fecha_final=request.json['fecha_final'],
         id_user=current_user.id,
         id_paquete=paquete_id,
-        id_imageURL=request.json('imageURL')
     )
 
     db.session.add(nueva_reserva)
@@ -539,7 +537,6 @@ def add_new_hotel_reserva(hotel_id):
         fecha_final=request.json['fecha_final'],
         id_user=current_user.id,
         id_hotel=hotel_id,
-        id_imageURL=request.json('imageURL')
     )
 
     db.session.add(nueva_reserva)

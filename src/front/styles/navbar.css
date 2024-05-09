@@ -19,36 +19,38 @@
     margin: 0px;
 }
 
- ul {
+ul {
     list-style-type: none;
-   
-  }
-  
-  ul li {
+
+}
+
+ul li {
     /* width: 100%; */
     margin: 1rem 0;
     margin-left: 2rem;
-  }
-  
-  ul li a {
+}
+
+ul li a {
     text-decoration: none;
-    color: #0077b6;
+    font-weight: 900;
+    color: #2e887c;
     font-size: 1.2rem;
     transition: 0.1s ease-in-out;
-  }
-  
-  ul li a:hover {
+}
+
+ul li a:hover {
     color: #023e8a;
-  }
-  
-  ul li:first-of-type a {
+}
+
+/* ul li:first-of-type a {
     color: #023e8a;
     font-weight: 900;
-  } 
+} */
+
 .hamburger {
     display: none;
     /* padding: 1rem; */
-  
+
 }
 
 .mobile-menu {
@@ -61,12 +63,19 @@
     width: 53px;
     border-radius: 10px;
     background: #ffffff;
-    color: #0077b685;
-    border: 1px solid #48cae4;
-    box-shadow: 3px 5px 1px rgba(70, 206, 235, 1.0);
+    color: #2e887c;
+    /* color: #0077b685; */
+    /* border: 1px solid #48cae4; */
+    border: 2px solid #2e887c;
+    /* box-shadow: 3px 5px 1px rgba(70, 206, 235, 1.0); */
 }
 
-.icon{
+.svg-icon:hover {
+    background-color: #2e887c;
+    color: #023e8a;
+}
+
+.icon {
     width: 25px;
     height: 25px;
 }
@@ -81,31 +90,39 @@
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     transition: 0.3s ease-in-out;
-  }
-  
-  .navbar button:hover {
+}
+
+.navbar button:hover {
     background-color: #023e8a;
-  }
+}
+
 .username-span {
-    color: #0077b6;
+    color: #2e887c;
+    background-color: #fff;
     font-weight: bold;
     font-size: 1.2rem;
     margin-right: 35px;
     padding: 7px;
-    border: 1px solid #48cae4;
-    box-shadow: 3px 5px 1px rgba(70, 206, 235, 1.0);
+    border: 2px solid #2e887c;
+    /* box-shadow: 3px 5px 1px rgba(70, 206, 235, 1.0); */
     border-radius: 12px;
     width: 121px;
     text-align: center;
+    text-transform: uppercase;
 }
 
-.dropdown{
+.username-span:hover {
+    background-color: #2e887c;
+    color: #023e8a;
+}
+
+.dropdown {
     display: flex;
     color: #023e8a;
     font-weight: 900;
 }
 
-.nav-icons{
+.nav-icons {
     padding: 23px;
 }
 
@@ -116,7 +133,7 @@
     margin-left: 115px;
 }
 
-.dropdown-menu[data-bs-popper]{
+.dropdown-menu[data-bs-popper] {
     top: 112%;
 }
 
@@ -157,7 +174,7 @@
         width: 100%;
         text-align: center;
         padding: 1rem 0;
-    } 
+    }
 
     .social-icons {
         display: flex;
@@ -173,7 +190,7 @@
     .mobile-menu button {
         margin: 1rem;
         width: 90%;
-    } 
+    }
 
 
     .nav-menu {
@@ -183,9 +200,10 @@
     .nav-icons {
         display: none;
     }
+
     .hamburger {
         display: block;
-        color:black;
+        color: black;
     }
 
 }

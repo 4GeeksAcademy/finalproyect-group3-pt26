@@ -7,5 +7,8 @@
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "remote.autoForwardPortsFallback": 0
+    "remote.autoForwardPortsFallback": 0,
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    }
 }

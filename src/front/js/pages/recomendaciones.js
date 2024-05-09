@@ -69,7 +69,7 @@ export const Recomendaciones = () => {
   return (
     <section className="recommend">
       <div className="title">
-        <h2 className="tituloReco">Recommended Destinations</h2>
+        <h2 className="tituloReco">RECOMMENDED DESTINATIONS</h2>
       </div>
       <div className="packages">
         <ul>

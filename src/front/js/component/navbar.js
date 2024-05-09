@@ -44,11 +44,10 @@ export const Navbar = () => {
                     <Link to='/'><img src="https://raw.githubusercontent.com/4GeeksAcademy/finalproyect-group3-pt26/main/src/front/img/travello%20white%20bg%20brand.PNG" style={{ width: "150px", height: "55px", opacity: "0.75 " }} /></Link>
                 </div>
                 <ul className="nav-menu">
-                    <li><Link to='/' >Home</Link></li>
-                    <li><Link to='/info' style={{ width: "130px" }}>About Us</Link></li>
-
-                    <li><Link to='/travel'>Travel</Link></li>
-                    <li><Link to='/contact'>Contact</Link></li>
+                    <li><Link to='/' >HOME</Link></li>
+                    <li><Link to='/info' style={{ width: "130px" }}>ABOUT US</Link></li>
+                    <li><Link to='/travel'>TRAVEL</Link></li>
+                    <li><Link to='/contact'>CONTACT</Link></li>
 
                 </ul>
                 <div className="nav-icons">
@@ -88,7 +87,6 @@ export const Navbar = () => {
                 </div>
                 <div className={nav ? 'mobile-menu active' : 'mobile-menu'}>
                     <ul className="mobile-nav">
-
                         <li><Link to='/' >Home</Link></li>
                         <li><Link to='/info'>About Us</Link></li>
                         <li><Link to='/travel'>Travel</Link></li>

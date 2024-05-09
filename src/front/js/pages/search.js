@@ -61,7 +61,7 @@ export const Search = () => {
                                 <input type="date" style={{ "width": "265px" }} />
                             </div>
                         </div>
-                        <button>Rates & Availabilities </button>
+                        <button>Rates & Availabilities</button>
                     </form>
                 </div>
             </div>

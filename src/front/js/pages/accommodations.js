@@ -18,11 +18,12 @@ export const Accommodations = () => {
                         <div className="card">
                             <img src={hot.imageURL} className="card-img-top" alt="..." />
                             <div className="card-body">
-                                <h5 className="card-title">{hot.name}</h5>
-                                <p className="card-text">{hot.descripcion}</p>
-                                <p className="card-title">{hot.precio}$ per night</p>
+                                <h5 className="card-title" style={{ color: '#3a6b67', fontSize: '2rem', fontWeight: '700' }}>{hot.name}</h5>
+                                <p className="card-text" style={{ fontSize: '1rem', lineHeight: '1.2' }}>{hot.descripcion}</p>
+                                <p className="card-text" style={{ fontSize: '1.5rem', fontWeight: '500', color: '#464f52', lineHeight: '1.2' }}>{hot.precio}$ per night</p>
+                                <p className="card-text" style={{ fontSize: '1rem', lineHeight: '1.2' }}>Taxes included</p>
                                 <Link to={`/accommodation/${hot.id}`}>
-                                    <button className="btn btn-primary">VIEW DETAILS</button>
+                                    <button>VIEW DETAILS</button>
                                 </Link>
                             </div>
                         </div>
@@ -31,7 +32,7 @@ export const Accommodations = () => {
             </div>
             <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
                 <Link to={'/'}>
-                    <button type="button" className="btn btn-secondary">Go back</button>
+                    <button>Go back</button>
                 </Link>
             </div>
         </div>

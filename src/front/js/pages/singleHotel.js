@@ -76,12 +76,12 @@ export const SingleHotel = () => {
                             </div>
                         }
                         {store.token ? (
-                            <button type="button" className="btn btnSingleHotel mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                 Check and Book
                             </button>
                         ) : (
                             <Link to="/login">
-                                <button type="button" className="btn btnSingleHotel mb-4">Check and Book</button>
+                                <button type="button">Check and Book</button>
                             </Link>
                         )}
                     </div>
@@ -90,7 +90,7 @@ export const SingleHotel = () => {
 
             <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
                 <Link to={'/accommodations'}>
-                    <button type="button" className="btn btn-secondary">Go back</button>
+                    <button>Go back</button>
                 </Link>
             </div>
 
@@ -115,8 +115,8 @@ export const SingleHotel = () => {
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={bookHotel}>Book</button>
+                            <button type="button" data-bs-dismiss="modal">Close</button>
+                            <button type="button" data-bs-dismiss="modal" onClick={bookHotel}>Book</button>
                         </div>
                     </div>
                 </div>

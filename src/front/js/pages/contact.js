@@ -7,7 +7,7 @@ export const Contact = () => {
     const [nombre, setNombre] = useState('')
     const [email, setEmail] = useState('')
     const [mensaje, setMensaje] = useState('')
-    
+
 
     const handleNameChange = (event) => {
         setNombre(event.target.value);
@@ -20,7 +20,7 @@ export const Contact = () => {
         setMensaje(event.target.value);
     }
 
-  
+
     const emailFetch = async (event) => {
         event.preventDefault();
         try {
@@ -94,7 +94,7 @@ export const Contact = () => {
                         style={{ width: '100%', padding: '0.5rem', boxSizing: 'border-box' }}
                     ></textarea>
                 </div>
-                <button type="submit" className='loginBoton'>Send</button>
+                <button type="submit" >Send</button>
                 {/* <button onClick={emailFetch}>Enviar</button> */}
             </form>
         </div>

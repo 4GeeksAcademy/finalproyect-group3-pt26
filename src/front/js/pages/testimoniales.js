@@ -7,7 +7,8 @@ export const Testimoniales = () => {
   return (
     <section id="testimonials">
       <div className="title">
-        <h2>Happy Customers</h2>
+        <h2>HAPPY CUSTOMERS</h2>
+        <p>At Travelo, we value the opinions of our customers and passengers because they matter and help us grow.</p>
       </div>
       <div className="testimonials">
         <div className="testimonial">

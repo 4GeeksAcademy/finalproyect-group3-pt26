@@ -79,7 +79,7 @@ export const SingleTour = () => {
                             </button>
                         ) : (
                             <Link to="/login">
-                                <button type="button" className="btn btnSingleHotel mb-4">Check and Book</button>
+                                <button>Check and Book</button>
                             </Link>
                         )}
                     </div>
@@ -88,7 +88,7 @@ export const SingleTour = () => {
 
             <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
                 <Link to={'/tours'}>
-                    <button type="button" className="btn btn-secondary">Go back</button>
+                    <button>Go back</button>
                 </Link>
             </div>
 
@@ -113,8 +113,8 @@ export const SingleTour = () => {
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={bookTour}>Book</button>
+                            <button type="button" data-bs-dismiss="modal">Close</button>
+                            <button type="button" data-bs-dismiss="modal" onClick={bookTour}>Book</button>
                         </div>
                     </div>
                 </div>
