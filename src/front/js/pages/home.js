@@ -30,7 +30,7 @@ export const Home = () => {
 							<input type="text" placeholder='Search Destinations' />
 						</div>
 						<div>
-							<button className="buttonSearch"><AiOutlineSearch className='icon' /></button>
+							<button><AiOutlineSearch className='icon' /></button>
 						</div>
 					</form>
 				</div>

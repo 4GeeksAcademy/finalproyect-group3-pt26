@@ -110,13 +110,13 @@ export const AdminTour = () => {
               <img src={URL.createObjectURL(file)} alt="img-preview" style={{ maxWidth: '30rem' }} />
             }
             {serverResponse}
-            <button onClick={() => handleSubmit()} className="btn btn-success btnAdmin">Upload</button>
+            <button onClick={() => handleSubmit()}>Upload</button>
           </div>
 
 
           <div className="card-body d-flex justify-content-center">
             {/* <!-- Button trigger modal --> */}
-            <button type="button" className="btn btn-primary " style={{ borderRadius: "10px", border: "none" }} data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={handleCreateTour}>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={handleCreateTour}>
               Create Tour
             </button>
 
@@ -129,7 +129,7 @@ export const AdminTour = () => {
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div className="modal-footer">
-                    <button type="button" className="btn btn-primary" data-bs-dismiss="modal" >Close</button>
+                    <button type="button" data-bs-dismiss="modal" >Close</button>
                   </div>
                 </div>
               </div>
@@ -139,10 +139,10 @@ export const AdminTour = () => {
       </div>
       <div className="d-flex justify-content-between" style={{ width: '30rem', margin: 'auto', paddingTop: '1rem', paddingBottom: '1rem' }}>
         <Link to={'/admin'}>
-          <button type="button" className="btn btn-secondary borderAdmin">Go back</button>
+          <button type="button">Go back</button>
         </Link>
         <Link to={'/tours'}>
-          <button type="button" className="btn btn-secondary borderAdmin">Tours view</button>
+          <button type="button">Tours view</button>
         </Link>
       </div>
     </>

@@ -42,7 +42,7 @@ export const AdminUser = () => {
             </div>
             <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
                 <Link to={'/admin'}>
-                    <button type="button" className="btn btn-secondary">Go back</button>
+                    <button type="button">Go back</button>
                 </Link>
             </div>
         </div>
