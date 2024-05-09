@@ -36,7 +36,7 @@ export const Search = () => {
                     <div className="promo">
                         <h4 className="save">GET AN ADDITIONAL 7% OFF</h4>
                         <p className="timer">12 HOURS LEFT!</p>
-                        <p className="offers">VIEW ALL CURRENT OFFERS</p>
+                        <Link to={'/travel'} style={{ color: '#fff', textDecoration: 'underline' }}>VIEW ALL CURRENT OFFERS</Link>
                     </div>
                     <form className="d-flex  flex-column">
                         <div className="input-wrap">
