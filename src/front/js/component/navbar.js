@@ -34,9 +34,8 @@ export const Navbar = () => {
     const handleReservas = async () => {
 
     }
-
     const adminUser = store.token && store.user && store.user.username === 'Admin';
-
+    
     return (
         <>
             <div className={nav ? 'navbar navbar-bg' : 'navbar'}>
