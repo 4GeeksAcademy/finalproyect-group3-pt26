@@ -35,7 +35,7 @@ export const Navbar = () => {
 
     }
     const adminUser = store.token && store.user && store.user.username === 'Admin';
-    
+
     return (
         <>
             <div className={nav ? 'navbar navbar-bg' : 'navbar'}>

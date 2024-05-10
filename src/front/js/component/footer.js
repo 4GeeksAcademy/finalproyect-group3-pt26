@@ -10,11 +10,10 @@ export const Footer = () => {
                     <div className="row" >
                         <div className="col" >
                             <ul className="ulFooter">
-                                <li className="listFooterFather" ><Link className="listFooter" to="/">Aviso Legal</Link></li>
-                                <li className="listFooterFather" ><Link className="listFooter" to="/">Política de Privacidad</Link></li>
-                                <li className="listFooterFather" ><Link className="listFooter" to="/">Política de Cookies</Link></li>
-                                <li className="listFooterFather" ><Link className="listFooter" to="/">Política de Calidad</Link></li>
-                                <li className="listFooterFather" ><Link className="listFooter" to="/">Declaración Accesibilidad</Link></li>
+                                <li className="listFooterFather" ><Link className="listFooter" to="/">AVISO LEGAL</Link></li>
+                                <li className="listFooterFather" ><Link className="listFooter" to="/">POLÍTICA DE PRIVACIDAD</Link></li>
+                                <li className="listFooterFather" ><Link className="listFooter" to="/">POLÍTICA DE COOKIES</Link></li>
+                                <li className="listFooterFather" ><Link className="listFooter" to="/">DECLARACIÓN ACCESIBILIDAD</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -29,16 +28,16 @@ export const Footer = () => {
                             <Link to='https://twitter.com/'> < FaTwitter className="iconFooter" /> </Link>
                             <Link to='https://www.youtube.com/'> < FaYoutube className="iconFooter" /> </Link>
                         </div>
-                        <p className="pFooter">© 2024 Travelo. Todos los derechos reservados.</p>
+                        <p className="pFooter">© 2024 Travelo. Designed and developed by <Link style={{ color: '#fff' }} to={'https://github.com/SebaFretes/'}>Sebastián Fretes</Link>, <Link style={{ color: '#fff' }} to={'https://github.com/clisdermar/'}>Clisdermar Vivas</Link> y <Link style={{ color: '#fff' }} to={'https://github.com/Anibal-JPG'}>Anibal Velasco</Link></p>
                     </div>
                 </div>
                 <div className="col-4 col-4-footer">
                     <div className="row" >
                         <ul className="d-flex flex-column ul2Footer">
-                            <li className="listFooterFather" ><Link className="listFooter" to="/">Home</Link></li>
-                            <li className="listFooterFather" ><Link className="listFooter" to="/info">About us</Link></li>
-                            <li className="listFooterFather" ><Link className="listFooter" to="/travel">Travel</Link></li>
-                            <li className="listFooterFather" ><Link className="listFooter" to="/contact">Contacts</Link></li>
+                            <li className="listFooterFather" ><Link className="listFooter" to="/">HOME</Link></li>
+                            <li className="listFooterFather" ><Link className="listFooter" to="/info">ABOUT US</Link></li>
+                            <li className="listFooterFather" ><Link className="listFooter" to="/travel">TRAVEL</Link></li>
+                            <li className="listFooterFather" ><Link className="listFooter" to="/contact">CONTACTS</Link></li>
                         </ul>
                     </div>
                 </div>
