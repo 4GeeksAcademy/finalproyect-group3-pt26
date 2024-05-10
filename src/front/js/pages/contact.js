@@ -51,7 +51,7 @@ export const Contact = () => {
     }
 
     return (
-        <div className=" container">
+        <div className="container">
 
 
             <div style={{ height: '20rem', width: '100%', background: 'url(https://images.pexels.com/photos/62623/wing-plane-flying-airplane-62623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat', backgroundSize: 'cover' }}> </div>

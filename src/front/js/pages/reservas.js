@@ -78,23 +78,20 @@ export const Reservas = () => {
                                         {reserva.id_tour ? <div className='col'>Tour: {reserva.id_tour}</div> : null}
                                         {reserva.id_paquete ? <div className='col'>Paquete: {reserva.id_paquete}</div> : null}
                                         {reserva.id_hotel ? <div className='col'>Hotel: {reserva.id_hotel}</div> : null}
-                                        <button onClick={openModal}>Cancelar</button>
+                                        <button onClick={openModal}>Delete Reservation</button>
                                         {showModal && (
                                             <div className="modal" tabIndex="-1" role="dialog" style={{ display: 'block' }}>
                                                 <div className="modal-dialog" role="document">
                                                     <div className="modal-content">
                                                         <div className="modal-header">
-                                                            <h5 className="modal-title">Confirmar Cancelación</h5>
-                                                            <button type="button" className="close" onClick={closeModal} aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
+                                                            <h5 className="modal-title">Delete Reservation</h5>
                                                         </div>
                                                         <div className="modal-body">
-                                                            <p>¿Estás seguro que deseas cancelar esta reserva?</p>
+                                                            <p>¿Are you sure do you want to delete?</p>
                                                         </div>
                                                         <div className="modal-footer">
-                                                            <button type="button" className="btn btn-secondary" onClick={closeModal}>Cerrar</button>
-                                                            <button type="button" className="btn btn-danger" onClick={() => { deleteRes(reserva.id); closeModal(); }}>Cancelar Reserva</button>
+                                                            <button type="button" onClick={closeModal}>Go back</button>
+                                                            <button type="button" onClick={() => { deleteRes(reserva.id); closeModal(); }}>Delete</button>
                                                         </div>
                                                     </div>
                                                 </div>

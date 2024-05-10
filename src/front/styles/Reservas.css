@@ -2,26 +2,26 @@
     max-width: 1500px !important
 } */
 
-.bg-image{
+.bg-image {
     margin: 50px 1px 50px 0px;
     height: 550px;
-    
+
 }
 
-#videoReserva{
-    width: 99%;
-    height: 60vh;
+#videoReserva {
+    width: 100%;
+    height: 80vh;
     object-fit: fill;
     z-index: -1;
     position: absolute;
 }
 
-h2{
+h2 {
     color: rgb(12, 12, 12);
     font-size: 43px;
 }
 
-.buttonClas{
+.buttonClas {
     width: 140px;
     height: 50px;
     border: none;
@@ -30,46 +30,50 @@ h2{
     font-size: 23px;
     transition: 0.3s ease-in-out;
 }
-.buttonClas:hover{
+
+.buttonClas:hover {
     transform: translateX(0.02rem) translateY(-0.5rem);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.text{
+.text {
     animation: zoom 5s ease infinite;
 }
+
 @keyframes zoom {
     0% {
         transform: scale(0.85);
     }
+
     50% {
-        transform: scale(1); 
+        transform: scale(1);
     }
+
     100% {
-        transform: scale(0.85); 
+        transform: scale(0.85);
     }
 }
 
-.cardReserva{
+.cardReserva {
     border: 2px solid rgb(72 202 228);
-    border-radius:20px;
+    border-radius: 20px;
     padding: 10px;
     box-shadow: 0px 0px 10px 2px rgba(72, 202, 228, 0.7)
 }
 
-.fatherCardReserva{
+.fatherCardReserva {
     height: 400px;
     margin: 60px;
 }
 
-.imgReservas{
+.imgReservas {
     margin: 15px;
     border-radius: 120px;
     width: 470px;
     height: 341px;
 }
 
-.btnReservas{
+.btnReservas {
     width: 150px;
     height: 45px;
     border: none;
@@ -78,22 +82,25 @@ h2{
     color: white;
 }
 
-.animation{
+.animation {
     animation: zoom 5s ease infinite;
 }
+
 @keyframes zoom {
     0% {
         transform: scale(0.85);
     }
+
     50% {
-        transform: scale(1); 
+        transform: scale(1);
     }
+
     100% {
-        transform: scale(0.85); 
+        transform: scale(0.85);
     }
 }
 
-.x{
+.x {
     width: 240px;
     border-radius: 29px;
     transform: rotate(-25deg);
