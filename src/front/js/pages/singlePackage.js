@@ -70,7 +70,7 @@ export const SinglePackage = () => {
                             <div className='text-center p-4'>
                                 <h1 style={{ color: '#3a6b67', fontSize: '2rem', fontWeight: '700' }}>{singlePaq.name}</h1>
                                 <p style={{ fontSize: '1rem', lineHeight: '1.2' }}>{singlePaq.descripcion}</p>
-                                <p style={{ fontSize: '1.5rem', fontWeight: '500', color: '#464f52', lineHeight: '1.2' }}>{singlePaq.precio}$ per night</p>
+                                <p style={{ fontSize: '1.5rem', fontWeight: '500', color: '#464f52', lineHeight: '1.2' }}>{singlePaq.precio}$ per person</p>
                                 <p className="card-text" style={{ fontSize: '1rem', lineHeight: '1.2' }}>Taxes included</p>
                             </div>
                         }

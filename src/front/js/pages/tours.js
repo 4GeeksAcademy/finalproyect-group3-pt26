@@ -20,7 +20,7 @@ export const Tours = () => {
                             <div className="card-body">
                                 <h5 className="card-title" style={{ color: '#3a6b67', fontSize: '2rem', fontWeight: '700' }}>{tour.name}</h5>
                                 <p className="card-text" style={{ fontSize: '1rem', lineHeight: '1.2' }}>{tour.descripcion}</p>
-                                <p className="card-text" style={{ fontSize: '1.5rem', fontWeight: '500', color: '#464f52', lineHeight: '1.2' }}>{tour.precio} $</p>
+                                <p className="card-text" style={{ fontSize: '1.5rem', fontWeight: '500', color: '#464f52', lineHeight: '1.2' }}>{tour.precio}$ per person</p>
                                 <p className="card-text" style={{ fontSize: '1rem', lineHeight: '1.2' }}>Taxes included</p>
                                 <Link to={`/tour/${tour.id}`}>
                                     <button>VIEW DETAILS</button>
