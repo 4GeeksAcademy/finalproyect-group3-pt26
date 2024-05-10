@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Footer = () => {
     return (
         <footer className="footer">
-            <div className="row d-flex justify-content-between">
+            <div className="row d-flex justify-content-between" style={{ margin: "29px" }}>
                 <div className="col-4 col-4-footer">
                     <div className="row" >
                         <div className="col" >
