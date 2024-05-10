@@ -68,9 +68,10 @@ export const SingleTour = () => {
                     <div className="col-12 col-md-6 d-flex flex-column align-items-center">
                         {tour &&
                             <div className='text-center p-4'>
-                                <h1>{tour.name}</h1>
-                                <p>{tour.descripcion}</p>
-                                <p>{tour.precio}$ </p>
+                                <h1 style={{ color: '#3a6b67', fontSize: '2rem', fontWeight: '700' }}>{tour.name}</h1>
+                                <p style={{ fontSize: '1rem', lineHeight: '1.2' }}>{tour.descripcion}</p>
+                                <p style={{ fontSize: '1.5rem', fontWeight: '500', color: '#464f52', lineHeight: '1.2' }}>{tour.precio}$ </p>
+                                <p className="card-text" style={{ fontSize: '1rem', lineHeight: '1.2' }}>Taxes included</p>
                             </div>
                         }
                         {store.token ? (
