@@ -42,6 +42,22 @@
   margin-top: 38px;
 }
 
+
+@media only screen and (min-width: 375px) {
+  .ulFooter {
+    padding: 0px;
+    margin-right: 50px;
+  }
+
+  .listFooterFather {
+    margin: 3px;
+    padding: 2px;
+  }
+  .ul2Footer{
+    margin-left: 50px;
+  }
+}
+
 @media only screen and (min-width: 576px) {
   .col-4-footer {
     flex: 0 0 33.333333%;

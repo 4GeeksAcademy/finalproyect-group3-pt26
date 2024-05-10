@@ -44,14 +44,14 @@ export const Reservas = () => {
                         </video>
                         <div className="row">
                             <div className="col">
-                                <h1 className='text' style={{ "color": "white" }}>{`Encuentra las mejores y más exclusivas opciones con nosotros!`}</h1>
+                                <h1 className='text text-center' style={{ "color": "white" }}>{`Encuentra las mejores y más exclusivas opciones con nosotros!`}</h1>
                             </div>
                         </div>
                         <div className='row' style={{ "width": "100%" }}>
                             <div className='col-3' ></div>
                             <div className='col-6 d-flex flex-column align-items-center'>
                                 <h2 style={{ color: "white" }}>¿Quieres hacer mas reservas?</h2>
-                                <div>
+                                <div className='linksReserva'>
                                     <Link to={'/accommodations'} ><button className='buttonClas' >Hoteles</button></Link>
                                     <Link to={'/tours'} ><button className='buttonClas' >Tours</button></Link>
                                     <Link to={'/packages/'} ><button className='buttonClas' >Paquetes</button></Link>
@@ -65,11 +65,11 @@ export const Reservas = () => {
                         <div className='col d-flex justify-content-center'><span style={{ "fontSize": "60px", "borderBottom": "7px solid #48cae4" }} >Tus Reservas</span></div>
                     </div>
                     {/* mapeo que muestra las reservas */}
-                    <div className="container text-center">
+                    <div className="container text-center d-flex flex-wrap justify-content-center">
 
                         {store.reservasUser.map((reserva, id) => (
-                            <div key={id} className="row fatherCardReserva">
-                                <div className="col-5 cardReserva">
+                            <div key={id} className=" fatherCardReserva">
+                                <div className="cardReserva">
                                     <div className="row">
                                         <div className='col'><h3>Reserva</h3></div>
                                         <div className='col'><img src="https://lesroches.edu/wp-content/uploads/2023/03/tour-1.png" alt="viajes" style={{ width: '288px' }} /></div>

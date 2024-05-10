@@ -64,6 +64,7 @@ h2 {
 .fatherCardReserva {
     height: 400px;
     margin: 60px;
+    width: 400px;
 }
 
 .imgReservas {
@@ -111,4 +112,32 @@ h2 {
     border: 3px solid rgb(72 202 228);
     border-radius: 15px;
     transform: rotate(24deg);
+}
+
+@media (min-width: 375px) and (max-width: 430px) {
+    #videoReserva {
+        height: 521px;
+        width: 84vh;
+    }
+}
+
+@media (min-width: 430px) and (max-width: 767px) {
+    #videoReserva {
+        height: 521px;
+        width: 60vh;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #videoReserva {
+        height: 521px;
+        width: 80vh;
+    }
+
+    .linksReserva {
+        width: 500px;
+        display: flex;
+        justify-content: center;
+    }
+    
 }

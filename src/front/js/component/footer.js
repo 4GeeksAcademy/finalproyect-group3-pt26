@@ -9,7 +9,7 @@ export const Footer = () => {
                 <div className="col-4 col-4-footer">
                     <div className="row" >
                         <div className="col" >
-                            <ul>
+                            <ul className="ulFooter">
                                 <li className="listFooterFather" ><Link className="listFooter" to="/">Aviso Legal</Link></li>
                                 <li className="listFooterFather" ><Link className="listFooter" to="/">Política de Privacidad</Link></li>
                                 <li className="listFooterFather" ><Link className="listFooter" to="/">Política de Cookies</Link></li>
@@ -34,7 +34,7 @@ export const Footer = () => {
                 </div>
                 <div className="col-4 col-4-footer">
                     <div className="row" >
-                        <ul className="d-flex flex-column">
+                        <ul className="d-flex flex-column ul2Footer">
                             <li className="listFooterFather" ><Link className="listFooter" to="/">Home</Link></li>
                             <li className="listFooterFather" ><Link className="listFooter" to="/info">About us</Link></li>
                             <li className="listFooterFather" ><Link className="listFooter" to="/travel">Travel</Link></li>
