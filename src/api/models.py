@@ -58,10 +58,10 @@ class Tour(db.Model):
     __tablename__ = 'tour'
     id= db.Column(db.Integer, primary_key = True, autoincrement=True)
     name = db.Column(db.String(120), nullable=False)
-    descripcion = db.Column(db.String(250),nullable = False)
-    duracion = db.Column(db.String(250),nullable = False)
+    descripcion = db.Column(db.String(500),nullable = False)
+    duracion = db.Column(db.String(500),nullable = False)
     precio = db.Column(db.Float,nullable = False)
-    imageURL = db.Column(db.String(500), nullable = False)
+    imageURL = db.Column(db.String(1000), nullable = False)
 
     def __init__(self,name,descripcion,duracion,precio, imageURL):
         self.name = name

@@ -16,7 +16,7 @@ export const Accommodations = () => {
                 {store.accommodations && store.accommodations.map((hot, id) => (
                     <div className="col" key={id}>
                         <div className="card">
-                            <img src={hot.imageURL} className="card-img-top" alt="..." />
+                            <img src={hot.imageURL} className="card-img-top" alt="..." style={{width:'100%', height:'50%', objectfit: 'cover'}}/>
                             <div className="card-body">
                                 <h5 className="card-title" style={{ color: '#3a6b67', fontSize: '2rem', fontWeight: '700' }}>{hot.name}</h5>
                                 <p className="card-text" style={{ fontSize: '1rem', lineHeight: '1.2' }}>{hot.descripcion}</p>

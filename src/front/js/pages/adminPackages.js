@@ -5,7 +5,7 @@ import "../../styles/home.css";
 
 export const AdminPackages = () => {
     const { store, actions } = useContext(Context);
-    const [packageData, setPackageData] = useState({
+    const [packagesData, setpackagesData] = useState({
         name: '',
         destino: '',
         descripcion: '',
@@ -31,7 +31,7 @@ export const AdminPackages = () => {
             });
             const data = await resp.json()
             setServerResponse(data.url)
-            setPackageData({ ...packageData, imageURL: data.url })
+            setpackagesData({ ...packagesData, imageURL: data.url })
         } catch (error) {
             setServerResponse(error.message);
         }
@@ -45,7 +45,7 @@ export const AdminPackages = () => {
                     'Content-Type': 'application/json' // Asegúrate de incluir este encabezado
                 },
                 body: JSON.stringify({
-                    ...packageData,
+                    ...packagesData,
                 })
             });
 
@@ -81,31 +81,31 @@ export const AdminPackages = () => {
                     <div className="card-name">
                         <input type="texto" className="form-control"
                             placeholder="Name" style={{ width: '100%', height: '30px', borderRadius: '10px' }}
-                            value={packageData.name}
-                            onChange={(e) => setPackageData({ ...packageData, name: e.target.value })}
+                            value={packagesData.name}
+                            onChange={(e) => setpackagesData({ ...packagesData, name: e.target.value })}
                         />
                     </div>
                     <ul className="card-name">
                         <li className="adminLi"> <input type="texto" className="form-control" placeholder="Destino"
                             style={{ width: '100%', height: '30px', borderRadius: '10px' }}
-                            value={packageData.destino}
-                            onChange={(e) => setPackageData({ ...packageData, destino: e.target.value })} />
+                            value={packagesData.destino}
+                            onChange={(e) => setpackagesData({ ...packagesData, destino: e.target.value })} />
                         </li>
                         <textarea className="form-control mb-3" id="exampleFormControlTextarea1" rows="3"
                             placeholder="Description"
                             style={{ borderRadius: '10px' }}
-                            value={packageData.descripcion}
-                            onChange={(e) => setPackageData({ ...packageData, descripcion: e.target.value })}
+                            value={packagesData.descripcion}
+                            onChange={(e) => setpackagesData({ ...packagesData, descripcion: e.target.value })}
                         ></textarea>
                         <li className="adminLi"> <input type="texto" className="form-control" placeholder="Duracion"
                             style={{ width: '100%', height: '30px', borderRadius: '10px' }}
-                            value={packageData.duracion}
-                            onChange={(e) => setPackageData({ ...packageData, duracion: e.target.value })} />
+                            value={packagesData.duracion}
+                            onChange={(e) => setpackagesData({ ...packagesData, duracion: e.target.value })} />
                         </li>
                         <li className="adminLi d-flex justify-content-center"><input type="texto" className="form-control"
                             placeholder="Precio" style={{ width: '230px', height: '30px', borderRadius: '10px' }}
-                            value={packageData.precio}
-                            onChange={(e) => setPackageData({ ...packageData, precio: e.target.value })}
+                            value={packagesData.precio}
+                            onChange={(e) => setpackagesData({ ...packagesData, precio: e.target.value })}
                         />
                         </li>
                     </ul>
