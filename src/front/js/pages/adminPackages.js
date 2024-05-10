@@ -56,7 +56,7 @@ export const AdminPackages = () => {
                 const newPaquete = await response.json();
                 actions.paquetes();
 
-                setPackageData({
+                setpackagesData({
                     name: '',
                     destino: '',
                     descripcion: '',
