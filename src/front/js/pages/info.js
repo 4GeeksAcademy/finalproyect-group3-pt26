@@ -1,5 +1,6 @@
 import React from 'react';
 import "../../styles/home.css";
+import { Link } from "react-router-dom";
 
 export const Info = () => {
 
@@ -10,7 +11,9 @@ export const Info = () => {
 					<div className="col">
 						<div>
 							<h1>Our company</h1>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi, deleniti velit labore, veniam corrupti ex aut illo autem aliquam maiores ducimus quibusdam cumque, quis possimus voluptatibus enim voluptatem sunt? Adipisci at nesciunt quasi. Amet quas molestias quam! Deleniti nihil cumque sit dolor. Provident neque laboriosam dignissimos ratione sit vitae tempora, ipsam veritatis fugiat deserunt, maxime repudiandae, nemo inventore reprehenderit error. Ullam, nisi mollitia harum quam quia obcaecati numquam soluta quos maxime sed repellat ratione commodi architecto magni assumenda, officiis repudiandae!</p>
+							<p>Travelo es una agencia del rubro turístico creado en el año 2024. La compañía está conformada y dirigida por <Link to={'https://github.com/clisdermar/'}>Clisdermar Vivas</Link>, <Link to={'https://github.com/SebaFretes/'}>Sebastián Fretes</Link> y <Link to={'https://github.com/Anibal-JPG'}>Anibal Velasco</Link>.
+							</p>
+							<p>En este proyecto estuvimos trabajando con las siguientes tecnologías: React, Vanilla CSS, Bootstrap, Bootstrap-React, Python, Flask, SQL Alchemy, además estuvimos implementando dos APIS externas mediante Firebase y Flask Mail.</p>
 						</div>
 					</div>
 					<div className="col">

@@ -14,20 +14,6 @@ export const Packages = () => {
             <h1 style={{ textAlign: 'center' }}>Packages</h1>
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 {store.paquetes.map((pkg, id) => (
-                    // <div className="col" key={id}>
-                    //     <div className="card">
-                    //         <img src={pkg.imageURL} className="card-img-top" alt="..." />
-                    //         <div className="card-body">
-                    //             <h5 className="card-title">{pkg.name}</h5>
-                    //             <p className="card-text">{pkg.descripcion}</p>
-                    //             <Link to={`/package/${pkg.id}`}>
-                    //                 <button className="btn btn-primary">VIEW DETAILS</button>
-                    //             </Link>
-                    //         </div>
-                    //     </div>
-                    // </div>
-
-
                     <div className="col" key={id}>
                         <div className="card">
                             <img src={pkg.imageURL} className="card-img-top" alt="..." />

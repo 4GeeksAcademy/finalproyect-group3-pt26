@@ -58,7 +58,7 @@ export const SingleTour = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="container card">
                 <div className="row">
                     <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
                         {tour &&
@@ -88,7 +88,7 @@ export const SingleTour = () => {
 
             <div className="d-flex justify-content-center" style={{ width: '30rem', margin: 'auto', paddingBottom: '1rem' }}>
                 <Link to={'/tours'}>
-                    <button>Go back</button>
+                    <button style={{ marginTop: '1rem' }}>Go back</button>
                 </Link>
             </div>
 
