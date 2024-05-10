@@ -12,7 +12,7 @@ export const Packages = () => {
     return (
         <div className="container">
             <h1 style={{ textAlign: 'center' }}>Packages</h1>
-            <div className="row row-cols-1 row-cols-md-2 g-4">
+            <div className="row row-cols-1 row-cols-md-3 g-4">
                 {store.paquetes.map((pkg, id) => (
                     <div className="col" key={id}>
                         <div className="card">
@@ -22,7 +22,7 @@ export const Packages = () => {
                                 <p className="card-text" style={{ fontSize: '1.4rem', lineHeight: '1.2' }}>{pkg.destino}</p>
                                 <p className="card-text" style={{ fontSize: '1.2rem', lineHeight: '1.2' }}>{pkg.duracion}</p>
                                 <p className="card-text" style={{ fontSize: '1rem', lineHeight: '1.2' }}>{pkg.descripcion}</p>
-                                <p className="card-text" style={{ fontSize: '1.5rem', fontWeight: '500', color: '#464f52', lineHeight: '1.2' }}>{pkg.precio} $</p>
+                                <p className="card-text" style={{ fontSize: '1.5rem', fontWeight: '500', color: '#464f52', lineHeight: '1.2' }}>{pkg.precio}$ per person</p>
                                 <p className="card-text" style={{ fontSize: '1rem', lineHeight: '1.2' }}>Taxes included</p>
                                 <Link to={`/package/${pkg.id}`}>
                                     <button>VIEW DETAILS</button>
