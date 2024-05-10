@@ -70,9 +70,10 @@ export const SingleHotel = () => {
                     <div className="col-12 col-md-6 d-flex flex-column align-items-center">
                         {singleHotel &&
                             <div className='text-center p-4'>
-                                <h1>{singleHotel.name}</h1>
-                                <p>{singleHotel.descripcion}</p>
-                                <p>{singleHotel.precio}$ per night</p>
+                                <h1 style={{ color: '#3a6b67', fontSize: '2rem', fontWeight: '700' }}>{singleHotel.name}</h1>
+                                <p style={{ fontSize: '1rem', lineHeight: '1.2' }}>{singleHotel.descripcion}</p>
+                                <p style={{ fontSize: '1.5rem', fontWeight: '500', color: '#464f52', lineHeight: '1.2' }}>{singleHotel.precio}$ per night</p>
+                                <p className="card-text" style={{ fontSize: '1rem', lineHeight: '1.2' }}>Taxes included</p>
                             </div>
                         }
                         {store.token ? (
