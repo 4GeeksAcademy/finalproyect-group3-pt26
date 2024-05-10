@@ -27,7 +27,9 @@ export const Search = () => {
                             <div>
                                 <h3>NO ONE INCLUDES MORE</h3>
                                 <p>ALL-INCLUSIVE COMPANY FOR 20 YEARS IN-A-ROW</p>
-                                <button>View Packages</button>
+                                <Link to={'/packages'}>
+                                    <button>View Packages</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
