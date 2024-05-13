@@ -28,7 +28,7 @@ export const Footer = () => {
                             <Link to='https://twitter.com/' target="_blank"> < FaTwitter className="iconFooter" /> </Link>
                             <Link to='https://www.youtube.com/' target="_blank"> < FaYoutube className="iconFooter" /> </Link>
                         </div>
-                        <p style={{ color: '#fff', textAlign: 'center', lineHeight: '1.2' }}>© 2024 Travelo. All rights reserved. Designed and developed by <Link style={{ color: '#2e887c' }} to={'https://github.com/SebaFretes/'}>Sebastián Fretes</Link>, <Link style={{ color: '#2e887c' }} to={'https://github.com/clisdermar/'}>Clisdermar Vivas</Link> y <Link style={{ color: '#2e887c' }} to={'https://github.com/Anibal-JPG'}>Anibal Velasco</Link></p>
+                        <p style={{ color: '#fff', textAlign: 'center', lineHeight: '1.2' }}>© 2024 Travelo. All rights reserved. Designed and developed by <Link style={{ color: '#2e887c' }} to={'https://github.com/SebaFretes/'} target="_blank">Sebastián Fretes</Link>, <Link style={{ color: '#2e887c' }} to={'https://github.com/clisdermar/'} target="_blank">Clisdermar Vivas</Link> y <Link style={{ color: '#2e887c' }} to={'https://github.com/Anibal-JPG'} target="_blank">Anibal Velasco</Link></p>
                     </div>
                 </div>
                 <div className="col-4 col-4-footer">
