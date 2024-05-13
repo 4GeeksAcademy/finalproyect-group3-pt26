@@ -56,12 +56,10 @@ def send_email():
                 <title>Correo electrónico HTML</title>
             </head>
             <body style="font-family: Arial, sans-serif;">
-                <h1>Email sending from Travelo!</h1>
-                <p style="margin-bottom: 10px;">Hola {nombre},</p>
-                <p style="margin-bottom: 10px;">Acabamos de recibir un mensaje de tu parte:</p>
+                <h1>New email from Travelo!</h1>
+                <p style="margin-bottom: 10px;">Acabamos de recibir un mensaje de parte de {nombre}:</p>
                 <p>{mensaje}</p>
                 <p>Puedes responder a este correo electrónico para contactar a {nombre} a la dirección de correo electrónico {email}.</p>
-                <p>Atentamente,<br>Travelo Team</p>
             </body>
             </html>
     '''
