@@ -56,10 +56,10 @@ export const Contact = () => {
 
             <div style={{ height: '20rem', width: '100%', background: 'url(https://images.pexels.com/photos/62623/wing-plane-flying-airplane-62623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover no-repeat', backgroundSize: 'cover' }}> </div>
 
-            <form onSubmit={emailFetch} style={{ margin: '-4rem auto 1rem auto', backgroundColor: '#464f52', width: '90%', padding: '2rem', justifyContent: 'center', alignItems: 'center', maxWidth: '50rem', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', boxSizing: 'border-box' }}>
+            <form onSubmit={emailFetch} style={{ margin: '-6rem auto 1rem auto', backgroundColor: '#252525', width: '90%', padding: '2rem', justifyContent: 'center', alignItems: 'center', maxWidth: '50rem', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', boxSizing: 'border-box' }}>
 
 
-                <h3 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Contacto</h3>
+                <h3 style={{ textAlign: 'center', marginBottom: '0.5rem', color: '#fff' }}>CONTACT</h3>
                 <div style={{ marginBottom: '1rem' }}>
                     <label htmlFor="nombre">Name</label>
                     <input

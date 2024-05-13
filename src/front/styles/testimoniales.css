@@ -1,58 +1,58 @@
 section {
-    margin: 5rem 0;
+  margin: 5rem 0;
+}
+
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  margin: 0 2rem;
+  gap: 2rem;
+}
+
+.testimonials .testimonial {
+  background-color: aliceblue;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.testimonials .testimonial:hover {
+  transform: translateX(0.4rem) translateY(-1rem);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.testimonials .testimonial .info {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.testimonials .testimonial .info img {
+  border-radius: 3rem;
+  height: 3rem;
+}
+
+.testimonials .testimonial .info .details span {
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .testimonials {
+    flex-direction: column;
+    margin: 0;
   }
 
-  
-  .title {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .testimonials {
-    display: flex;
-    justify-content: center;
-    margin: 0 2rem;
-    gap: 2rem;
-  }
-  
-  .testimonials .testimonial {
-    background-color: aliceblue;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .testimonials .testimonial:hover {
-    transform: translateX(0.4rem) translateY(-1rem);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-  
   .testimonials .testimonial .info {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    align-items: center;
-    margin-top: 1rem;
+    flex-direction: column;
+    justify-content: start;
   }
-  
-  .testimonials .testimonial .info img {
-    border-radius: 3rem;
-    height: 3rem;
-  }
-  
-  .testimonials .testimonial .info .details span {
-    font-size: 0.9rem;
-  }
-  
-  @media screen and (min-width: 280px) and (max-width: 768px) {
-    .testimonials {
-      flex-direction: column;
-      margin: 0;
-    }
-  
-    .testimonials .testimonial .info {
-      flex-direction: column;
-      justify-content: center;
-    }
-  }
+}
