@@ -3,6 +3,7 @@ import json
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+import os
 
 # Cargar el modelo entrenado
 model = load_model('intent_model.h5')
