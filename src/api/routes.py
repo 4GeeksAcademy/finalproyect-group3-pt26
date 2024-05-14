@@ -15,11 +15,16 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask import make_response
 import jwt
+import os
 from api.chatbot_interactivo import get_response
 
 
 import firebase_admin
 from firebase_admin import credentials, storage
+
+ENV= "./google-services.json" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/google-services.json"
+
+ENV= "./intent_model.h5" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/intent_model.h5"
 
 cred = credentials.Certificate("./google-services.json")
 firebase_admin.initialize_app(cred, {
