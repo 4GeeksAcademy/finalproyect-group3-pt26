@@ -9,6 +9,7 @@ from flask_cors import CORS, cross_origin
 from datetime import datetime
 from datetime import timedelta
 
+
 #importado de la pagina
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
