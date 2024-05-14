@@ -4,6 +4,7 @@ import firebase from "firebase/compat/app"
 import "firebase/compat/storage";
 // import 'firebase-storage'; // Importa el módulo de almacenamiento si lo necesitas
 // Configura tu objeto de configuración de Firebase
+
 const firebaseConfig = {
     apiKey: "AIzaSyBLTkqQCoE31ydNEbZOSZLDYRvZRHeRD6w",
     authDomain: "travelo-69d3a.firebaseapp.com",

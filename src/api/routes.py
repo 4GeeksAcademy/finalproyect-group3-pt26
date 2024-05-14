@@ -9,6 +9,7 @@ from flask_cors import CORS, cross_origin
 from datetime import datetime
 from datetime import timedelta
 
+
 #importado de la pagina
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -22,9 +23,9 @@ from api.chatbot_interactivo import get_response
 import firebase_admin
 from firebase_admin import credentials, storage
 
-google_services = "./google-services.json" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/google-services.json"
+google_services= "./google-services.json" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/google-services.json"
 
-# ENV= "./intent_model.h5" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/intent_model.h5"
+
 
 cred = credentials.Certificate(google_services)
 firebase_admin.initialize_app(cred, {

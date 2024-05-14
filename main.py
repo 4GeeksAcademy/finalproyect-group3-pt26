@@ -5,8 +5,10 @@ from tensorflow.keras.layers import Dense, Dropout, Embedding, GlobalAveragePool
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from sklearn.preprocessing import LabelEncoder
-
+import os 
 # Cargar los intents desde el archivo JSON
+intents= "./intent_model.h5" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/intent_model.h5"
+
 with open('intents.json') as file:
     data = json.load(file)
     intents = data['intents']
