@@ -58,7 +58,6 @@ export const Contact = () => {
 
             <form onSubmit={emailFetch} style={{ margin: '-6rem auto 1rem auto', backgroundColor: '#252525', width: '90%', padding: '2rem', justifyContent: 'center', alignItems: 'center', maxWidth: '50rem', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', boxSizing: 'border-box' }}>
 
-
                 <h3 style={{ textAlign: 'center', marginBottom: '0.5rem', color: '#fff' }}>CONTACT</h3>
                 <div style={{ marginBottom: '1rem' }}>
                     <label htmlFor="nombre">Name</label>
