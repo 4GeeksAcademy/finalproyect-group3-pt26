@@ -11,7 +11,7 @@ export const Info = () => {
 						<div>
 							<h1 style={{ textAlign: 'center' }}>Our team</h1>
 							<p style={{ lineHeight: '1.2' }}>
-								Travelo is a tourism agency founded in 2024, led by <Link style={{ color: '#3a6b67' }} to={'https://github.com/clisdermar/'}>Clisdermar Vivas</Link>, <Link style={{ color: '#3a6b67' }} to={'https://github.com/SebaFretes/'}>Sebastián Fretes</Link> and <Link style={{ color: '#3a6b67' }} to={'https://github.com/Anibal-JPG'}>Anibal Velasco</Link>.
+								Travelo is a tourism agency founded in 2024, led by <Link target="_blank" style={{ color: '#3a6b67' }} to={'https://github.com/clisdermar/'}>Clisdermar Vivas</Link>, <Link target="_blank" style={{ color: '#3a6b67' }} to={'https://github.com/SebaFretes/'}>Sebastián Fretes</Link> and <Link target="_blank" style={{ color: '#3a6b67' }} to={'https://github.com/Anibal-JPG'}>Anibal Velasco</Link>.
 							</p>
 							<p>In this project, we have worked with various technologies, including React for the frontend, Vanilla CSS and Bootstrap for styling, as well as Bootstrap-React for components. For the backend, we have used Python with Flask and SQL Alchemy for the database. Additionally, we have integrated two external APIs through Firebase and Flask Mail for additional functionalities.</p>
 						</div>
