@@ -24,8 +24,10 @@ from firebase_admin import credentials, storage
 
 ENV= "./google-services.json" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/google-services.json"
 
-ENV= "./intent_model.h5" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/intent_model.h5"
 
+intent= "./intent_model.h5" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/intent_model.h5"
+
+crede =credentials.Certificate("./intent_model.h5")
 cred = credentials.Certificate("./google-services.json")
 firebase_admin.initialize_app(cred, {
     'storageBucket': "travelo-69d3a.appspot.com"
