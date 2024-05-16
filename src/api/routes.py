@@ -19,13 +19,10 @@ import jwt
 import os
 from api.chatbot_interactivo import get_response
 
-
 import firebase_admin
 from firebase_admin import credentials, storage
 
 google_services= "./google-services.json" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/google-services.json"
-
-
 
 cred = credentials.Certificate(google_services)
 firebase_admin.initialize_app(cred, {
