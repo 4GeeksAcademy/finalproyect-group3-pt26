@@ -51,11 +51,6 @@ export const Home = () => {
 			<div >
 				<Testimoniales />
 			</div>
-
-			<div >
-				<Chatbot />
-			</div>
-
 		</>
 	);
 };

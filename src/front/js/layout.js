@@ -23,8 +23,8 @@ import { Packages } from "./pages/packages";
 import { SinglePackage } from "./pages/singlePackage";
 import { Contact } from "./pages/contact";
 import { Reservas } from "./pages/reservas";
-import { Chatbot } from "./pages/chatbot";
-import { Admin} from "./pages/admin";
+// import { Chatbot } from "./pages/chatbot";
+import { Admin } from "./pages/admin";
 import { AdminBooking } from "./pages/adminBooking";
 import { AdminUser } from "./pages/adminUser";
 import { AdminTour } from "./pages/adminTour";
@@ -37,7 +37,7 @@ import { AdminPackages } from "./pages/adminPackages";
 //create your first component
 const Layout = () => {
     //the basename is used when your project is published in a subdirectory and not in the root of the domain
- 
+
     const basename = process.env.BASENAME || "";
 
     if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
@@ -46,8 +46,8 @@ const Layout = () => {
         <div style={{ display: "grid", height: "100%", alignContent: "space-between" }}>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-                 <Navbar />
-                   
+                    <Navbar />
+
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Info />} path="/info" />
@@ -72,9 +72,9 @@ const Layout = () => {
                         <Route element={<AdminPackages />} path="/add-packages" />
 
                     </Routes>
-                       
-                    <Chatbot />
-                 <Footer /> 
+
+                    {/* <Chatbot /> */}
+                    <Footer />
                 </ScrollToTop>
             </BrowserRouter>
 
