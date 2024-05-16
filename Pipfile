@@ -24,7 +24,6 @@ scikit-learn = "*"
 firebase-admin = "*"
 google-cloud-storage = "*"
 flask-mail = "*"
-tensorflow = "*"
 
 [requires]
 python_version = "3.10"

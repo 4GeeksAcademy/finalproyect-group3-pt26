@@ -9,7 +9,6 @@ from flask_cors import CORS, cross_origin
 from datetime import datetime
 from datetime import timedelta
 
-
 #importado de la pagina
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -17,22 +16,18 @@ from flask_jwt_extended import jwt_required
 from flask import make_response
 import jwt
 import os
-from api.chatbot_interactivo import get_response
+# from api.chatbot_interactivo import get_response
 
 import firebase_admin
 from firebase_admin import credentials, storage
 
-google_services= "./google-services.json" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/google-services.json"
+google_services= "./googleservices.json" if os.getenv("FLASK_DEBUG") == "1" else "/etc/secrets/googleservices.json"
 
 cred = credentials.Certificate(google_services)
 firebase_admin.initialize_app(cred, {
     'storageBucket': "travelo-69d3a.appspot.com"
 })
 bucket = storage.bucket()
-
-# firebase_admin.initialize_app(cred)
-# bucket = storage.bucket("travelo-f8bc8.appspot.com")
-
 
 api = Blueprint('api', __name__)
 
@@ -579,16 +574,15 @@ def get_user_reservations():
         return jsonify({"msg": "Usuario no encontrado"}), 404
     
 #chatbot
-    
-@api.route('/chatbot', methods=['POST'])
-def chatbot():
-    data = request.get_json()
-    message = data['message']
-    response = get_response(message)
-    return jsonify({'response': response})
+# @api.route('/chatbot', methods=['POST'])
+# def chatbot():
+#     data = request.get_json()
+#     message = data['message']
+#     response = get_response(message)
+#     return jsonify({'response': response})
 
-if __name__ == '__main__':
-    api.run(debug=True)
+# if __name__ == '__main__':
+#     api.run(debug=True)
 
 #images'
 @api.route('/image', methods=['POST'])
